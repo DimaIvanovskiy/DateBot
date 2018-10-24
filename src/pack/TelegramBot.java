@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class TelegramBot extends TelegramLongPollingBot
 {
     private static String botName = "DateSearcherBot";
-    private static String botToken = "780567805:AAGXbsDkw6oxJxt6H5w3-LaMI_k3SRdvlFc";
+    private static String botToken = "";
 
     private DateBot dateBot = new DateBot();
 
