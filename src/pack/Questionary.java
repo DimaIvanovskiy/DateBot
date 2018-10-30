@@ -1,7 +1,5 @@
 package pack;
 
-import java.lang.reflect.Array;
-
 public class Questionary
 {
     public Sex userSex;
@@ -22,9 +20,11 @@ public class Questionary
         return isLastQuestion;
     }
 
-    public String AskQuestion()
+    public QuestionAndAnswers AskQuestion()
     {
-        String result = questions[questionNumber];
+        if (questionNumber == questions.length)
+            return null;
+        QuestionAndAnswers result = questions[questionNumber];
         questionNumber++;
         if (questionNumber == questions.length)
             isLastQuestion = true;
@@ -39,15 +39,9 @@ public class Questionary
                 (userSex2 == coupleSex || coupleSex == Sex.MALE_OR_FEMALE);
     }
 
-    private final String[] questions =
-            {
-                    "What is your biological sex?\n" +
-                            "1)Male\n" +
-                            "2)Female",
-
-                    "What is the sex of your dream couple?\n" +
-                            "1)Only male\n" +
-                            "2)Only female\n" +
-                            "3)Male or female"
+    final QuestionAndAnswers[] questions =
+            {       new QuestionAndAnswers("What is your biological sex?", "Male", "Female"),
+                    new QuestionAndAnswers("What is the sex of your dream couple?",
+                            "Only male", "Only female", "Male or female")
             };
 }

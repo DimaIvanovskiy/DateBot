@@ -21,6 +21,11 @@ public enum Sex
         return null;
     }
 
+    public int getNumber()
+    {
+        return number;
+    }
+
     public static Sex get(String str)
     {
         int number = 0;
