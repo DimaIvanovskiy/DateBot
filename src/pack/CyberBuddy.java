@@ -15,12 +15,11 @@ import java.util.HashMap;
 public class CyberBuddy {
     private final String apiKey = "QDz1wyesabl0da7U";
     private final String apiSecret = "I33deXsRMKjyUKEr0VTWwpB4jeXQE1hr";
-    private boolean firstMessage = true;
 
-    public String getMessage(String message, Long chatId, Sex userSex) throws Exception
+    public String getMessage(String message, Long chatId, Sex userSex, Sex coupleSex) throws Exception
     {
         JSONObject messageObj = new JSONObject();
-        URL url = new URL(getRequest(message, chatId, userSex));
+        URL url = new URL(getRequest(message, chatId, userSex, coupleSex));
         HttpURLConnection connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         BufferedReader in = new BufferedReader(
@@ -33,12 +32,13 @@ public class CyberBuddy {
         return messageObj.getJSONObject("message").get("message").toString();
     }
 
-    private JSONObject makeJSON(String message, Long chatId, Sex userSex)
+    private JSONObject makeJSON(String message, Long chatId, Sex userSex, Sex coupleSex)
     {
         String gender = userSex == Sex.MALE ? "m" : "f";
+        int chatBotId = coupleSex == Sex.MALE ? 145691 : 155117;
         HashMap messageObject = new HashMap<String, Object>(){{
             put("message", message);
-            put("chatBotID", 145691);
+            put("chatBotID", chatBotId);
             put("timestamp", System.currentTimeMillis() / 1000L);
         }};
         HashMap userObject = new HashMap<String, Object>() {{
@@ -54,9 +54,9 @@ public class CyberBuddy {
         return messageJson;
     }
 
-    private String getRequest(String message, Long chatId, Sex userSex) throws Exception
+    private String getRequest(String message, Long chatId, Sex userSex, Sex coupleSex) throws Exception
     {
-        JSONObject messageOb = makeJSON(message, chatId, userSex);
+        JSONObject messageOb = makeJSON(message, chatId, userSex, coupleSex);
         String hash = getHashHmac(messageOb);
         URIBuilder ub = new URIBuilder("https://www.personalityforge.com/api/chat/?");
         ub.addParameter("apiKey", apiKey);
