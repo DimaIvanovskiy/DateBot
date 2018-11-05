@@ -52,7 +52,7 @@ public class TelegramBot extends TelegramLongPollingBot
     private void sendMsg(Long chatId, String text, BotResult result)
     {
         SendMessage s = new SendMessage();
-        switch (dateBot.getBotAttributes().get(chatId).getState())
+        switch (dateBot.getBotAttributes().get(chatId).getBotState())
         {
             case CONNECTED:
                 setRowButtons(s, connectionCommands);
@@ -77,7 +77,7 @@ public class TelegramBot extends TelegramLongPollingBot
         }
     }
 
-    public synchronized void setRowButtons(SendMessage sendMessage, ArrayList<String> names)
+    synchronized void setRowButtons(SendMessage sendMessage, ArrayList<String> names)
     {
         ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
         sendMessage.setReplyMarkup(replyKeyboardMarkup);
@@ -161,7 +161,7 @@ public class TelegramBot extends TelegramLongPollingBot
         BotResult result = dateBot.processMessage(chatId, text);
         if (result != null)
         {
-            if (dateBot.getBotAttributes().get(chatId).getState() == State.CONNECTED)
+            if (dateBot.getBotAttributes().get(chatId).getBotState() == BotState.CONNECTED)
                 result.addText(getContentInfo(msg));
             String answer = result.getText();
             if (!answer.isEmpty())

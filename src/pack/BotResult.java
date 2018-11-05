@@ -10,7 +10,7 @@ public class BotResult
 
     private String[] answers =  new String[0];
 
-    public BotResult(String text,Long ... chatIds)
+    BotResult(String text,Long ... chatIds)
     {
         this.text.append(text);
         for (Long chatId : chatIds)
@@ -22,35 +22,35 @@ public class BotResult
         addQuestionAndAnswers(questionAnswers);
     }
 
-    public void addQuestionAndAnswers(QuestionAndAnswers questionAnswers)
+    void addQuestionAndAnswers(QuestionAndAnswers questionAnswers)
     {
         this.text.append(questionAnswers.question);
         this.answers = questionAnswers.answers;
     }
 
-    public BotResult(){}
+    BotResult(){}
 
-    public void addText(String text)
+    void addText(String text)
     {
         this.text.append(text);
     }
 
-    public void addChatId(Long chatId)
+    void addChatId(Long chatId)
     {
         this.chatIds.add(chatId);
     }
 
-    public String getText()
+    String getText()
     {
         return text.toString();
     }
 
-    public ArrayList<Long> getChatIds()
+    ArrayList<Long> getChatIds()
     {
         return this.chatIds;
     }
 
-    public String[] getAnswers()
+   String[] getAnswers()
     {
         return this.answers;
     }

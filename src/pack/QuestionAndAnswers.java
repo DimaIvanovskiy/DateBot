@@ -1,12 +1,12 @@
 package pack;
 
-public class QuestionAndAnswers
+class QuestionAndAnswers
 {
-    public final String question;
+    final String question;
 
-    public final String[] answers;
+    final String[] answers;
 
-    public QuestionAndAnswers(String question, String...answers)
+    QuestionAndAnswers(String question, String...answers)
     {
         this.question = question;
         this.answers = answers;

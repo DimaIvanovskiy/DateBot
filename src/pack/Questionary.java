@@ -1,26 +1,26 @@
 package pack;
 
-public class Questionary
+class Questionary
 {
-    public Sex userSex;
+    Sex userSex;
 
-    public Sex coupleSex;
+    Sex coupleSex;
 
     private int questionNumber = 0;
 
-    public int getNumber()
+    int getNumber()
     {
         return questionNumber;
     }
 
     private boolean isLastQuestion = false;
 
-    public boolean isLastQuestion()
+    boolean isLastQuestion()
     {
         return isLastQuestion;
     }
 
-    public QuestionAndAnswers AskQuestion()
+    QuestionAndAnswers AskQuestion()
     {
         if (questionNumber == questions.length)
             return null;
@@ -31,7 +31,7 @@ public class Questionary
         return result;
     }
 
-    public boolean isSuitable(Questionary questionary)
+    boolean isSuitable(Questionary questionary)
     {
         Sex coupleSex2 = questionary.coupleSex;
         Sex userSex2 = questionary.userSex;

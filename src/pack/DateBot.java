@@ -5,126 +5,78 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class DateBot
+class DateBot
 {
-    private HashSet<Long> abledUsers = new HashSet<>();
-
-    private final Object lock = new Object();
 
     private ConcurrentHashMap<Long, BotAttributes> botAttributes = new ConcurrentHashMap<>();
 
-    public ConcurrentHashMap<Long, BotAttributes> getBotAttributes() {
+    private ConnectionManager connectionManager = new ConnectionManager(botAttributes);
+
+    ConcurrentHashMap<Long, BotAttributes> getBotAttributes()
+    {
         return botAttributes;
     }
+
 
     private BotResult processCommands(Long chatId, String text)
     {
         BotResult result = new BotResult("", chatId);
         BotAttributes attributes = botAttributes.get(chatId);
-        State botState = attributes.getState();
-        switch (text)
+        synchronized (attributes.lock)
         {
+            BotState botState = attributes.getBotState();
+            switch (text) {
 
-            case "/start":
-                if (botState == State.STARTED)
-                {
-                    result.addText(greetingInformation);
-                    attributes.setState(State.MAKING_QUESTIONARY);
-                    result.addQuestionAndAnswers(attributes.getQuestionary().AskQuestion());
-                }
-                break;
-            case "/help":
-                result.addText(commandsInformation);
-                break;
-            case "/able":
-                if (botState == State.CONNECTED || abledUsers.contains(chatId))
-                    return result;
-                abledUsers.add(chatId);
-                result.addText(ableReply);
-                break;
-            case "/disable":
-                if (!abledUsers.contains(chatId))
-                    return result;
-                abledUsers.remove(chatId);
-                result.addText(disableReply);
-                break;
-            case "/connect":
-                synchronized (lock)
-                {
-                    if (botState == State.CONNECTED)
-                        return result;
-                    Long suitable = FindSuitable(chatId);
-                    if (suitable == null)
-                        result.addText(noSuitableQuestionayReply);
-                    else {
-                        abledUsers.remove(chatId);
-                        abledUsers.remove(suitable);
-                        attributes.setConnection(suitable);
-                        botAttributes.get(suitable).setConnection(chatId);
-                        attributes.setState(State.CONNECTED);
-                        botAttributes.get(suitable).setState(State.CONNECTED);
-                        result.addChatId(suitable);
-                        result.addText(connectionReply);
+                case "/start":
+                    if (botState == BotState.STARTED) {
+                        result.addText(greetingInformation);
+                        attributes.setBotState(BotState.MAKING_QUESTIONARY);
+                        result.addQuestionAndAnswers(attributes.getQuestionary().AskQuestion());
                     }
-                }
-                break;
-            case "/disconnect":
-                if (botState != State.CONNECTED)
-                    return result;
-                Long connection = attributes.getConnection();
-                attributes.setState(State.NORMAL);
-                botAttributes.get(connection).setState(State.NORMAL);
-                botAttributes.get(connection).setConnection(connection);
-                attributes.setConnection(chatId);
-                result.addChatId(connection);
-                result.addText(disconnectionReply);
-                break;
-            case "/change":
-                if (botState == State.CONNECTED)
-                    return result;
-                attributes.setState(State.MAKING_QUESTIONARY);
-                attributes.setQuestionary(new Questionary());
-                result.addQuestionAndAnswers(attributes.getQuestionary().AskQuestion());
-                break;
-            default:
-                return null;
+                    break;
+                case "/help":
+                    result.addText(commandsInformation);
+                    break;
+                case "/able":
+                    result = connectionManager.enableConnection(chatId, botState);
+                    break;
+                case "/disable":
+                    result = connectionManager.disableConnection(chatId);
+                    break;
+                case "/connect":
+                    result = connectionManager.tryConnect(chatId, attributes);
+                    break;
+                case "/disconnect":
+                    result = connectionManager.discoonnect(chatId, botState, attributes);
+                    break;
+                case "/change":
+                    if (botState == BotState.CONNECTED)
+                        return result;
+                    attributes.setBotState(BotState.MAKING_QUESTIONARY);
+                    attributes.setQuestionary(new Questionary());
+                    result.addQuestionAndAnswers(attributes.getQuestionary().AskQuestion());
+                    break;
+                default:
+                    return null;
+            }
+            return result;
         }
-        return result;
     }
 
 
-    private Long FindSuitable(Long chatId)
-    {
-        if (abledUsers.isEmpty())
-            return null;
-        Questionary curUser = botAttributes.get(chatId).getQuestionary();
-        ArrayList<Long> suitable = new ArrayList<>();
-        for (Long id : abledUsers)
-        {
-
-            if ( !id.equals(chatId) && curUser.isSuitable(botAttributes.get(id).
-                    getQuestionary()))
-                suitable.add(id);
-        }
-        if (suitable.isEmpty())
-            return null;
-        Random random = new Random();
-        return suitable.get(random.nextInt(suitable.size()));
-    }
-
-    public BotResult processMessage(Long chatId, String text)
+    BotResult processMessage(Long chatId, String text)
     {
         if (!botAttributes.containsKey(chatId))
-            botAttributes.putIfAbsent(chatId, new BotAttributes(State.STARTED,
+            botAttributes.putIfAbsent(chatId, new BotAttributes(BotState.STARTED,
                     new Questionary(), chatId));
         BotResult result = new BotResult("", chatId);
-        if (text == null && botAttributes.get(chatId).getState() == State.CONNECTED)
+        if (text == null && botAttributes.get(chatId).getBotState() == BotState.CONNECTED)
         {
             result.addChatId(botAttributes.get(chatId).getConnection());
         }
         else
         {
-            switch (botAttributes.get(chatId).getState()) {
+            switch (botAttributes.get(chatId).getBotState()) {
                 case MAKING_QUESTIONARY:
                     makeQuestionary(result, chatId, text);
                     break;
@@ -177,7 +129,7 @@ public class DateBot
         }
         if (questionary.isLastQuestion())
         {
-            botAttributes.get(chatId).setState(State.NORMAL);
+            botAttributes.get(chatId).setBotState(BotState.NORMAL);
             result.addText(finishingQuestionaryReply);
         }
         else

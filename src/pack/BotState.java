@@ -1,9 +1,10 @@
 package pack;
 
-public enum State
+public enum BotState
 {
     NORMAL,
     MAKING_QUESTIONARY,
     CONNECTED,
     STARTED
 }
+

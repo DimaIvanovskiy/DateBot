@@ -7,8 +7,7 @@ public class MethodsForTests {
     {
         StartDateBot(datebot, chatId);
         datebot.processMessage(chatId, Integer.toString(userSex.getNumber()));
-        BotResult result = datebot.processMessage(chatId, Integer.toString(coupleSex.getNumber()));
-        return result;
+        return datebot.processMessage(chatId, Integer.toString(coupleSex.getNumber()));
     }
 
     static BotResult getResultOfConnect(DateBot dateBot, Long chatId, Long suitableId,
@@ -22,9 +21,7 @@ public class MethodsForTests {
         setSexAndCouple(dateBot, suitableId, secondUserSex, secondCoupleSex);
 
         dateBot.processMessage(chatId, "/able");
-
-        BotResult result = dateBot.processMessage(suitableId,"/connect");
-        return result;
+        return dateBot.processMessage(suitableId,"/connect");
 
     }
 
@@ -42,7 +39,6 @@ public class MethodsForTests {
 
     static BotResult StartDateBot(DateBot datebot, Long chatId)
     {
-        BotResult result = datebot.processMessage(chatId, "/start");
-        return result;
+        return datebot.processMessage(chatId, "/start");
     }
 }
