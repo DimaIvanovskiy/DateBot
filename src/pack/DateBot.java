@@ -25,7 +25,8 @@ class DateBot
             switch (text) {
 
                 case "/start":
-                    if (botState == BotState.STARTED) {
+                    if (botState == BotState.STARTED)
+                    {
                         result.addText(greetingInformation);
                         attributes.setBotState(BotState.MAKING_QUESTIONARY);
                         result.addQuestionAndAnswers(attributes.getQuestionary().AskQuestion());
@@ -82,7 +83,8 @@ class DateBot
                     break;
                 case CONNECTED:
                     result = processCommands(chatId, text);
-                    if (result == null) {
+                    if (result == null)
+                    {
                         result = new BotResult();
                         result.addChatId(botAttributes.get(chatId).getConnection());
                         result.addText(text);
@@ -92,13 +94,10 @@ class DateBot
                     result = processCommands(chatId, text);
                     break;
                 case TALKING_WITH_BOT:
-                    if (text.equals("/disconnect"))
+                    result = processCommands(chatId, text);
+                    if (result == null)
                     {
-                        result.addText("You've been disconnected from a conversation with the bot");
-                        botAttributes.get(chatId).setBotState(BotState.NORMAL);
-                    }
-                    else
-                    {
+                        result = new BotResult("", chatId);
                         Questionary questionary =  botAttributes.get(chatId).getQuestionary();
                         try
                         {
@@ -107,17 +106,22 @@ class DateBot
                         }
                         catch (Exception e)
                         {
-                            result.addText("Sorry, but there was some mistake in work of out bot");
+                            result.addText("Sorry, but there was some mistake in work of ouк bot");
                         }
                     }
                     break;
                 case ASKED_ABOUT_BOT:
-                    if (text.toLowerCase().equals("yes"))
+                    switch (text)
                     {
-                        result.addText("You have been connected to our bot for conversation");
-                        botAttributes.get(chatId).setBotState(BotState.TALKING_WITH_BOT);
+                        case "1":
+                            result.addText("You have been connected to our bot for conversation");
+                            botAttributes.get(chatId).setBotState(BotState.TALKING_WITH_BOT);
+                            break;
+                        case "2":
+                            result.addText("Ok, now you can wait for a suitable person to appear");
+                            botAttributes.get(chatId).setBotState(BotState.NORMAL);
+                            break;
                     }
-                    break;
             }
         }
         return result;
@@ -161,6 +165,8 @@ class DateBot
     }
 
 
+    final static String botDisconnectionReply = "You've been disconnected from a conversation with the bot";
+
     final static String wrongAnswerReply = "There is no such answer\n";
 
     final static String finishingQuestionaryReply = "Your questionary is finished";
@@ -169,8 +175,7 @@ class DateBot
 
     final static String disableReply = "Now no one can write you";
 
-    final static String noSuitableQuestionaryReply = "Sorry, but for now there are no suitable people in our base." +
-            "Would you like to talk to our conversation bot?";
+    final static String noSuitableQuestionaryReply = "Sorry, but for now there are no suitable people in our base.";
 
     final static String connectionReply = "You've been connected to some stranger. If you write something to me, it " +
             "will be sent to him.";
