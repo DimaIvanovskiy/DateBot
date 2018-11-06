@@ -45,6 +45,8 @@ class ConnectionManager
         if (suitable == null)
         {
             result.addText(DateBot.noSuitableQuestionaryReply);
+            result.addQuestionAndAnswers(new QuestionAndAnswers("Would you like to talk to " +
+                    "our conversation bot?", "yes", "no"));
             attributes.setBotState(BotState.ASKED_ABOUT_BOT);
         }
         else
@@ -64,6 +66,11 @@ class ConnectionManager
     synchronized BotResult disconnect(Long chatId, BotState botState, BotAttributes attributes)
     {
         BotResult result = new BotResult("", chatId);
+        if (botState == BotState.TALKING_WITH_BOT)
+        {
+            result.addText(DateBot.botDisconnectionReply);
+            return result;
+        }
         if (botState != BotState.CONNECTED)
             return result;
         Long connection = attributes.getConnection();

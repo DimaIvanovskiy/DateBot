@@ -60,7 +60,13 @@ public class TelegramBot extends TelegramLongPollingBot
             case NORMAL:
                 setRowButtons(s, normalCommands);
                 break;
+            case TALKING_WITH_BOT:
+                setRowButtons(s, connectionCommands);
+                break;
             case MAKING_QUESTIONARY:
+                setInline(s, result.getAnswers());
+                break;
+            case ASKED_ABOUT_BOT:
                 setInline(s, result.getAnswers());
                 break;
         }
@@ -77,7 +83,7 @@ public class TelegramBot extends TelegramLongPollingBot
         }
     }
 
-    synchronized void setRowButtons(SendMessage sendMessage, ArrayList<String> names)
+    private void setRowButtons(SendMessage sendMessage, ArrayList<String> names)
     {
         ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
         sendMessage.setReplyMarkup(replyKeyboardMarkup);
@@ -110,7 +116,6 @@ public class TelegramBot extends TelegramLongPollingBot
         markupKeyboard.setKeyboard(buttons);
 
         sendMessage.setReplyMarkup(markupKeyboard);
-
     }
 
     private String getContentInfo(Message msg)
