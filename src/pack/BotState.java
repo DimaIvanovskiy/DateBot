@@ -7,6 +7,8 @@ public enum BotState
     CONNECTED,
     STARTED,
     TALKING_WITH_BOT,
-    ASKED_ABOUT_BOT
+    ASKED_ABOUT_BOT,
+    ASKED_NAME
 }
+
 
