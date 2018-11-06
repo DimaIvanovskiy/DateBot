@@ -14,7 +14,6 @@ class DateBot
     }
 
     private CyberBuddy cyberBuddy = new CyberBuddy();
-    private String userName;
 
     private BotResult processCommands(Long chatId, String text)
     {
@@ -104,7 +103,7 @@ class DateBot
                         try
                         {
                             result.addText(cyberBuddy.getMessage(text, chatId, questionary.userSex,
-                                    questionary.coupleSex, userName));
+                                    questionary.coupleSex, botAttributes.get(chatId).getUserName()));
                         }
                         catch (Exception e)
                         {
@@ -113,6 +112,8 @@ class DateBot
                     }
                     break;
                 case ASKED_ABOUT_BOT:
+                    switch(text)
+                    {
                         case "1":
                             result.addText("What is your name?");
                             botAttributes.get(chatId).setBotState(BotState.ASKED_NAME);
@@ -121,8 +122,10 @@ class DateBot
                             result.addText("Ok, now you can wait for a suitable person to appear");
                             botAttributes.get(chatId).setBotState(BotState.NORMAL);
                             break;
+                    }
+                    break;
                 case ASKED_NAME:
-                    userName = text;
+                    botAttributes.get(chatId).setUserName(text);
                     result.addText("You have been connected to our bot for conversation");
                     botAttributes.get(chatId).setBotState(BotState.TALKING_WITH_BOT);
                     break;
