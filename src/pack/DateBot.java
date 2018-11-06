@@ -1,8 +1,5 @@
 package pack;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
 
 class DateBot
@@ -11,12 +8,12 @@ class DateBot
     private ConcurrentHashMap<Long, BotAttributes> botAttributes = new ConcurrentHashMap<>();
 
     private ConnectionManager connectionManager = new ConnectionManager(botAttributes);
-
     ConcurrentHashMap<Long, BotAttributes> getBotAttributes()
     {
         return botAttributes;
     }
 
+    private CyberBuddy cyberBuddy = new CyberBuddy();
 
     private BotResult processCommands(Long chatId, String text)
     {
@@ -47,7 +44,7 @@ class DateBot
                     result = connectionManager.tryConnect(chatId, attributes);
                     break;
                 case "/disconnect":
-                    result = connectionManager.discoonnect(chatId, botState, attributes);
+                    result = connectionManager.disconnect(chatId, botState, attributes);
                     break;
                 case "/change":
                     if (botState == BotState.CONNECTED)
@@ -93,6 +90,33 @@ class DateBot
                     break;
                 case STARTED:
                     result = processCommands(chatId, text);
+                    break;
+                case TALKING_WITH_BOT:
+                    if (text.equals("/disconnect"))
+                    {
+                        result.addText("You've been disconnected from a conversation with the bot");
+                        botAttributes.get(chatId).setBotState(BotState.NORMAL);
+                    }
+                    else
+                    {
+                        Questionary questionary =  botAttributes.get(chatId).getQuestionary();
+                        try
+                        {
+                            result.addText(cyberBuddy.getMessage(text, chatId, questionary.userSex,
+                                    questionary.coupleSex));
+                        }
+                        catch (Exception e)
+                        {
+                            result.addText("Sorry, but there was some mistake in work of out bot");
+                        }
+                    }
+                    break;
+                case ASKED_ABOUT_BOT:
+                    if (text.toLowerCase().equals("yes"))
+                    {
+                        result.addText("You have been connected to our bot for conversation");
+                        botAttributes.get(chatId).setBotState(BotState.TALKING_WITH_BOT);
+                    }
                     break;
             }
         }
@@ -145,7 +169,8 @@ class DateBot
 
     final static String disableReply = "Now no one can write you";
 
-    final static String noSuitableQuestionayReply = "Sorry, but for now there are no suitable people in our base.";
+    final static String noSuitableQuestionaryReply = "Sorry, but for now there are no suitable people in our base." +
+            "Would you like to talk to our conversation bot?";
 
     final static String connectionReply = "You've been connected to some stranger. If you write something to me, it " +
             "will be sent to him.";

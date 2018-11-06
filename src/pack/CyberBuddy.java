@@ -12,7 +12,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
 
-public class CyberBuddy {
+public class CyberBuddy
+{
     private final String apiKey = "QDz1wyesabl0da7U";
     private final String apiSecret = "I33deXsRMKjyUKEr0VTWwpB4jeXQE1hr";
 

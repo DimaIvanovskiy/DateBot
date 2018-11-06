@@ -43,7 +43,10 @@ class ConnectionManager
         BotResult result = new BotResult("", chatId);
         Long suitable = findSuitable(chatId);
         if (suitable == null)
-            result.addText(DateBot.noSuitableQuestionayReply);
+        {
+            result.addText(DateBot.noSuitableQuestionaryReply);
+            attributes.setBotState(BotState.ASKED_ABOUT_BOT);
+        }
         else
         {
             abledUsers.remove(chatId);
@@ -58,7 +61,7 @@ class ConnectionManager
         return result;
     }
 
-    synchronized BotResult discoonnect(Long chatId, BotState botState, BotAttributes attributes)
+    synchronized BotResult disconnect(Long chatId, BotState botState, BotAttributes attributes)
     {
         BotResult result = new BotResult("", chatId);
         if (botState != BotState.CONNECTED)
