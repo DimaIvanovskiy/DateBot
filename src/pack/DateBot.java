@@ -14,6 +14,7 @@ class DateBot
     }
 
     private CyberBuddy cyberBuddy = new CyberBuddy();
+    private String userName;
 
     private BotResult processCommands(Long chatId, String text)
     {
@@ -74,7 +75,8 @@ class DateBot
         }
         else
         {
-            switch (botAttributes.get(chatId).getBotState()) {
+            switch (botAttributes.get(chatId).getBotState()) 
+            {
                 case MAKING_QUESTIONARY:
                     makeQuestionary(result, chatId, text);
                     break;
@@ -102,26 +104,28 @@ class DateBot
                         try
                         {
                             result.addText(cyberBuddy.getMessage(text, chatId, questionary.userSex,
-                                    questionary.coupleSex));
+                                    questionary.coupleSex, userName));
                         }
                         catch (Exception e)
                         {
-                            result.addText("Sorry, but there was some mistake in work of ouк bot");
+                            result.addText("Sorry, but there was some mistake in work of our bot");
                         }
                     }
                     break;
                 case ASKED_ABOUT_BOT:
-                    switch (text)
-                    {
                         case "1":
-                            result.addText("You have been connected to our bot for conversation");
-                            botAttributes.get(chatId).setBotState(BotState.TALKING_WITH_BOT);
+                            result.addText("What is your name?");
+                            botAttributes.get(chatId).setBotState(BotState.ASKED_NAME);
                             break;
                         case "2":
                             result.addText("Ok, now you can wait for a suitable person to appear");
                             botAttributes.get(chatId).setBotState(BotState.NORMAL);
                             break;
-                    }
+                case ASKED_NAME:
+                    userName = text;
+                    result.addText("You have been connected to our bot for conversation");
+                    botAttributes.get(chatId).setBotState(BotState.TALKING_WITH_BOT);
+                    break;
             }
         }
         return result;
@@ -194,3 +198,4 @@ class DateBot
             "'/disconnect'-use it if you want stop the conversation\n" +
             "'/change'-use it if you want to rewrite your questionary\n";
 }
+
