@@ -14,6 +14,7 @@ class DateBot
     }
 
     private CyberBuddy cyberBuddy = new CyberBuddy();
+    private String userName;
 
     private BotResult processCommands(Long chatId, String text)
     {
@@ -103,20 +104,26 @@ class DateBot
                         try
                         {
                             result.addText(cyberBuddy.getMessage(text, chatId, questionary.userSex,
-                                    questionary.coupleSex));
+                                    questionary.coupleSex, userName));
                         }
                         catch (Exception e)
                         {
-                            result.addText("Sorry, but there was some mistake in work of out bot");
+                            result.addText("Sorry, but there was some mistake in work of our bot");
                         }
                     }
                     break;
                 case ASKED_ABOUT_BOT:
                     if (text.toLowerCase().equals("yes"))
                     {
-                        result.addText("You have been connected to our bot for conversation");
-                        botAttributes.get(chatId).setBotState(BotState.TALKING_WITH_BOT);
+                        result.addText("What is your name?");
+                        botAttributes.get(chatId).setBotState(BotState.ASKED_NAME);
                     }
+                case ASKED_NAME:
+                {
+                    userName = text;
+                    result.addText("You have been connected to our bot for conversation");
+                    botAttributes.get(chatId).setBotState(BotState.TALKING_WITH_BOT);
+                }
                     break;
             }
         }
@@ -189,3 +196,4 @@ class DateBot
             "'/disconnect'-use it if you want stop the conversation\n" +
             "'/change'-use it if you want to rewrite your questionary\n";
 }
+
