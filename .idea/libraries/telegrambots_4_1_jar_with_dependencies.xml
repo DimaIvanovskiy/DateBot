@@ -2,8 +2,11 @@
   <library name="telegrambots-4.1-jar-with-dependencies">
     <CLASSES>
       <root url="jar://$USER_HOME$/Downloads/telegrambots-4.1-jar-with-dependencies.jar!/" />
+      <root url="jar://C:/Program Files/Java/jre-10.0.2/mockito-all-1.9.5.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://C:/Program Files/Java/jre-10.0.2/mockito-all-1.9.5.jar!/" />
+    </SOURCES>
   </library>
 </component>
