@@ -1,92 +1,43 @@
 package pack;
 
 
-import com.google.common.collect.Sets;
-
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Random;
 import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
+
 
 class ConnectionManager
 {
-    private Set<Long> abledUsers = Sets.newConcurrentHashSet();
-
-    private ConcurrentHashMap<Long, BotAttributes> botAttributes;
-
-    ConnectionManager(ConcurrentHashMap<Long, BotAttributes> botAttributes)
+    synchronized static Long tryConnect(Long chatId, Map<Long, BotAttributes> botAttributes, Set<Long> abledUsers)
     {
-        this.botAttributes = botAttributes;
-    }
-
-    BotResult enableConnection(Long chatId, BotState botState)
-    {
-        BotResult result = new BotResult("", chatId);
-        if (botState == BotState.CONNECTED || abledUsers.contains(chatId))
-            return result;
-        abledUsers.add(chatId);
-        result.addText(DateBot.ableReply);
-        return result;
-    }
-
-    BotResult disableConnection(Long chatId)
-    {
-        BotResult result = new BotResult("", chatId);
-        if (!abledUsers.contains(chatId))
-            return result;
-        abledUsers.remove(chatId);
-        result.addText(DateBot.disableReply);
-        return result;
-    }
-
-    synchronized BotResult tryConnect(Long chatId, BotAttributes attributes)
-    {
-        BotResult result = new BotResult("", chatId);
-        Long suitable = findSuitable(chatId);
+        BotAttributes attributes = botAttributes.get(chatId);
+        Long suitable = findSuitable(chatId, botAttributes, abledUsers);
         if (suitable == null)
-        {
-            result.addText(DateBot.noSuitableQuestionaryReply);
-            result.addQuestionAndAnswers(new QuestionAndAnswers("Would you like to talk to " +
-                    "our conversation bot?", "yes", "no"));
-            attributes.setBotState(BotState.ASKED_ABOUT_BOT);
-        }
-        else
-        {
-            abledUsers.remove(chatId);
-            abledUsers.remove(suitable);
-            BotAttributes pair = this.botAttributes.get(suitable);
-            result.addChatId(suitable);
-            result.addText(DateBot.connectionReply);
-            attributes.setConnection(suitable);
-            attributes.setBotState(BotState.CONNECTED);
-            pair.setConnection(chatId);
-            pair.setBotState(BotState.CONNECTED);
-        }
-        return result;
+            return null;
+        abledUsers.remove(chatId);
+        abledUsers.remove(suitable);
+        BotAttributes pair = botAttributes.get(suitable);
+        attributes.setConnection(suitable);
+        attributes.setBotState(BotState.CONNECTED);
+        pair.setConnection(chatId);
+        pair.setBotState(BotState.CONNECTED);
+        return suitable;
     }
 
-    synchronized BotResult disconnect(Long chatId, BotState botState, BotAttributes attributes)
+    synchronized static Long disconnect(Long chatId, Map<Long, BotAttributes> botAttributes)
     {
-        BotResult result = new BotResult("", chatId);
-        if (botState == BotState.TALKING_WITH_BOT)
-        {
-            result.addText(DateBot.botDisconnectionReply);
-            attributes.setBotState(BotState.NORMAL);
-            return result;
-        }
-        if (botState != BotState.CONNECTED)
-            return result;
+        BotAttributes attributes = botAttributes.get(chatId);
         Long connection = attributes.getConnection();
         attributes.setBotState(BotState.NORMAL);
         botAttributes.get(connection).setBotState(BotState.NORMAL);
         botAttributes.get(connection).setConnection(connection);
         attributes.setConnection(chatId);
-        result.addChatId(connection);
-        result.addText(DateBot.disconnectionReply);
-        return result;
+        return connection;
     }
 
-    private Long findSuitable(Long chatId)
+    private static Long findSuitable(Long chatId, Map<Long, BotAttributes> botAttributes,
+                                     Set<Long> abledUsers)
     {
         if (abledUsers.isEmpty())
             return null;

@@ -19,8 +19,18 @@ public class CyberBuddy {
     public String getMessage(String message, Long chatId, Sex userSex, Sex coupleSex,
                              String userName) throws Exception
     {
+        JSONObject messageJson = getMessageJson(message, chatId, userSex, coupleSex, userName);
+        if (messageJson.get("success") == "1")
+            return messageJson.get("message").toString();
+        else
+            throw new Exception(messageJson.get("errorMessage").toString());
+    }
+
+    public JSONObject getMessageJson(String message, Long chatId, Sex userSex, Sex coupleSex,
+                             String userName) throws Exception
+    {
         JSONObject messageObj = new JSONObject();
-        URL url = new URL(getRequest(message, chatId, userSex, coupleSex, userName));
+        URL url = new URL(getURL(message, chatId, userSex, coupleSex, userName));
         HttpURLConnection connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         BufferedReader in = new BufferedReader(
@@ -30,10 +40,12 @@ public class CyberBuddy {
         while ((inputLine = in.readLine()) != null)
             messageObj = new JSONObject(inputLine);
         in.close();
-        return messageObj.getJSONObject("message").get("message").toString();
+        JSONObject messageJson = messageObj.getJSONObject("message");
+        return messageJson;
+
     }
 
-    private JSONObject makeJSON(String message, Long chatId, Sex userSex, Sex coupleSex,
+    public JSONObject makeJSON(String message, Long chatId, Sex userSex, Sex coupleSex,
                                 String userName)
     {
         String gender = userSex == Sex.MALE ? "m" : "f";
@@ -57,8 +69,8 @@ public class CyberBuddy {
         return messageJson;
     }
 
-    private String getRequest(String message, Long chatId, Sex userSex, Sex coupleSex,
-                              String userName) throws Exception
+    public String getURL(String message, Long chatId, Sex userSex, Sex coupleSex,
+                          String userName) throws Exception
     {
         JSONObject messageOb = makeJSON(message, chatId, userSex, coupleSex, userName);
         String hash = getHashHmac(messageOb);
@@ -70,7 +82,7 @@ public class CyberBuddy {
         return url;
     }
 
-    private String getHashHmac(JSONObject value)
+    public String getHashHmac(JSONObject value)
     {
         try {
             byte[] keyBytes = apiSecret.getBytes();

@@ -25,12 +25,6 @@ public class TelegramBot extends TelegramLongPollingBot
 
     private static String botToken =  System.getenv("BOT_TOKEN");
 
-    private final ArrayList<String> normalCommands =  new ArrayList<>(Arrays.asList("/help", "/able", "/disable",
-            "/change", "/connect"));
-
-    private final ArrayList<String> connectionCommands =  new ArrayList<>(Arrays.asList("/help",
-            "/disconnect"));
-
     private DateBot dateBot = new DateBot();
 
     public static void main(String[] args)
@@ -52,24 +46,16 @@ public class TelegramBot extends TelegramLongPollingBot
     private void sendMsg(Long chatId, String text, BotResult result)
     {
         SendMessage s = new SendMessage();
-        switch (dateBot.getBotAttributes().get(chatId).getBotState())
+
+        if (result.getCurrentCommands().size()!=0)
         {
-            case CONNECTED:
-                setRowButtons(s, connectionCommands);
-                break;
-            case NORMAL:
-                setRowButtons(s, normalCommands);
-                break;
-            case TALKING_WITH_BOT:
-                setRowButtons(s, connectionCommands);
-                break;
-            case MAKING_QUESTIONARY:
-                setInline(s, result.getAnswers());
-                break;
-            case ASKED_ABOUT_BOT:
-                setInline(s, result.getAnswers());
-                break;
+            setRowButtons(s, result.getCurrentCommands());
         }
+        if (result.getAnswers().length!=0)
+        {
+            setInlineButtons(s, result.getAnswers());
+        }
+
         s.setChatId(chatId);
         s.setText(text);
 
@@ -100,7 +86,7 @@ public class TelegramBot extends TelegramLongPollingBot
         replyKeyboardMarkup.setKeyboard(keyboard);
     }
 
-    private void setInline(SendMessage sendMessage, String[] answers)
+    private void setInlineButtons(SendMessage sendMessage, String[] answers)
     {
         List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
         List<InlineKeyboardButton> buttons1 = new ArrayList<>();

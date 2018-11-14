@@ -2,12 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5420adb-31ce-46ca-90a5-f207c8f48054" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/telegrambots_4_1_jar_with_dependencies.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mockito.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/ConnectionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/ConnectionManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/CyberBuddy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/CyberBuddy.class" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Java-Chat-Bot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Chat-Bot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/BotAttributes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/BotResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/BotState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/ConnectionManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/CyberBuddy$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/CyberBuddy$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/CyberBuddy$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/CyberBuddy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/DateBot$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/DateBot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/MethodsForTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/QuestionAndAnswers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/Questionary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/Sex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TelegramBot$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TelegramBot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TestDateBot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TestPersonalityForge.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TestPersonalityForge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TestQuestionary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/BotResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/BotResult.java" afterDir="false" />
+>>>>>>> ddef0ac0619c5ff2a8341476dc763e4268c890c4
       <change beforePath="$PROJECT_DIR$/src/pack/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/ConnectionManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pack/CyberBuddy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/CyberBuddy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pack/DateBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/DateBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/TelegramBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/TestCyberBuddy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/TestCyberBuddy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/TestDateBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/TestDateBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/TestPersonalityForge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/TestPersonalityForge.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -137,7 +166,12 @@
     <session id="-131174661">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+<<<<<<< HEAD
           <entry key="project.closed" value="7" />
+=======
+          <entry key="project.closed" value="9" />
+          <entry key="project.open.time.20" value="1" />
+>>>>>>> ddef0ac0619c5ff2a8341476dc763e4268c890c4
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.57" value="1" />
           <entry key="project.open.time.59" value="1" />
@@ -145,29 +179,49 @@
           <entry key="project.open.time.64" value="1" />
           <entry key="project.open.time.68" value="1" />
           <entry key="project.open.time.81" value="1" />
+<<<<<<< HEAD
           <entry key="project.opened" value="7" />
+=======
+          <entry key="project.opened" value="8" />
+>>>>>>> ddef0ac0619c5ff2a8341476dc763e4268c890c4
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="12" />
+<<<<<<< HEAD
           <entry key="java" value="2072" />
+=======
+          <entry key="java" value="2949" />
+>>>>>>> ddef0ac0619c5ff2a8341476dc763e4268c890c4
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+<<<<<<< HEAD
           <entry key="JAVA" value="2072" />
+=======
+          <entry key="JAVA" value="2949" />
+>>>>>>> ddef0ac0619c5ff2a8341476dc763e4268c890c4
           <entry key="PLAIN_TEXT" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+<<<<<<< HEAD
           <entry key="java" value="25" />
+=======
+          <entry key="java" value="34" />
+>>>>>>> ddef0ac0619c5ff2a8341476dc763e4268c890c4
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+<<<<<<< HEAD
           <entry key="JAVA" value="25" />
+=======
+          <entry key="JAVA" value="34" />
+>>>>>>> ddef0ac0619c5ff2a8341476dc763e4268c890c4
         </counts>
       </usages-collector>
     </session>
@@ -177,8 +231,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pack/DateBot.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="2227">
               <caret line="134" column="5" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+=======
+            <state relative-caret-position="393">
+              <caret line="281" column="72" lean-forward="true" selection-start-line="281" selection-start-column="72" selection-end-line="281" selection-end-column="72" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#444#445#0" expanded="true" />
+                <element signature="e#480#481#0" expanded="true" />
+              </folding>
+>>>>>>> ddef0ac0619c5ff2a8341476dc763e4268c890c4
             </state>
           </provider>
         </entry>
@@ -195,8 +259,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pack/CyberBuddy.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="410">
               <caret line="84" column="9" lean-forward="true" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
+=======
+            <state relative-caret-position="510">
+              <caret line="40" column="51" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
+>>>>>>> ddef0ac0619c5ff2a8341476dc763e4268c890c4
             </state>
           </provider>
         </entry>
@@ -204,17 +273,36 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pack/TelegramBot.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="1700">
               <caret line="177" column="9" lean-forward="true" selection-start-line="177" selection-start-column="9" selection-end-line="177" selection-end-column="9" />
+=======
+            <state relative-caret-position="1515">
+              <caret line="165" lean-forward="true" selection-start-line="165" selection-end-line="165" />
+              <folding>
+                <element signature="e#6508#6509#0" expanded="true" />
+                <element signature="e#6538#6539#0" expanded="true" />
+                <element signature="e#6591#6592#0" expanded="true" />
+                <element signature="e#6622#6623#0" expanded="true" />
+              </folding>
+>>>>>>> ddef0ac0619c5ff2a8341476dc763e4268c890c4
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pack/ConnectionManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
               <caret line="28" column="22" lean-forward="true" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pack/ConnectionManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+>>>>>>> ddef0ac0619c5ff2a8341476dc763e4268c890c4
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -225,17 +313,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pack/TestDateBot.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="-1511">
               <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pack/TestQuestionary.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+=======
+            <state relative-caret-position="782">
+              <caret line="46" column="19" lean-forward="true" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> ddef0ac0619c5ff2a8341476dc763e4268c890c4
             </state>
           </provider>
         </entry>
@@ -250,22 +337,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pack/Questionary.java">
+        <entry file="file://$PROJECT_DIR$/src/pack/TestPersonalityForge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            <state relative-caret-position="257">
+              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pack/Sex.java">
+        <entry file="file://$PROJECT_DIR$/src/pack/TestCyberBuddy.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
-              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+              <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pack/BotResult.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
               <folding>
-                <element signature="e#148#149#0" expanded="true" />
-                <element signature="e#184#185#0" expanded="true" />
+                <element signature="e#702#703#0" expanded="true" />
+                <element signature="e#741#742#0" expanded="true" />
+                <element signature="e#792#793#0" expanded="true" />
+                <element signature="e#822#823#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -294,16 +395,24 @@
         <option value="$PROJECT_DIR$/src/pack/Question.java" />
         <option value="$PROJECT_DIR$/src/pack/TestQuestionary.java" />
         <option value="$PROJECT_DIR$/src/pack/Sex.java" />
-        <option value="$PROJECT_DIR$/src/pack/TestDateBot.java" />
         <option value="$PROJECT_DIR$/src/pack/State.java" />
-        <option value="$PROJECT_DIR$/src/pack/BotResult.java" />
         <option value="$PROJECT_DIR$/src/pack/MethodsForTests.java" />
         <option value="$PROJECT_DIR$/src/pack/QuestionAndAnswers.java" />
         <option value="$PROJECT_DIR$/src/pack/Questionary.java" />
         <option value="$PROJECT_DIR$/src/pack/BotState.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/pack/TelegramBot.java" />
         <option value="$PROJECT_DIR$/src/pack/BotAttributes.java" />
         <option value="$PROJECT_DIR$/src/pack/CyberBuddy.java" />
+=======
+        <option value="$PROJECT_DIR$/src/pack/BotAttributes.java" />
+        <option value="$PROJECT_DIR$/src/pack/BotResult.java" />
+        <option value="$PROJECT_DIR$/src/pack/CyberBuddy.java" />
+        <option value="$PROJECT_DIR$/src/pack/TestCyberBuddy.java" />
+        <option value="$PROJECT_DIR$/src/pack/TestPersonalityForge.java" />
+        <option value="$PROJECT_DIR$/src/pack/TestDateBot.java" />
+        <option value="$PROJECT_DIR$/src/pack/TelegramBot.java" />
+>>>>>>> ddef0ac0619c5ff2a8341476dc763e4268c890c4
         <option value="$PROJECT_DIR$/src/pack/DateBot.java" />
         <option value="$PROJECT_DIR$/src/pack/ConnectionManager.java" />
       </list>
@@ -355,8 +464,13 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
       <pane id="Scope" />
+=======
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+>>>>>>> ddef0ac0619c5ff2a8341476dc763e4268c890c4
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -366,11 +480,17 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Дима/Desktop/Java-Chat-Bot/src/pack/Main.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541568778563" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542169876281" />
+    <property name="last_opened_file_path" value="D:/Проекты/mockito-all-1.9.5.jar!/" />
+>>>>>>> ddef0ac0619c5ff2a8341476dc763e4268c890c4
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.16896552" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -384,7 +504,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TelegramBot">
+  <component name="RunManager" selected="JUnit.TestDateBot">
     <configuration name="TelegramBot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pack.TelegramBot" />
       <module name="Java-Chat-Bot" />
@@ -428,7 +548,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestDateBot.testSetNotSex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestPersonalityForge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java-Chat-Bot" />
       <extension name="coverage">
         <pattern>
@@ -437,9 +557,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="pack" />
-      <option name="MAIN_CLASS_NAME" value="pack.TestDateBot" />
-      <option name="METHOD_NAME" value="testSetNotSex" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="pack.TestPersonalityForge" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -462,16 +580,16 @@
       <item itemvalue="JUnit.TestDateBot" />
       <item itemvalue="JUnit.TestQuestionary" />
       <item itemvalue="Application.TelegramBot" />
-      <item itemvalue="JUnit.TestDateBot.testSetNotSex" />
       <item itemvalue="JUnit.TestDateBot.testHelp" />
+      <item itemvalue="JUnit.TestPersonalityForge" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TelegramBot" />
         <item itemvalue="JUnit.TestDateBot" />
-        <item itemvalue="JUnit.TestDateBot.testHelp" />
         <item itemvalue="JUnit.TestQuestionary" />
-        <item itemvalue="JUnit.TestDateBot.testSetNotSex" />
+        <item itemvalue="JUnit.TestPersonalityForge" />
+        <item itemvalue="Application.TelegramBot" />
+        <item itemvalue="JUnit.TestDateBot.testHelp" />
       </list>
     </recent_temporary>
   </component>
@@ -490,24 +608,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestQuestionary - 2018.10.31 at 02h 18m 34s.xml">
-      <configuration name="TestQuestionary" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestDateBot - 2018.10.31 at 02h 18m 39s.xml">
-      <configuration name="TestDateBot" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestQuestionary - 2018.10.31 at 02h 25m 17s.xml">
-      <configuration name="TestQuestionary" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestQuestionary - 2018.10.31 at 02h 25m 51s.xml">
-      <configuration name="TestQuestionary" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestDateBot - 2018.10.31 at 02h 40m 38s.xml">
-      <configuration name="TestDateBot" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestDateBot - 2018.10.31 at 03h 04m 00s.xml">
-      <configuration name="TestDateBot" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestDateBot - 2018.10.31 at 03h 05m 13s.xml">
       <configuration name="TestDateBot" configurationId="JUnit" />
     </history-entry>
@@ -520,14 +620,45 @@
     <history-entry file="TestDateBot - 2018.10.31 at 09h 47m 58s.xml">
       <configuration name="TestDateBot" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestPersonalityForge - 2018.11.14 at 07h 38m 39s.xml">
+      <configuration name="TestPersonalityForge" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestPersonalityForge - 2018.11.14 at 07h 44m 20s.xml">
+      <configuration name="TestPersonalityForge" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDateBot - 2018.11.14 at 09h 01m 41s.xml">
+      <configuration name="TestDateBot" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestPersonalityForge - 2018.11.14 at 09h 02m 01s.xml">
+      <configuration name="TestPersonalityForge" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestQuestionary - 2018.11.14 at 09h 02m 06s.xml">
+      <configuration name="TestQuestionary" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDateBot - 2018.11.14 at 09h 23m 25s.xml">
+      <configuration name="TestDateBot" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="11608000" />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24508321" />
+=======
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2526475" />
+>>>>>>> ddef0ac0619c5ff2a8341476dc763e4268c890c4
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -540,11 +671,11 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3878887" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5015129" side_tool="true" weight="0.30114567" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50075644" side_tool="true" weight="0.32569557" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32569557" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49924356" weight="0.32569557" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -565,6 +696,18 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/pack/ConnectionManager.java</url>
+          <line>35</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="jar://$PROJECT_DIR$/../telegrambots-4.1-jar-with-dependencies.jar!/org/telegram/telegrambots/updatesreceivers/DefaultBotSession.class" />
     <entry file="file://$PROJECT_DIR$/src/pack/QuestResult.java" />
@@ -580,31 +723,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/BotResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pack/MethodsForTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/TestQuestionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/BotState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -615,6 +737,12 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/pack/MethodsForTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+=======
     <entry file="file://$PROJECT_DIR$/src/pack/Sex.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -626,6 +754,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pack/TestQuestionary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-865">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pack/BotState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pack/TestPersonalityForge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pack/TestCyberBuddy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pack/BotResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+          <folding>
+            <element signature="e#702#703#0" expanded="true" />
+            <element signature="e#741#742#0" expanded="true" />
+            <element signature="e#792#793#0" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
+          </folding>
+>>>>>>> ddef0ac0619c5ff2a8341476dc763e4268c890c4
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pack/TestDateBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="46" column="19" lean-forward="true" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pack/CyberBuddy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="40" column="51" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pack/BotAttributes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pack/TelegramBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1515">
+          <caret line="165" lean-forward="true" selection-start-line="165" selection-end-line="165" />
+          <folding>
+            <element signature="e#6508#6509#0" expanded="true" />
+            <element signature="e#6538#6539#0" expanded="true" />
+            <element signature="e#6591#6592#0" expanded="true" />
+            <element signature="e#6622#6623#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/pack/TestDateBot.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1511">
@@ -637,11 +848,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1700">
           <caret line="177" column="9" lean-forward="true" selection-start-line="177" selection-start-column="9" selection-end-line="177" selection-end-column="9" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/pack/ConnectionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> ddef0ac0619c5ff2a8341476dc763e4268c890c4
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pack/DateBot.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="2227">
           <caret line="134" column="5" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
         </state>
@@ -667,6 +888,14 @@
           <caret line="28" column="22" lean-forward="true" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
+=======
+        <state relative-caret-position="393">
+          <caret line="281" column="72" lean-forward="true" selection-start-line="281" selection-start-column="72" selection-end-line="281" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#480#481#0" expanded="true" />
+>>>>>>> ddef0ac0619c5ff2a8341476dc763e4268c890c4
           </folding>
         </state>
       </provider>
@@ -735,11 +964,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>telegrambots-4.1-jar-with-dependencies</last-edited>
+          <last-edited>mockito</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.16896552" />
               </list>
             </option>
           </splitter-proportions>

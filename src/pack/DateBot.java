@@ -1,19 +1,25 @@
 package pack;
 
+import com.google.common.collect.Sets;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 class DateBot
 {
 
     private ConcurrentHashMap<Long, BotAttributes> botAttributes = new ConcurrentHashMap<>();
-
-    private ConnectionManager connectionManager = new ConnectionManager(botAttributes);
     ConcurrentHashMap<Long, BotAttributes> getBotAttributes()
     {
         return botAttributes;
     }
 
     private CyberBuddy cyberBuddy = new CyberBuddy();
+
+    private Set<Long> abledUsers = Sets.newConcurrentHashSet();
+
 
     private BotResult processCommands(Long chatId, String text)
     {
@@ -36,16 +42,40 @@ class DateBot
                     result.addText(commandsInformation);
                     break;
                 case "/able":
-                    result = connectionManager.enableConnection(chatId, botState);
+                    result = enableConnection(chatId, botState);
                     break;
                 case "/disable":
-                    result = connectionManager.disableConnection(chatId);
+                    result = disableConnection(chatId);
                     break;
                 case "/connect":
-                    result = connectionManager.tryConnect(chatId, attributes);
+                    Long suitableId = ConnectionManager.tryConnect(chatId, botAttributes, abledUsers);
+                    if (suitableId == null)
+                    {
+                        result.addText(DateBot.noSuitableQuestionaryReply);
+                        result.addQuestionAndAnswers(new QuestionAndAnswers("Would you like to talk to " +
+                                "our conversation bot?", "yes", "no"));
+                        attributes.setBotState(BotState.ASKED_ABOUT_BOT);
+                    }
+                    else
+                    {
+                        result.addChatId(suitableId);
+                        result.addText(DateBot.connectionReply);
+                    }
+
                     break;
                 case "/disconnect":
-                    result = connectionManager.disconnect(chatId, botState, attributes);
+                    if (botState == BotState.TALKING_WITH_BOT)
+                    {
+                        result.addText(DateBot.botDisconnectionReply);
+                        attributes.setBotState(BotState.NORMAL);
+                        return result;
+                    }
+                    if (botState == BotState.CONNECTED)
+                    {
+                        Long connection = ConnectionManager.disconnect(chatId, botAttributes);
+                        result.addChatId(connection);
+                        result.addText(DateBot.disconnectionReply);
+                    }
                     break;
                 case "/change":
                     if (botState == BotState.CONNECTED)
@@ -107,7 +137,7 @@ class DateBot
                         }
                         catch (Exception e)
                         {
-                            result.addText("Sorry, but there was some mistake in work of our bot");
+                            result.addText(botError);
                         }
                     }
                     break;
@@ -115,23 +145,61 @@ class DateBot
                     switch(text)
                     {
                         case "1":
-                            result.addText("What is your name?");
+                            result.addText(nameQuestion);
                             botAttributes.get(chatId).setBotState(BotState.ASKED_NAME);
                             break;
                         case "2":
-                            result.addText("Ok, now you can wait for a suitable person to appear");
+                            result.addText(waitForSuitable);
                             botAttributes.get(chatId).setBotState(BotState.NORMAL);
                             break;
                     }
                     break;
                 case ASKED_NAME:
                     botAttributes.get(chatId).setUserName(text);
-                    result.addText("You have been connected to our bot for conversation");
+                    result.addText(botConnectionReply);
                     botAttributes.get(chatId).setBotState(BotState.TALKING_WITH_BOT);
                     break;
             }
+
         }
+        addButtons(result, botAttributes.get(chatId).getBotState());
         return result;
+    }
+
+    BotResult enableConnection(Long chatId, BotState botState)
+    {
+        BotResult result = new BotResult("", chatId);
+        if (botState == BotState.CONNECTED || abledUsers.contains(chatId))
+            return result;
+        abledUsers.add(chatId);
+        result.addText(DateBot.ableReply);
+        return result;
+    }
+
+    BotResult disableConnection(Long chatId)
+    {
+        BotResult result = new BotResult("", chatId);
+        if (!abledUsers.contains(chatId))
+            return result;
+        abledUsers.remove(chatId);
+        result.addText(DateBot.disableReply);
+        return result;
+    }
+
+    private void addButtons(BotResult result, BotState botState)
+    {
+        switch (botState)
+        {
+            case CONNECTED:
+                result.addCurrentCommands(connectionCommands);
+            break;
+            case TALKING_WITH_BOT:
+                result.addCurrentCommands(connectionCommands);
+                break;
+            case NORMAL:
+                result.addCurrentCommands(normalCommands);
+            break;
+        }
     }
 
     private void makeQuestionary(BotResult result, Long chatId, String text)
@@ -170,6 +238,20 @@ class DateBot
             result.addQuestionAndAnswers(questionary.AskQuestion());
     }
 
+
+    private final ArrayList<String> normalCommands =  new ArrayList<>(Arrays.asList("/help", "/able", "/disable",
+            "/change", "/connect"));
+
+    private final ArrayList<String> connectionCommands =  new ArrayList<>(Arrays.asList("/help",
+            "/disconnect"));
+
+    final static String botConnectionReply = "You have been connected to our bot for conversation";
+
+    final static String botError = "Sorry, but there was some mistake in work of our bot";
+
+    final static String nameQuestion = "What is your name?";
+
+    final static String waitForSuitable = "Ok, now you can wait for a suitable person to appear";
 
     final static String botDisconnectionReply = "You've been disconnected from a conversation with the bot";
 

@@ -10,6 +10,8 @@ public class BotResult
 
     private String[] answers =  new String[0];
 
+    private ArrayList<String> commands = new ArrayList<>();
+
     BotResult(String text,Long ... chatIds)
     {
         this.text.append(text);
@@ -17,15 +19,20 @@ public class BotResult
         this.chatIds.add(chatId);
     }
 
-    public BotResult(QuestionAndAnswers questionAnswers)
-    {
-        addQuestionAndAnswers(questionAnswers);
-    }
-
     void addQuestionAndAnswers(QuestionAndAnswers questionAnswers)
     {
         this.text.append(questionAnswers.question);
         this.answers = questionAnswers.answers;
+    }
+
+    void addCurrentCommands(ArrayList<String> commands)
+    {
+        this.commands = commands;
+    }
+
+    ArrayList<String> getCurrentCommands()
+    {
+        return commands;
     }
 
     BotResult(){}

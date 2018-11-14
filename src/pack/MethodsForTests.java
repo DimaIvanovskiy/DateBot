@@ -41,4 +41,11 @@ public class MethodsForTests {
     {
         return datebot.processMessage(chatId, "/start");
     }
+
+    static BotResult startConversationCyberBuddy(DateBot dateBot, Long chatId)
+    {
+        dateBot.processMessage(chatId, "/connect");
+        dateBot.processMessage(chatId, "1");
+        return dateBot.processMessage(chatId, "Alice");
+    }
 }

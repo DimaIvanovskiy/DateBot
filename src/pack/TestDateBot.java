@@ -1,11 +1,15 @@
 package pack;
 
+import org.mockito.Mockito;
+import java.net.ConnectException;
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.when;
 
 public class TestDateBot {
 
     DateBot dateBot = new DateBot();
     Long chatId = 12345678L;
+    CyberBuddy buddy = Mockito.mock(CyberBuddy.class);
 
     @org.junit.Test
     public void testStart()
@@ -96,7 +100,7 @@ public class TestDateBot {
         dateBot.processMessage(chatId, "/change");
         dateBot.processMessage(chatId, "2");
         assertEquals(Sex.FEMALE, dateBot.getBotAttributes().get(chatId).getQuestionary().
-                userSex );
+                userSex);
     }
 
     @org.junit.Test
@@ -120,4 +124,65 @@ public class TestDateBot {
         assertEquals(result.getText(),"Hello2");
         assertTrue(result.getChatIds().contains(chatId1));
     }
+
+    @org.junit.Test
+    public void testNotConnectCyberBuddy()
+    {
+        MethodsForTests.setSexAndCouple(dateBot, chatId, Sex.MALE, Sex.FEMALE);
+        dateBot.processMessage(chatId, "/connect");
+        assertEquals(BotState.ASKED_ABOUT_BOT, dateBot.getBotAttributes().get(chatId).
+                getBotState());
+        BotResult result = dateBot.processMessage(chatId, "2");
+        assertEquals(DateBot.waitForSuitable,
+                result.getText());
+        assertEquals(BotState.NORMAL, dateBot.getBotAttributes().get(chatId).getBotState());
+    }
+
+    @org.junit.Test
+    public void testConnectCyberBuddy()
+    {
+        MethodsForTests.setSexAndCouple(dateBot, chatId, Sex.MALE, Sex.FEMALE);
+        dateBot.processMessage(chatId, "/connect");
+        assertEquals(BotState.ASKED_ABOUT_BOT, dateBot.getBotAttributes().get(chatId).
+                getBotState());
+        BotResult result = dateBot.processMessage(chatId, "1");
+        assertEquals(DateBot.nameQuestion, result.getText());
+        assertEquals(BotState.ASKED_NAME, dateBot.getBotAttributes().get(chatId).getBotState());
+        dateBot.processMessage(chatId, "Alice");
+        assertEquals(BotState.TALKING_WITH_BOT, dateBot.getBotAttributes().get(chatId).getBotState());
+    }
+
+    @org.junit.Test
+    public void testBuddyMakeResponse() throws Exception
+    {
+        MethodsForTests.setSexAndCouple(dateBot, chatId, Sex.MALE, Sex.FEMALE);
+        MethodsForTests.startConversationCyberBuddy(dateBot, chatId);
+        when(buddy.getMessage("Hi", chatId, Sex.MALE, Sex.FEMALE, "Alice")).
+                thenReturn("Hello");
+        assertEquals("Hello",
+                buddy.getMessage("Hi", chatId, Sex.MALE, Sex.FEMALE, "Alice"));
+    }
+
+    @org.junit.Test(expected = ConnectException.class)
+    public void testBuddyThrowException() throws Exception
+    {
+        MethodsForTests.setSexAndCouple(dateBot, chatId, Sex.MALE, Sex.FEMALE);
+        MethodsForTests.startConversationCyberBuddy(dateBot, chatId);
+        when(buddy.getMessage("Hi", chatId, Sex.MALE, Sex.FEMALE, "Alice"))
+                .thenThrow(new ConnectException("Connection is not established"));
+        assertEquals("Connection is not established",
+                buddy.getMessage("Hi", chatId, Sex.MALE, Sex.FEMALE, "Alice"));
+    }
+
+    @org.junit.Test(expected = Exception.class)
+    public void testWrongFormatException() throws Exception
+    {
+        MethodsForTests.setSexAndCouple(dateBot, chatId, Sex.MALE, Sex.FEMALE);
+        MethodsForTests.startConversationCyberBuddy(dateBot, chatId);
+        when(buddy.getMessage("Hi", chatId, Sex.MALE, Sex.FEMALE, "Alice"))
+                .thenThrow(new Exception("Wrong format of message"));
+        assertEquals("Wrong format of message",
+                buddy.getMessage("Hi", chatId, Sex.MALE, Sex.FEMALE, "Alice"));
+    }
+
 }
