@@ -20,10 +20,8 @@ public class CyberBuddy {
                              String userName) throws Exception
     {
         JSONObject messageJson = getMessageJson(message, chatId, userSex, coupleSex, userName);
-        if (messageJson.get("success") == "1")
-            return messageJson.get("message").toString();
-        else
-            throw new Exception(messageJson.get("errorMessage").toString());
+        return messageJson.getJSONObject("message").get("message").toString();
+
     }
 
     public JSONObject getMessageJson(String message, Long chatId, Sex userSex, Sex coupleSex,
@@ -40,8 +38,10 @@ public class CyberBuddy {
         while ((inputLine = in.readLine()) != null)
             messageObj = new JSONObject(inputLine);
         in.close();
-        JSONObject messageJson = messageObj.getJSONObject("message");
-        return messageJson;
+        if (messageObj.get("success") == "1")
+            return messageObj;
+        else
+            throw new Exception(messageObj.get("errorMessage").toString());
 
     }
 
