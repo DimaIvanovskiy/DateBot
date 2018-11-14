@@ -28,6 +28,7 @@ class ConnectionManager
         result.addText(DateBot.ableReply);
         return result;
     }
+
     BotResult disableConnection(Long chatId)
     {
         BotResult result = new BotResult("", chatId);
@@ -53,12 +54,13 @@ class ConnectionManager
         {
             abledUsers.remove(chatId);
             abledUsers.remove(suitable);
-            attributes.setConnection(suitable);
-            botAttributes.get(suitable).setConnection(chatId);
-            attributes.setBotState(BotState.CONNECTED);
-            botAttributes.get(suitable).setBotState(BotState.CONNECTED);
+            BotAttributes pair = this.botAttributes.get(suitable);
             result.addChatId(suitable);
             result.addText(DateBot.connectionReply);
+            attributes.setConnection(suitable);
+            attributes.setBotState(BotState.CONNECTED);
+            pair.setConnection(chatId);
+            pair.setBotState(BotState.CONNECTED);
         }
         return result;
     }
@@ -69,6 +71,7 @@ class ConnectionManager
         if (botState == BotState.TALKING_WITH_BOT)
         {
             result.addText(DateBot.botDisconnectionReply);
+            attributes.setBotState(BotState.NORMAL);
             return result;
         }
         if (botState != BotState.CONNECTED)

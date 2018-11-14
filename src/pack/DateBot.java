@@ -149,7 +149,6 @@ class DateBot
                     result.addText(wrongAnswerReply);
                     return;
                 }
-
                 break;
             case 2:
                 Sex coupleSex = Sex.get(text);
