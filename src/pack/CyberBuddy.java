@@ -13,10 +13,20 @@ import java.net.URL;
 import java.util.HashMap;
 
 public class CyberBuddy {
-    private final String apiKey = "QDz1wyesabl0da7U";
-    private final String apiSecret = "I33deXsRMKjyUKEr0VTWwpB4jeXQE1hr";
+    private final String apiKey =  System.getenv("API_KEY");
+    private final String apiSecret = System.getenv("API_SECRET");
 
     public String getMessage(String message, Long chatId, Sex userSex, Sex coupleSex,
+                             String userName) throws Exception
+    {
+        JSONObject messageJson = getMessageJson(message, chatId, userSex, coupleSex, userName);
+        if (messageJson.get("success") == "1")
+            return messageJson.get("message").toString();
+        else
+            throw new Exception(messageJson.get("errorMessage").toString());
+    }
+
+    public JSONObject getMessageJson(String message, Long chatId, Sex userSex, Sex coupleSex,
                              String userName) throws Exception
     {
         JSONObject messageObj = new JSONObject();
@@ -31,10 +41,8 @@ public class CyberBuddy {
             messageObj = new JSONObject(inputLine);
         in.close();
         JSONObject messageJson = messageObj.getJSONObject("message");
-        if (messageJson.get("success") == "1")
-            return messageJson.get("message").toString();
-        else
-            throw new Exception(messageJson.get("errorMessage").toString());
+        return messageJson;
+
     }
 
     public JSONObject makeJSON(String message, Long chatId, Sex userSex, Sex coupleSex,

@@ -1,12 +1,9 @@
 package pack;
 
 import org.mockito.Mockito;
-
 import java.net.ConnectException;
-
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
-
 
 public class TestDateBot {
 
@@ -136,7 +133,7 @@ public class TestDateBot {
         assertEquals(BotState.ASKED_ABOUT_BOT, dateBot.getBotAttributes().get(chatId).
                 getBotState());
         BotResult result = dateBot.processMessage(chatId, "2");
-        assertEquals("Ok, now you can wait for a suitable person to appear",
+        assertEquals(DateBot.waitForSuitable,
                 result.getText());
         assertEquals(BotState.NORMAL, dateBot.getBotAttributes().get(chatId).getBotState());
     }
@@ -149,7 +146,7 @@ public class TestDateBot {
         assertEquals(BotState.ASKED_ABOUT_BOT, dateBot.getBotAttributes().get(chatId).
                 getBotState());
         BotResult result = dateBot.processMessage(chatId, "1");
-        assertEquals("What is your name?", result.getText());
+        assertEquals(DateBot.nameQuestion, result.getText());
         assertEquals(BotState.ASKED_NAME, dateBot.getBotAttributes().get(chatId).getBotState());
         dateBot.processMessage(chatId, "Alice");
         assertEquals(BotState.TALKING_WITH_BOT, dateBot.getBotAttributes().get(chatId).getBotState());
@@ -187,4 +184,5 @@ public class TestDateBot {
         assertEquals("Wrong format of message",
                 buddy.getMessage("Hi", chatId, Sex.MALE, Sex.FEMALE, "Alice"));
     }
+
 }

@@ -9,6 +9,7 @@ import java.net.URLEncoder;
 public class TestCyberBuddy {
 
     private CyberBuddy buddy = new CyberBuddy();
+
     private String message = "{\"message\":{\"message\":\"Hi\",\"chatBotID\":155117," +
             "\"timestamp\":1542136352}," +
             "\"user\":{\"firstName\":\"Ann\",\"gender\":\"m\",\"externalID\":123}}";
