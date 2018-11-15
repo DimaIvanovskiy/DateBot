@@ -14,7 +14,7 @@ class ConnectionManager
         BotAttributes attributes = botAttributes.get(chatId);
         Long suitable = findSuitable(chatId, botAttributes, abledUsers);
         if (suitable == null)
-            return null;
+           return null;
         abledUsers.remove(chatId);
         abledUsers.remove(suitable);
         BotAttributes pair = botAttributes.get(suitable);
@@ -37,7 +37,7 @@ class ConnectionManager
     }
 
     private static Long findSuitable(Long chatId, Map<Long, BotAttributes> botAttributes,
-                                     Set<Long> abledUsers)
+                              Set<Long> abledUsers)
     {
         if (abledUsers.isEmpty())
             return null;

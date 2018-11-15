@@ -19,15 +19,14 @@ public class CyberBuddy {
     public String getMessage(String message, Long chatId, Sex userSex, Sex coupleSex,
                              String userName) throws Exception
     {
-        JSONObject messageJson = getMessageJson(message, chatId, userSex, coupleSex, userName);
-        if (messageJson.get("success") == "1")
-            return messageJson.get("message").toString();
-        else
-            throw new Exception(messageJson.get("errorMessage").toString());
+        JSONObject messageJson = getMessageJson(message, chatId, userSex, coupleSex, userName).
+                getJSONObject("message");
+        return messageJson.get("message").toString();
+
     }
 
     public JSONObject getMessageJson(String message, Long chatId, Sex userSex, Sex coupleSex,
-                             String userName) throws Exception
+                                     String userName) throws Exception
     {
         JSONObject messageObj = new JSONObject();
         URL url = new URL(getURL(message, chatId, userSex, coupleSex, userName));
@@ -41,12 +40,15 @@ public class CyberBuddy {
             messageObj = new JSONObject(inputLine);
         in.close();
         JSONObject messageJson = messageObj.getJSONObject("message");
-        return messageJson;
+        if (messageJson.get("success") == "1")
+            return messageObj;
+        else
+            throw new Exception(messageJson.get("errorMessage").toString());
 
     }
 
     public JSONObject makeJSON(String message, Long chatId, Sex userSex, Sex coupleSex,
-                                String userName)
+                               String userName)
     {
         String gender = userSex == Sex.MALE ? "m" : "f";
         int chatBotId = coupleSex == Sex.MALE ? 145691 : 155117;
@@ -70,7 +72,7 @@ public class CyberBuddy {
     }
 
     public String getURL(String message, Long chatId, Sex userSex, Sex coupleSex,
-                          String userName) throws Exception
+                         String userName) throws Exception
     {
         JSONObject messageOb = makeJSON(message, chatId, userSex, coupleSex, userName);
         String hash = getHashHmac(messageOb);

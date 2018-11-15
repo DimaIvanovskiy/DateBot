@@ -16,21 +16,34 @@ public class TestPersonalityForge {
     }
 
     @org.junit.Test
-    public void testFormatResponse() throws Exception
+    public void testUserInformationInResponse() throws Exception
     {
-        String response = buddy.getMessage("Hi", 17L,
-            Sex.FEMALE, Sex.MALE, "Anya");
-        assertTrue(response.matches("a-zA-z"));
-        assertFalse(response.matches("[{/\"?*+.]"));
+        JSONObject responseAsJson = buddy.getMessageJson("Hi", 7L, Sex.FEMALE, Sex.MALE,
+                "Anya");
+        JSONObject userInformation = responseAsJson.getJSONObject("user");
+        assertEquals("Anya", userInformation.get("firstName").toString());
+        assertEquals("f", userInformation.get("gender").toString());
+        assertEquals("7L", userInformation.get("externalID").toString());
     }
 
     @org.junit.Test
-    public void testJsonFormat() throws Exception
+    public void testSuccessRequest() throws Exception
     {
-        JSONObject response = buddy.getMessageJson("Hi", 17L,
-                Sex.FEMALE, Sex.MALE, "Anya");
-        System.out.println(response.toString());
+        JSONObject responseAsJson = buddy.getMessageJson("Hi", 7L, Sex.FEMALE, Sex.MALE,
+                "Anya");
+        JSONObject messageInformation = responseAsJson.getJSONObject("message");
+        assertEquals(1, messageInformation.get("success"));
+        assertEquals("", messageInformation.get("errorMessage"));
+    }
 
+    @org.junit.Test
+    public void testMessageInformationInResponse() throws Exception
+    {
+        JSONObject responseAsJson = buddy.getMessageJson("Hi", 7L, Sex.FEMALE, Sex.MALE,
+                "Anya");
+        JSONObject messageInformation = responseAsJson.getJSONObject("message");
+        assertTrue(messageInformation.get("message").toString().length() != 0);
+        assertTrue(messageInformation.get("mood").toString().length() != 0);
     }
 }
 
