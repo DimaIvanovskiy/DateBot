@@ -2,37 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5420adb-31ce-46ca-90a5-f207c8f48054" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/telegrambots_4_1_jar_with_dependencies.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mockito.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Chat-Bot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Chat-Bot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/BotAttributes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/BotResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/BotState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/ConnectionManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/CyberBuddy$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/CyberBuddy$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/CyberBuddy$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/CyberBuddy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/DateBot$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/DateBot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/MethodsForTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/QuestionAndAnswers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/Questionary.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/Sex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TelegramBot$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TelegramBot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TestCyberBuddy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TestCyberBuddy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TestDateBot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TestPersonalityForge.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TestPersonalityForge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TestQuestionary.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pack/BotResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/BotResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pack/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/ConnectionManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pack/CyberBuddy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/CyberBuddy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pack/DateBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/DateBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pack/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/TelegramBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pack/TestCyberBuddy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/TestCyberBuddy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pack/TestDateBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/TestDateBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pack/TestPersonalityForge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/TestPersonalityForge.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -171,29 +142,32 @@
           <entry key="project.open.time.64" value="1" />
           <entry key="project.open.time.68" value="1" />
           <entry key="project.open.time.81" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="12" />
-          <entry key="java" value="2949" />
+          <entry key="java" value="2996" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2949" />
+          <entry key="JAVA" value="2996" />
           <entry key="PLAIN_TEXT" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="34" />
+          <entry key="class" value="2" />
+          <entry key="java" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="34" />
+          <entry key="CLASS" value="2" />
+          <entry key="JAVA" value="36" />
         </counts>
       </usages-collector>
     </session>
@@ -212,47 +186,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pack/DateBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="285" lean-forward="true" selection-start-line="285" selection-end-line="285" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pack/BotAttributes.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pack/CyberBuddy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="101" selection-start-line="101" selection-end-line="101" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pack/TelegramBot.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2110">
-              <caret line="165" selection-start-line="165" selection-end-line="165" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pack/ConnectionManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="38" column="89" lean-forward="true" selection-start-line="38" selection-start-column="89" selection-end-line="38" selection-end-column="89" />
+            <state relative-caret-position="459">
+              <caret line="150" column="33" lean-forward="true" selection-start-line="150" selection-start-column="33" selection-end-line="150" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -261,10 +196,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pack/CyberBuddy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="57" column="11" lean-forward="true" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Downloads/telegrambots-4.1-jar-with-dependencies.jar!/org/json/JSONObject.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="121">
+              <caret line="216" selection-start-line="216" selection-end-line="216" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pack/TestDateBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-559">
-              <caret line="128" column="23" lean-forward="true" selection-start-line="128" selection-start-column="23" selection-end-line="128" selection-end-column="23" />
+            <state relative-caret-position="2176">
+              <caret line="128" column="23" selection-start-line="128" selection-start-column="23" selection-end-line="128" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -284,8 +237,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pack/TestPersonalityForge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+            <state relative-caret-position="204">
+              <caret line="21" column="12" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="25" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -294,9 +247,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pack/Sex.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+              <folding>
+                <element signature="e#148#149#0" expanded="true" />
+                <element signature="e#184#185#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pack/TestCyberBuddy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2">
+            <state relative-caret-position="-235">
               <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
             </state>
           </provider>
@@ -346,8 +321,8 @@
         <option value="$PROJECT_DIR$/src/pack/TelegramBot.java" />
         <option value="$PROJECT_DIR$/src/pack/DateBot.java" />
         <option value="$PROJECT_DIR$/src/pack/ConnectionManager.java" />
-        <option value="$PROJECT_DIR$/src/pack/CyberBuddy.java" />
         <option value="$PROJECT_DIR$/src/pack/TestPersonalityForge.java" />
+        <option value="$PROJECT_DIR$/src/pack/CyberBuddy.java" />
       </list>
     </option>
   </component>
@@ -363,7 +338,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1386" />
@@ -374,21 +349,22 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="DateBot1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DateBot1" type="462c0819:PsiDirectoryNode" />
+              <item name="DateBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DateBot" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="DateBot1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DateBot1" type="462c0819:PsiDirectoryNode" />
+              <item name="DateBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DateBot" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="DateBot1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DateBot1" type="462c0819:PsiDirectoryNode" />
+              <item name="DateBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DateBot" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pack" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -396,9 +372,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -408,7 +383,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Дима/Desktop/Java-Chat-Bot/src/pack/Main.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542223688854" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542441553644" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -427,7 +402,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestCyberBuddy">
+  <component name="RunManager" selected="Application.TelegramBot">
     <configuration name="TelegramBot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pack.TelegramBot" />
       <module name="Java-Chat-Bot" />
@@ -437,34 +412,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestCyberBuddy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Java-Chat-Bot" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pack.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pack" />
-      <option name="MAIN_CLASS_NAME" value="pack.TestCyberBuddy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestDateBot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Java-Chat-Bot" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pack.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pack" />
-      <option name="MAIN_CLASS_NAME" value="pack.TestDateBot" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -483,7 +430,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestQuestionary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestPersonalityForge.testMessageInformationInResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java-Chat-Bot" />
       <extension name="coverage">
         <pattern>
@@ -492,25 +439,59 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="pack" />
-      <option name="MAIN_CLASS_NAME" value="pack.TestQuestionary" />
+      <option name="MAIN_CLASS_NAME" value="pack.TestPersonalityForge" />
+      <option name="METHOD_NAME" value="testMessageInformationInResponse" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestPersonalityForge.testTimeResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java-Chat-Bot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pack.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pack" />
+      <option name="MAIN_CLASS_NAME" value="pack.TestPersonalityForge" />
+      <option name="METHOD_NAME" value="testTimeResponse" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestPersonalityForge.testUserInformationInResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java-Chat-Bot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pack.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pack" />
+      <option name="MAIN_CLASS_NAME" value="pack.TestPersonalityForge" />
+      <option name="METHOD_NAME" value="testUserInformationInResponse" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.TestDateBot" />
-      <item itemvalue="JUnit.TestQuestionary" />
-      <item itemvalue="Application.TelegramBot" />
       <item itemvalue="JUnit.TestPersonalityForge" />
-      <item itemvalue="JUnit.TestCyberBuddy" />
+      <item itemvalue="JUnit.TestPersonalityForge.testTimeResponse" />
+      <item itemvalue="JUnit.TestPersonalityForge.testUserInformationInResponse" />
+      <item itemvalue="JUnit.TestPersonalityForge.testMessageInformationInResponse" />
+      <item itemvalue="Application.TelegramBot" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestCyberBuddy" />
-        <item itemvalue="JUnit.TestDateBot" />
-        <item itemvalue="JUnit.TestQuestionary" />
-        <item itemvalue="JUnit.TestPersonalityForge" />
         <item itemvalue="Application.TelegramBot" />
+        <item itemvalue="JUnit.TestPersonalityForge.testUserInformationInResponse" />
+        <item itemvalue="JUnit.TestPersonalityForge" />
+        <item itemvalue="JUnit.TestPersonalityForge.testMessageInformationInResponse" />
+        <item itemvalue="JUnit.TestPersonalityForge.testTimeResponse" />
       </list>
     </recent_temporary>
   </component>
@@ -529,35 +510,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestDateBot - 2018.11.14 at 09h 01m 41s.xml">
-      <configuration name="TestDateBot" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestPersonalityForge - 2018.11.14 at 09h 02m 01s.xml">
+    <history-entry file="TestPersonalityForge - 2018.11.17 at 12h 33m 22s.xml">
       <configuration name="TestPersonalityForge" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestQuestionary - 2018.11.14 at 09h 02m 06s.xml">
-      <configuration name="TestQuestionary" configurationId="JUnit" />
+    <history-entry file="TestPersonalityForge_testUserInformationInResponse - 2018.11.17 at 12h 35m 15s.xml">
+      <configuration name="TestPersonalityForge.testUserInformationInResponse" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestDateBot - 2018.11.14 at 09h 23m 25s.xml">
-      <configuration name="TestDateBot" configurationId="JUnit" />
+    <history-entry file="TestPersonalityForge - 2018.11.17 at 12h 36m 51s.xml">
+      <configuration name="TestPersonalityForge" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestQuestionary - 2018.11.14 at 23h 43m 26s.xml">
-      <configuration name="TestQuestionary" configurationId="JUnit" />
+    <history-entry file="TestPersonalityForge_testMessageInformationInResponse - 2018.11.17 at 12h 40m 37s.xml">
+      <configuration name="TestPersonalityForge.testMessageInformationInResponse" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestDateBot - 2018.11.14 at 23h 43m 38s.xml">
-      <configuration name="TestDateBot" configurationId="JUnit" />
+    <history-entry file="TestPersonalityForge_testMessageInformationInResponse - 2018.11.17 at 12h 41m 39s.xml">
+      <configuration name="TestPersonalityForge.testMessageInformationInResponse" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestCyberBuddy - 2018.11.14 at 23h 43m 49s.xml">
-      <configuration name="TestCyberBuddy" configurationId="JUnit" />
+    <history-entry file="TestPersonalityForge_testMessageInformationInResponse - 2018.11.17 at 12h 43m 33s.xml">
+      <configuration name="TestPersonalityForge.testMessageInformationInResponse" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestCyberBuddy - 2018.11.14 at 23h 55m 16s.xml">
-      <configuration name="TestCyberBuddy" configurationId="JUnit" />
+    <history-entry file="TestPersonalityForge_testMessageInformationInResponse - 2018.11.17 at 12h 44m 20s.xml">
+      <configuration name="TestPersonalityForge.testMessageInformationInResponse" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestDateBot - 2018.11.14 at 23h 55m 24s.xml">
-      <configuration name="TestDateBot" configurationId="JUnit" />
+    <history-entry file="TestPersonalityForge - 2018.11.17 at 12h 44m 30s.xml">
+      <configuration name="TestPersonalityForge" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestCyberBuddy - 2018.11.14 at 23h 56m 42s.xml">
-      <configuration name="TestCyberBuddy" configurationId="JUnit" />
+    <history-entry file="TestPersonalityForge_testUserInformationInResponse - 2018.11.17 at 12h 45m 42s.xml">
+      <configuration name="TestPersonalityForge.testUserInformationInResponse" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestPersonalityForge_testUserInformationInResponse - 2018.11.17 at 12h 49m 15s.xml">
+      <configuration name="TestPersonalityForge.testUserInformationInResponse" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
@@ -575,7 +556,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25642964" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2602118" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -584,7 +565,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.36497545" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.36497545" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3878887" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -612,6 +593,30 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/pack/TestPersonalityForge.java</url>
+          <line>45</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/pack/TestPersonalityForge.java</url>
+          <line>22</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/pack/CyberBuddy.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$PROJECT_DIR$/../telegrambots-4.1-jar-with-dependencies.jar!/org/telegram/telegrambots/updatesreceivers/DefaultBotSession.class" />
@@ -642,17 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/Sex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding>
-            <element signature="e#148#149#0" expanded="true" />
-            <element signature="e#184#185#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pack/TestQuestionary.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-865">
@@ -660,20 +654,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/DateBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="285" lean-forward="true" selection-start-line="285" selection-end-line="285" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pack/BotAttributes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="19" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pack/TelegramBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2516">
+          <caret line="165" selection-start-line="165" selection-end-line="165" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pack/ConnectionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="38" column="89" selection-start-line="38" selection-start-column="89" selection-end-line="38" selection-end-column="89" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -691,10 +692,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/ConnectionManager.java">
+    <entry file="file://$PROJECT_DIR$/src/pack/Sex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding>
+            <element signature="e#148#149#0" expanded="true" />
+            <element signature="e#184#185#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/telegrambots-4.1-jar-with-dependencies.jar!/org/json/JSONObject.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="121">
-          <caret line="38" column="89" lean-forward="true" selection-start-line="38" selection-start-column="89" selection-end-line="38" selection-end-column="89" />
+          <caret line="216" selection-start-line="216" selection-end-line="216" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pack/TestCyberBuddy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-235">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pack/TestDateBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2176">
+          <caret line="128" column="23" selection-start-line="128" selection-start-column="23" selection-end-line="128" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pack/TestPersonalityForge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="21" column="12" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="25" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pack/DateBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="150" column="33" lean-forward="true" selection-start-line="150" selection-start-column="33" selection-end-line="150" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -704,41 +757,7 @@
     <entry file="file://$PROJECT_DIR$/src/pack/CyberBuddy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/TelegramBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2110">
-          <caret line="165" selection-start-line="165" selection-end-line="165" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/TestCyberBuddy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/TestPersonalityForge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/TestDateBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-559">
-          <caret line="128" column="23" lean-forward="true" selection-start-line="128" selection-start-column="23" selection-end-line="128" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="57" column="11" lean-forward="true" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="11" />
         </state>
       </provider>
     </entry>

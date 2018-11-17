@@ -39,11 +39,10 @@ public class CyberBuddy {
         while ((inputLine = in.readLine()) != null)
             messageObj = new JSONObject(inputLine);
         in.close();
-        JSONObject messageJson = messageObj.getJSONObject("message");
-        if (messageJson.get("success") == "1")
+        if (messageObj.get("success").toString().equals("1"))
             return messageObj;
         else
-            throw new Exception(messageJson.get("errorMessage").toString());
+            throw new Exception(messageObj.get("errorMessage").toString());
 
     }
 
@@ -51,7 +50,7 @@ public class CyberBuddy {
                                String userName)
     {
         String gender = userSex == Sex.MALE ? "m" : "f";
-        int chatBotId = coupleSex == Sex.MALE ? 145691 : 155117;
+        int chatBotId = coupleSex == Sex.MALE ? 100387 : 155117;
         HashMap messageObject = new HashMap<String, Object>(){{
             put("message", message);
             put("chatBotID", chatBotId);
