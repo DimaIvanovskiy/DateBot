@@ -10,9 +10,9 @@ public class TestCyberBuddy {
 
     private CyberBuddy buddy = new CyberBuddy();
 
-    private String message = "{\"message\":{\"message\":\"Hi\",\"chatBotID\":155117," +
+    private JSONObject message = new JSONObject("{\"message\":{\"message\":\"Hi\",\"chatBotID\":155117," +
             "\"timestamp\":1542136352}," +
-            "\"user\":{\"firstName\":\"Ann\",\"gender\":\"m\",\"externalID\":123}}";
+            "\"user\":{\"firstName\":\"Ann\",\"gender\":\"m\",\"externalID\":123}}");
 
     @org.junit.Test
     public void testMakeJSON()
@@ -26,7 +26,6 @@ public class TestCyberBuddy {
         assertEquals("Ann", userParameters.get("firstName"));
         assertEquals("m", userParameters.get("gender"));
         assertEquals(123L, userParameters.get("externalID"));
-
     }
 
     @org.junit.Test
@@ -34,7 +33,7 @@ public class TestCyberBuddy {
     {
         assertEquals(
                 "666fad603f2d79ec3e9b0e8b763829d1bf140ff5",
-                buddy.getHashHmac(new JSONObject(message)));
+                buddy.getHashHmac(message));
     }
 
     @org.junit.Test
@@ -45,7 +44,7 @@ public class TestCyberBuddy {
             assertEquals("https", url.getProtocol());
             assertEquals("www.personalityforge.com", url.getHost());
             assertEquals("/api/chat/", url.getPath());
-            String expectedMessageUrl = URLEncoder.encode(message,
+            String expectedMessageUrl = URLEncoder.encode(message.toString(),
                     "utf-8");
             String query = url.getQuery();
             String actualMessageUrl = query.substring(query.indexOf("message") + 8,

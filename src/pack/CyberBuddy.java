@@ -19,8 +19,9 @@ public class CyberBuddy {
     public String getMessage(String message, Long chatId, Sex userSex, Sex coupleSex,
                              String userName) throws Exception
     {
-        JSONObject messageJson = getMessageJson(message, chatId, userSex, coupleSex, userName);
-        return messageJson.getJSONObject("message").get("message").toString();
+        JSONObject messageJson = getMessageJson(message, chatId, userSex, coupleSex, userName).
+                getJSONObject("message");
+        return messageJson.get("message").toString();
 
     }
 
@@ -38,10 +39,11 @@ public class CyberBuddy {
         while ((inputLine = in.readLine()) != null)
             messageObj = new JSONObject(inputLine);
         in.close();
-        if (messageObj.get("success") == "1")
+        JSONObject messageJson = messageObj.getJSONObject("message");
+        if (messageJson.get("success") == "1")
             return messageObj;
         else
-            throw new Exception(messageObj.get("errorMessage").toString());
+            throw new Exception(messageJson.get("errorMessage").toString());
 
     }
 
@@ -70,7 +72,7 @@ public class CyberBuddy {
     }
 
     public String getURL(String message, Long chatId, Sex userSex, Sex coupleSex,
-                          String userName) throws Exception
+                              String userName) throws Exception
     {
         JSONObject messageOb = makeJSON(message, chatId, userSex, coupleSex, userName);
         String hash = getHashHmac(messageOb);

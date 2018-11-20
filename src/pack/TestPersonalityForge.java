@@ -2,6 +2,7 @@ package pack;
 import org.json.JSONObject;
 
 import static org.junit.Assert.*;
+import java.util.Objects;
 
 public class TestPersonalityForge {
 
@@ -12,25 +13,49 @@ public class TestPersonalityForge {
     {
         String response = buddy.getMessage("Hi", 1L,
                 Sex.FEMALE, Sex.MALE, "Ivanovskii");
-        assertTrue(response.contains("Hi"));
+        assertFalse(Objects.isNull(response));
     }
 
     @org.junit.Test
-    public void testFormatResponse() throws Exception
+    public void testSuccessRequest() throws Exception
     {
-        String response = buddy.getMessage("Hi", 17L,
-            Sex.FEMALE, Sex.MALE, "Anya");
-        assertTrue(response.matches("a-zA-z"));
-        assertFalse(response.matches("[{/\"?*+.]"));
+        JSONObject responseAsJson = buddy.getMessageJson("Hi", 7L, Sex.FEMALE, Sex.MALE,
+                "Anya");
+        assertEquals(1, responseAsJson.get("success"));
+        assertTrue(Objects.isNull(responseAsJson.get("errorMessage")));
     }
 
     @org.junit.Test
-    public void testJsonFormat() throws Exception
+    public void testRequestStructure() throws Exception
     {
-        JSONObject response = buddy.getMessageJson("Hi", 17L,
-                Sex.FEMALE, Sex.MALE, "Anya");
-        System.out.println(response.toString());
-
+        JSONObject responseAsJson = buddy.getMessageJson("Test", 7L, Sex.FEMALE, Sex.MALE,
+                "Anya");
+        assertTrue(responseAsJson.has("message"));
+        assertTrue(responseAsJson.has("data"));
     }
+
+
+    @org.junit.Test
+    public void testFieldsInResponse() throws Exception
+    {
+        JSONObject responseAsJson = buddy.getMessageJson("Hi", 7L, Sex.FEMALE, Sex.MALE,
+                "Anya");
+        JSONObject messageInformation = responseAsJson.getJSONObject("message");
+        assertTrue(messageInformation.has("message"));
+        assertTrue(messageInformation.has("emotion"));
+        assertTrue(messageInformation.has("chatBotID"));
+        assertTrue(messageInformation.has("chatBotName"));
+    }
+
+    @org.junit.Test
+    public void testCorrectMessageInformationInResponse() throws Exception
+    {
+        JSONObject responseAsJson = buddy.getMessageJson("How are you?", 7L, Sex.FEMALE, Sex.MALE,
+                "Anya");
+        JSONObject messageInformation = responseAsJson.getJSONObject("message");
+        assertEquals("145691", messageInformation.get("chatBotID"));
+        assertEquals("Jimmy Jones", messageInformation.get("chatBotName"));
+    }
+
 }
 
