@@ -26,7 +26,7 @@ public class CyberBuddy {
     }
 
     public JSONObject getMessageJson(String message, Long chatId, Sex userSex, Sex coupleSex,
-                             String userName) throws Exception
+                                     String userName) throws Exception
     {
         JSONObject messageObj = new JSONObject();
         URL url = new URL(getURL(message, chatId, userSex, coupleSex, userName));
@@ -39,19 +39,26 @@ public class CyberBuddy {
         while ((inputLine = in.readLine()) != null)
             messageObj = new JSONObject(inputLine);
         in.close();
+<<<<<<< HEAD
         JSONObject messageJson = messageObj.getJSONObject("message");
         if (messageJson.get("success") == "1")
             return messageObj;
         else
             throw new Exception(messageJson.get("errorMessage").toString());
+=======
+        if (messageObj.get("success").toString().equals("1"))
+            return messageObj;
+        else
+            throw new Exception(messageObj.get("errorMessage").toString());
+>>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
 
     }
 
     public JSONObject makeJSON(String message, Long chatId, Sex userSex, Sex coupleSex,
-                                String userName)
+                               String userName)
     {
         String gender = userSex == Sex.MALE ? "m" : "f";
-        int chatBotId = coupleSex == Sex.MALE ? 145691 : 155117;
+        int chatBotId = coupleSex == Sex.MALE ? 100387 : 155117;
         HashMap messageObject = new HashMap<String, Object>(){{
             put("message", message);
             put("chatBotID", chatBotId);
@@ -72,7 +79,11 @@ public class CyberBuddy {
     }
 
     public String getURL(String message, Long chatId, Sex userSex, Sex coupleSex,
+<<<<<<< HEAD
                               String userName) throws Exception
+=======
+                         String userName) throws Exception
+>>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
     {
         JSONObject messageOb = makeJSON(message, chatId, userSex, coupleSex, userName);
         String hash = getHashHmac(messageOb);

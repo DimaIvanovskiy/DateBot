@@ -17,6 +17,7 @@ public class TestPersonalityForge {
     }
 
     @org.junit.Test
+<<<<<<< HEAD
     public void testSuccessRequest() throws Exception
     {
         JSONObject responseAsJson = buddy.getMessageJson("Hi", 7L, Sex.FEMALE, Sex.MALE,
@@ -37,14 +38,43 @@ public class TestPersonalityForge {
 
     @org.junit.Test
     public void testFieldsInResponse() throws Exception
+=======
+    public void testUserInformationInResponse() throws Exception
+    {
+        JSONObject responseAsJson = buddy.getMessageJson("Hi", 7L, Sex.FEMALE, Sex.MALE,
+                "Anya");
+        JSONObject userInformation = responseAsJson.getJSONObject("user");
+        assertEquals("Anya", userInformation.get("firstName").toString());
+        assertEquals("f", userInformation.get("gender").toString());
+        assertEquals("7L", userInformation.get("externalID").toString());
+    }
+
+    @org.junit.Test
+    public void testSuccessRequest() throws Exception
     {
         JSONObject responseAsJson = buddy.getMessageJson("Hi", 7L, Sex.FEMALE, Sex.MALE,
                 "Anya");
         JSONObject messageInformation = responseAsJson.getJSONObject("message");
+        assertEquals(1, messageInformation.get("success"));
+        assertEquals("", messageInformation.get("errorMessage"));
+    }
+
+    @org.junit.Test
+    public void testMessageInformationInResponse() throws Exception
+>>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
+    {
+        JSONObject responseAsJson = buddy.getMessageJson("Hi", 7L, Sex.FEMALE, Sex.MALE,
+                "Anya");
+        JSONObject messageInformation = responseAsJson.getJSONObject("message");
+<<<<<<< HEAD
         assertTrue(messageInformation.has("message"));
         assertTrue(messageInformation.has("emotion"));
         assertTrue(messageInformation.has("chatBotID"));
         assertTrue(messageInformation.has("chatBotName"));
+=======
+        assertTrue(messageInformation.get("message").toString().length() != 0);
+        assertTrue(messageInformation.get("mood").toString().length() != 0);
+>>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
     }
 
     @org.junit.Test
