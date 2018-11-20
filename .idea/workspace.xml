@@ -2,36 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5420adb-31ce-46ca-90a5-f207c8f48054" name="Default Changelist" comment="">
-<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/mockito.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mockito.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/BotAttributes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/BotResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/BotState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/ConnectionManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/CyberBuddy$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/CyberBuddy$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/CyberBuddy$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/CyberBuddy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/DateBot$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/DateBot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/MethodsForTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/QuestionAndAnswers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/Questionary.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/Sex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TelegramBot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TestCyberBuddy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TestDateBot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TestPersonalityForge.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TestQuestionary.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pack/CyberBuddy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/CyberBuddy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pack/TestCyberBuddy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/TestCyberBuddy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/TestDateBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/TestDateBot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pack/TestPersonalityForge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/TestPersonalityForge.java" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pack/CyberBuddy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/CyberBuddy.java" afterDir="false" />
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,6 +17,11 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/DateBot$TestDateBot.ic" NAME="TestDateBot Coverage Results" MODIFIED="1542745094507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>pack.*</FILTER>
+    </SUITE>
   </component>
   <component name="ErrorTreeViewConfiguration">
     <option name="hideWarnings" value="true" />
@@ -161,41 +144,43 @@
     <session id="-131174661">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="12" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.57" value="1" />
           <entry key="project.open.time.59" value="1" />
           <entry key="project.open.time.60" value="1" />
           <entry key="project.open.time.64" value="1" />
           <entry key="project.open.time.68" value="1" />
           <entry key="project.open.time.81" value="1" />
+          <entry key="project.open.time.82" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="12" />
-          <entry key="java" value="2996" />
+          <entry key="java" value="3196" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2996" />
+          <entry key="JAVA" value="3196" />
           <entry key="PLAIN_TEXT" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="2" />
-          <entry key="java" value="36" />
+          <entry key="java" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="36" />
+          <entry key="JAVA" value="41" />
         </counts>
       </usages-collector>
     </session>
@@ -208,83 +193,14 @@
         </counts>
       </usages-collector>
     </session>
-    <session id="1103147880">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.13" value="1" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="1605" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="1605" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="1131178912">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="iml" value="1" />
-          <entry key="xml" value="10" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="IDEA_MODULE" value="1" />
-          <entry key="XML" value="10" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-50806712">
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="xml" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="XML" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="218" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="218" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-<<<<<<< HEAD
-=======
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pack/DateBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="150" column="33" lean-forward="true" selection-start-line="150" selection-start-column="33" selection-end-line="150" selection-end-column="33" />
+            <state relative-caret-position="255">
+              <caret line="18" column="33" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -292,25 +208,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pack/CyberBuddy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="57" column="11" lean-forward="true" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/Downloads/telegrambots-4.1-jar-with-dependencies.jar!/org/json/JSONObject.class">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="-958">
-              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-=======
-            <state relative-caret-position="121">
-              <caret line="216" selection-start-line="216" selection-end-line="216" />
+            <state relative-caret-position="527">
+              <caret line="41" column="21" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -318,8 +220,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pack/TestDateBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2176">
-              <caret line="128" column="23" selection-start-line="128" selection-start-column="23" selection-end-line="128" selection-end-column="23" />
+            <state relative-caret-position="-236">
+              <caret line="149" column="39" lean-forward="true" selection-start-line="149" selection-start-column="39" selection-end-line="149" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -327,75 +229,74 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pack/BotState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pack/TestPersonalityForge.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="21" column="12" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="25" selection-end-column="73" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pack/TestPersonalityForge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="59" selection-end-column="1" />
-=======
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pack/Sex.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
+            <state relative-caret-position="374">
+              <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
               <folding>
-                <element signature="e#148#149#0" expanded="true" />
-                <element signature="e#184#185#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#252#253#0" expanded="true" />
+                <element signature="e#292#293#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-=======
-        <entry file="file://$PROJECT_DIR$/src/pack/TestCyberBuddy.java">
+        <entry file="file://$PROJECT_DIR$/src/pack/TestQuestionary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-235">
-              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+            <state relative-caret-position="238">
+              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
+        <entry file="file://$PROJECT_DIR$/src/pack/BotAttributes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-15">
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pack/TestCyberBuddy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="38" column="33" lean-forward="true" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+              <folding>
+                <element signature="e#471#472#0" expanded="true" />
+                <element signature="e#510#511#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pack/TelegramBot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2516">
+              <caret line="165" selection-start-line="165" selection-end-line="165" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pack/BotResult.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="493">
               <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pack/ConnectionManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="38" column="89" selection-start-line="38" selection-start-column="89" selection-end-line="38" selection-end-column="89" />
             </state>
           </provider>
         </entry>
@@ -409,14 +310,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>build</find>
-      <find>version</find>
-      <find>value</find>
-      <find>XML</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -438,20 +331,13 @@
         <option value="$PROJECT_DIR$/src/pack/BotState.java" />
         <option value="$PROJECT_DIR$/src/pack/BotAttributes.java" />
         <option value="$PROJECT_DIR$/src/pack/BotResult.java" />
-<<<<<<< HEAD
-=======
-        <option value="$PROJECT_DIR$/src/pack/TestCyberBuddy.java" />
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
-        <option value="$PROJECT_DIR$/src/pack/TestDateBot.java" />
         <option value="$PROJECT_DIR$/src/pack/TelegramBot.java" />
         <option value="$PROJECT_DIR$/src/pack/DateBot.java" />
         <option value="$PROJECT_DIR$/src/pack/ConnectionManager.java" />
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/src/pack/TestCyberBuddy.java" />
-=======
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
-        <option value="$PROJECT_DIR$/src/pack/TestPersonalityForge.java" />
         <option value="$PROJECT_DIR$/src/pack/CyberBuddy.java" />
+        <option value="$PROJECT_DIR$/src/pack/TestPersonalityForge.java" />
+        <option value="$PROJECT_DIR$/src/pack/TestCyberBuddy.java" />
+        <option value="$PROJECT_DIR$/src/pack/TestDateBot.java" />
       </list>
     </option>
   </component>
@@ -467,7 +353,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1386" />
@@ -478,65 +364,25 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="JavaDateBot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaDateBot" type="462c0819:PsiDirectoryNode" />
+              <item name="DateBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DateBot" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="JavaDateBot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaDateBot" type="462c0819:PsiDirectoryNode" />
+              <item name="DateBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DateBot" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="JavaDateBot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaDateBot" type="462c0819:PsiDirectoryNode" />
+              <item name="DateBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DateBot" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pack" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Production'; set:Production; class com.intellij.psi.search.scope.ProjectProductionScope">
-          <expand>
-            <path>
-              <item name="DateBot" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Java-Chat-Bot" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-            <path>
-              <item name="DateBot" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Java-Chat-Bot" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="DateBot" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Java-Chat-Bot" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="pack" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="DateBot" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Java-Chat-Bot" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-            <path>
-              <item name="DateBot" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Java-Chat-Bot" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="DateBot" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Java-Chat-Bot" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="pack" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -552,15 +398,9 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Дима/Desktop/Java-Chat-Bot/src/pack/Main.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-<<<<<<< HEAD
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542735109698" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
-=======
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542441553644" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542745269890" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.16896552" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
@@ -577,14 +417,8 @@
       </list>
     </option>
   </component>
-<<<<<<< HEAD
-  <component name="RunManager" selected="JUnit.TestPersonalityForge">
-    <configuration name="TestCyberBuddy.testGetHashHmac" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-=======
-  <component name="RunManager" selected="Application.TelegramBot">
-    <configuration name="TelegramBot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pack.TelegramBot" />
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
+  <component name="RunManager" selected="JUnit.TestQuestionary">
+    <configuration name="TestCyberBuddy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java-Chat-Bot" />
       <extension name="coverage">
         <pattern>
@@ -594,41 +428,11 @@
       </extension>
       <option name="PACKAGE_NAME" value="pack" />
       <option name="MAIN_CLASS_NAME" value="pack.TestCyberBuddy" />
-      <option name="METHOD_NAME" value="testGetHashHmac" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
-    <configuration name="TestCyberBuddy.testGetURL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-=======
-    <configuration name="TestPersonalityForge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
-      <module name="Java-Chat-Bot" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pack.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pack" />
-<<<<<<< HEAD
-      <option name="MAIN_CLASS_NAME" value="pack.TestCyberBuddy" />
-      <option name="METHOD_NAME" value="testGetURL" />
-      <option name="TEST_OBJECT" value="method" />
-=======
-      <option name="MAIN_CLASS_NAME" value="pack.TestPersonalityForge" />
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-<<<<<<< HEAD
     <configuration name="TestDateBot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-=======
-    <configuration name="TestPersonalityForge.testMessageInformationInResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
       <module name="Java-Chat-Bot" />
       <extension name="coverage">
         <pattern>
@@ -637,18 +441,28 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="pack" />
-<<<<<<< HEAD
       <option name="MAIN_CLASS_NAME" value="pack.TestDateBot" />
-=======
-      <option name="MAIN_CLASS_NAME" value="pack.TestPersonalityForge" />
-      <option name="METHOD_NAME" value="testMessageInformationInResponse" />
-      <option name="TEST_OBJECT" value="method" />
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestPersonalityForge.testTimeResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestDateBot.testBuddyThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java-Chat-Bot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pack.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pack" />
+      <option name="MAIN_CLASS_NAME" value="pack.TestDateBot" />
+      <option name="METHOD_NAME" value="testBuddyThrowException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestPersonalityForge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java-Chat-Bot" />
       <extension name="coverage">
         <pattern>
@@ -658,13 +472,11 @@
       </extension>
       <option name="PACKAGE_NAME" value="pack" />
       <option name="MAIN_CLASS_NAME" value="pack.TestPersonalityForge" />
-      <option name="METHOD_NAME" value="testTimeResponse" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestPersonalityForge.testUserInformationInResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestQuestionary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java-Chat-Bot" />
       <extension name="coverage">
         <pattern>
@@ -673,43 +485,25 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="pack" />
-      <option name="MAIN_CLASS_NAME" value="pack.TestPersonalityForge" />
-      <option name="METHOD_NAME" value="testUserInformationInResponse" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="pack.TestQuestionary" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-<<<<<<< HEAD
+      <item itemvalue="JUnit.TestPersonalityForge" />
       <item itemvalue="JUnit.TestDateBot" />
-      <item itemvalue="JUnit.TestPersonalityForge" />
-      <item itemvalue="JUnit.TestCyberBuddy.testGetHashHmac" />
-      <item itemvalue="JUnit.TestCyberBuddy.testGetURL" />
       <item itemvalue="JUnit.TestQuestionary" />
+      <item itemvalue="JUnit.TestCyberBuddy" />
+      <item itemvalue="JUnit.TestDateBot.testBuddyThrowException" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestPersonalityForge" />
         <item itemvalue="JUnit.TestQuestionary" />
-        <item itemvalue="JUnit.TestDateBot" />
-        <item itemvalue="JUnit.TestCyberBuddy.testGetURL" />
-        <item itemvalue="JUnit.TestCyberBuddy.testGetHashHmac" />
-=======
-      <item itemvalue="JUnit.TestPersonalityForge" />
-      <item itemvalue="JUnit.TestPersonalityForge.testTimeResponse" />
-      <item itemvalue="JUnit.TestPersonalityForge.testUserInformationInResponse" />
-      <item itemvalue="JUnit.TestPersonalityForge.testMessageInformationInResponse" />
-      <item itemvalue="Application.TelegramBot" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.TelegramBot" />
-        <item itemvalue="JUnit.TestPersonalityForge.testUserInformationInResponse" />
         <item itemvalue="JUnit.TestPersonalityForge" />
-        <item itemvalue="JUnit.TestPersonalityForge.testMessageInformationInResponse" />
-        <item itemvalue="JUnit.TestPersonalityForge.testTimeResponse" />
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
+        <item itemvalue="JUnit.TestDateBot" />
+        <item itemvalue="JUnit.TestCyberBuddy" />
+        <item itemvalue="JUnit.TestDateBot.testBuddyThrowException" />
       </list>
     </recent_temporary>
   </component>
@@ -728,67 +522,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-<<<<<<< HEAD
-    <history-entry file="TestCyberBuddy - 2018.11.14 at 21h 37m 58s.xml">
-      <configuration name="TestCyberBuddy" configurationId="JUnit" />
+    <history-entry file="TestDateBot_testBuddyThrowException - 2018.11.21 at 01h 10m 20s.xml">
+      <configuration name="TestDateBot.testBuddyThrowException" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestCyberBuddy - 2018.11.14 at 21h 38m 01s.xml">
-      <configuration name="TestCyberBuddy" configurationId="JUnit" />
+    <history-entry file="TestDateBot_testBuddyThrowException - 2018.11.21 at 01h 10m 56s.xml">
+      <configuration name="TestDateBot.testBuddyThrowException" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestCyberBuddy_testGetHashHmac - 2018.11.14 at 21h 40m 36s.xml">
-      <configuration name="TestCyberBuddy.testGetHashHmac" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestCyberBuddy_testGetURL - 2018.11.14 at 21h 41m 04s.xml">
-      <configuration name="TestCyberBuddy.testGetURL" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestDateBot - 2018.11.14 at 21h 44m 26s.xml">
+    <history-entry file="TestDateBot - 2018.11.21 at 01h 11m 36s.xml">
       <configuration name="TestDateBot" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestPersonalityForge - 2018.11.20 at 20h 18m 38s.xml">
+    <history-entry file="TestCyberBuddy - 2018.11.21 at 01h 18m 03s.xml">
+      <configuration name="TestCyberBuddy" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDateBot - 2018.11.21 at 01h 18m 10s.xml">
+      <configuration name="TestDateBot" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDateBot - 2018.11.21 at 01h 19m 14s.xml">
+      <configuration name="TestDateBot" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCyberBuddy - 2018.11.21 at 01h 19m 31s.xml">
+      <configuration name="TestCyberBuddy" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDateBot - 2018.11.21 at 01h 19m 39s.xml">
+      <configuration name="TestDateBot" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestPersonalityForge - 2018.11.21 at 01h 19m 50s.xml">
       <configuration name="TestPersonalityForge" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestQuestionary - 2018.11.20 at 20h 19m 01s.xml">
+    <history-entry file="TestQuestionary - 2018.11.21 at 01h 19m 55s.xml">
       <configuration name="TestQuestionary" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestPersonalityForge - 2018.11.20 at 20h 19m 23s.xml">
-      <configuration name="TestPersonalityForge" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestPersonalityForge - 2018.11.20 at 20h 23m 03s.xml">
-      <configuration name="TestPersonalityForge" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestPersonalityForge - 2018.11.20 at 20h 29m 09s.xml">
-      <configuration name="TestPersonalityForge" configurationId="JUnit" />
-=======
-    <history-entry file="TestPersonalityForge - 2018.11.17 at 12h 33m 22s.xml">
-      <configuration name="TestPersonalityForge" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestPersonalityForge_testUserInformationInResponse - 2018.11.17 at 12h 35m 15s.xml">
-      <configuration name="TestPersonalityForge.testUserInformationInResponse" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestPersonalityForge - 2018.11.17 at 12h 36m 51s.xml">
-      <configuration name="TestPersonalityForge" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestPersonalityForge_testMessageInformationInResponse - 2018.11.17 at 12h 40m 37s.xml">
-      <configuration name="TestPersonalityForge.testMessageInformationInResponse" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestPersonalityForge_testMessageInformationInResponse - 2018.11.17 at 12h 41m 39s.xml">
-      <configuration name="TestPersonalityForge.testMessageInformationInResponse" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestPersonalityForge_testMessageInformationInResponse - 2018.11.17 at 12h 43m 33s.xml">
-      <configuration name="TestPersonalityForge.testMessageInformationInResponse" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestPersonalityForge_testMessageInformationInResponse - 2018.11.17 at 12h 44m 20s.xml">
-      <configuration name="TestPersonalityForge.testMessageInformationInResponse" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestPersonalityForge - 2018.11.17 at 12h 44m 30s.xml">
-      <configuration name="TestPersonalityForge" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestPersonalityForge_testUserInformationInResponse - 2018.11.17 at 12h 45m 42s.xml">
-      <configuration name="TestPersonalityForge.testUserInformationInResponse" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestPersonalityForge_testUserInformationInResponse - 2018.11.17 at 12h 49m 15s.xml">
-      <configuration name="TestPersonalityForge.testUserInformationInResponse" configurationId="JUnit" />
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
@@ -806,11 +568,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-<<<<<<< HEAD
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2685325" />
-=======
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2602118" />
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2677761" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -819,22 +577,18 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-<<<<<<< HEAD
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.36393443" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.38688526" />
-=======
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.36497545" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4977307" weight="0.36497545" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3878887" />
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50075644" side_tool="true" weight="0.32569557" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50226927" side_tool="true" weight="0.36497545" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49924356" weight="0.32459018" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49924356" weight="0.32569557" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="right" id="Coverage" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -853,47 +607,14 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-<<<<<<< HEAD
-    <watches-manager>
-      <configuration name="JUnit">
-        <watch expression="messageObject" />
-      </configuration>
-    </watches-manager>
-  </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
-=======
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/pack/TestPersonalityForge.java</url>
-          <line>45</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/pack/TestPersonalityForge.java</url>
-          <line>22</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/pack/CyberBuddy.java</url>
-          <line>41</line>
-          <properties />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
-  </component>
   <component name="editorHistoryManager">
     <entry file="jar://$PROJECT_DIR$/../telegrambots-4.1-jar-with-dependencies.jar!/org/telegram/telegrambots/updatesreceivers/DefaultBotSession.class" />
     <entry file="file://$PROJECT_DIR$/src/pack/QuestResult.java" />
     <entry file="file://$PROJECT_DIR$/src/pack/Main.java" />
     <entry file="file://$PROJECT_DIR$/../Chat-Bot/src/pack/TestChatBot.java" />
+    <entry file="file://$PROJECT_DIR$/Java-Chat-Bot.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pack/QuestionAndAnswers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -915,54 +636,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/TestQuestionary.java">
+    <entry file="jar://$USER_HOME$/Downloads/telegrambots-4.1-jar-with-dependencies.jar!/org/json/JSONObject.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-865">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/pack/DateBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3400">
-          <caret line="285" selection-start-line="285" selection-end-line="285" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/BotAttributes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/TelegramBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2516">
-          <caret line="165" selection-start-line="165" selection-end-line="165" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/pack/BotAttributes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/TelegramBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2516">
-          <caret line="165" selection-start-line="165" selection-end-line="165" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/ConnectionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="38" column="89" selection-start-line="38" selection-start-column="89" selection-end-line="38" selection-end-column="89" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="3315">
+          <caret line="216" selection-start-line="216" selection-end-line="216" />
         </state>
       </provider>
     </entry>
@@ -970,34 +647,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/ConnectionManager.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
         <state relative-caret-position="238">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-=======
-        <state relative-caret-position="493">
-          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pack/Sex.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="714">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-=======
         <state relative-caret-position="425">
           <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
           <folding>
             <element signature="e#148#149#0" expanded="true" />
             <element signature="e#184#185#0" expanded="true" />
@@ -1005,21 +668,24 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/pack/BotState.java">
+    <entry file="file://$PROJECT_DIR$/src/pack/TestQuestionary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        <state relative-caret-position="238">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/TestCyberBuddy.java">
+    <entry file="file://$PROJECT_DIR$/src/pack/TelegramBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="2516">
+          <caret line="165" selection-start-line="165" selection-end-line="165" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pack/BotAttributes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1030,95 +696,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Java-Chat-Bot.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/dictionaries/.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/libraries/misc.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+    <entry file="file://$PROJECT_DIR$/src/pack/ConnectionManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="228" column="40" lean-forward="true" selection-start-line="228" selection-start-column="40" selection-end-line="228" selection-end-column="40" />
-=======
-    <entry file="jar://$USER_HOME$/Downloads/telegrambots-4.1-jar-with-dependencies.jar!/org/json/JSONObject.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="216" selection-start-line="216" selection-end-line="216" />
+        <state relative-caret-position="595">
+          <caret line="38" column="89" selection-start-line="38" selection-start-column="89" selection-end-line="38" selection-end-column="89" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+    <entry file="file://$PROJECT_DIR$/src/pack/DateBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="255">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pack/TestCyberBuddy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-235">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        <state relative-caret-position="102">
+          <caret line="38" column="33" lean-forward="true" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+          <folding>
+            <element signature="e#471#472#0" expanded="true" />
+            <element signature="e#510#511#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pack/TestDateBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2176">
-          <caret line="128" column="23" selection-start-line="128" selection-start-column="23" selection-end-line="128" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/TestPersonalityForge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" column="12" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="25" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="-1829" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/libraries/mockito.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/CyberBuddy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-958">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/TestPersonalityForge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="59" selection-end-column="1" />
-=======
-        <state relative-caret-position="459">
-          <caret line="150" column="33" lean-forward="true" selection-start-line="150" selection-start-column="33" selection-end-line="150" selection-end-column="33" />
->>>>>>> 66254acbee55eb537e518bcf1642d9ca12ebdf77
+        <state relative-caret-position="-236">
+          <caret line="149" column="39" lean-forward="true" selection-start-line="149" selection-start-column="39" selection-end-line="149" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1127,8 +736,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pack/CyberBuddy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="57" column="11" lean-forward="true" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="11" />
+        <state relative-caret-position="527">
+          <caret line="41" column="21" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pack/TestPersonalityForge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#252#253#0" expanded="true" />
+            <element signature="e#292#293#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1164,7 +785,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.16896552" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
@@ -1172,11 +793,11 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>11</last-edited>
+          <last-edited>10</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.16896552" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
@@ -1188,7 +809,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.16896552" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
