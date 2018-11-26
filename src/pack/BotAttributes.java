@@ -14,6 +14,7 @@ class BotAttributes
     Long getConnection() { return connection; }
     String getUserName() { return userName; }
     int getMoney() { return money; }
+
     void setBotState(BotState newBotState) { botState = newBotState; }
     void setQuestionary(Questionary newQuestionary) { questionary = newQuestionary; }
     void setConnection(Long newConnection) { connection = newConnection; }
