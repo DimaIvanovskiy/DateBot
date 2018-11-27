@@ -21,7 +21,9 @@ public class MethodsForTests {
         setSexAndCouple(dateBot, suitableId, secondUserSex, secondCoupleSex);
 
         dateBot.processMessage(chatId, "/able");
-        return dateBot.processMessage(suitableId,"/connect");
+        dateBot.processMessage(suitableId,"/connect");
+        return dateBot.processMessage(suitableId,"1");
+
 
     }
 

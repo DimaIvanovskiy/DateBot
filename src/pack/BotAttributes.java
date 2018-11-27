@@ -7,19 +7,23 @@ class BotAttributes
     private BotState botState;
     private Long connection;
     private String userName;
-    private int money;
+    private int money = DateBot.startMoneyCount;
+    private Long suitableId;
 
     Questionary getQuestionary() { return questionary; }
     BotState getBotState() { return botState; }
     Long getConnection() { return connection; }
     String getUserName() { return userName; }
     int getMoney() { return money; }
+    Long getSuitableId() { return suitableId; }
+
 
     void setBotState(BotState newBotState) { botState = newBotState; }
     void setQuestionary(Questionary newQuestionary) { questionary = newQuestionary; }
     void setConnection(Long newConnection) { connection = newConnection; }
     void setUserName(String userName){ this.userName = userName; }
     void setMoney(int money){ this.money = money; }
+    void setSuitableId(Long suitableId) { this.suitableId = suitableId; }
 
     BotAttributes(BotState newBotState, Questionary newQuestionary, Long newConnection)
     {
@@ -27,6 +31,7 @@ class BotAttributes
         questionary = newQuestionary;
         connection = newConnection;
     }
+
 
 
 

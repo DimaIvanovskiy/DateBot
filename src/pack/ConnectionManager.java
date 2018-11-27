@@ -9,20 +9,14 @@ import java.util.Set;
 
 class ConnectionManager
 {
-    synchronized static Long tryConnect(Long chatId, Map<Long, BotAttributes> botAttributes, Set<Long> abledUsers)
+    synchronized static void connect(Long chatId, Long suitableId, Map<Long, BotAttributes> botAttributes)
     {
         BotAttributes attributes = botAttributes.get(chatId);
-        Long suitable = findSuitable(chatId, botAttributes, abledUsers);
-        if (suitable == null)
-           return null;
-        abledUsers.remove(chatId);
-        abledUsers.remove(suitable);
-        BotAttributes pair = botAttributes.get(suitable);
-        attributes.setConnection(suitable);
+        BotAttributes pair = botAttributes.get(suitableId);
+        attributes.setConnection(suitableId);
         attributes.setBotState(BotState.CONNECTED);
         pair.setConnection(chatId);
         pair.setBotState(BotState.CONNECTED);
-        return suitable;
     }
 
     synchronized static Long disconnect(Long chatId, Map<Long, BotAttributes> botAttributes)
@@ -36,7 +30,7 @@ class ConnectionManager
         return connection;
     }
 
-    private static Long findSuitable(Long chatId, Map<Long, BotAttributes> botAttributes,
+    synchronized static Long findSuitable(Long chatId, Map<Long, BotAttributes> botAttributes,
                               Set<Long> abledUsers)
     {
         if (abledUsers.isEmpty())

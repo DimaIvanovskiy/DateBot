@@ -1,9 +1,8 @@
 package pack;
 
-
-
 import com.google.common.collect.Sets;
 
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Set;
@@ -43,6 +42,9 @@ class DateBot
                 case "/help":
                     result.addText(commandsInformation);
                     break;
+                case "/money":
+                    result.addText(MessageFormat.format(moneyInformation, attributes.getMoney(), connectionCost));
+                    break;
                 case "/able":
                     result = enableConnection(chatId, botState);
                     break;
@@ -50,18 +52,29 @@ class DateBot
                     result = disableConnection(chatId);
                     break;
                 case "/connect":
-                    Long suitableId = ConnectionManager.tryConnect(chatId, botAttributes, abledUsers);
-                    if (suitableId == null)
+                    Long suitableId = ConnectionManager.findSuitable(chatId, botAttributes, abledUsers);
+                    int currentMoney = attributes.getMoney();
+                    if (suitableId == null || currentMoney<connectionCost)
                     {
-                        result.addText(DateBot.noSuitableQuestionaryReply);
+                        if (suitableId == null)
+                            result.addText(DateBot.noSuitableQuestionaryReply);
+                        else
+                            result.addText(MessageFormat.format(DateBot.notEnoughMoney, currentMoney, connectionCost));
+
                         result.addQuestionAndAnswers(new QuestionAndAnswers("Would you like to talk to " +
                                 "our conversation bot?", "yes", "no"));
                         attributes.setBotState(BotState.ASKED_ABOUT_BOT);
                     }
                     else
                     {
-                        result.addChatId(suitableId);
-                        result.addText(DateBot.connectionReply);
+                        int pairMoneyCount = botAttributes.get(suitableId).getMoney();
+                        abledUsers.remove(chatId);
+                        abledUsers.remove(suitableId);
+                        attributes.setSuitableId(suitableId);
+                        result.addQuestionAndAnswers(new QuestionAndAnswers(MessageFormat.format(
+                                "Would you like to talk to stranger with {0} coins?", pairMoneyCount),
+                                "yes", "no"));
+                        attributes.setBotState(BotState.ASKED_ABOUT_CONNECTION);
                     }
 
                     break;
@@ -161,8 +174,26 @@ class DateBot
                     result.addText(botConnectionReply);
                     botAttributes.get(chatId).setBotState(BotState.TALKING_WITH_BOT);
                     break;
-            }
+                case ASKED_ABOUT_CONNECTION:
+                    Long suitableId = botAttributes.get(chatId).getSuitableId();
+                    switch (text)
+                    {
+                        case "1":
+                            int currentMoney = botAttributes.get(chatId).getMoney();
 
+                            ConnectionManager.connect(chatId, suitableId, botAttributes);
+                            botAttributes.get(chatId).setMoney(currentMoney-connectionCost);
+                            result.addChatId(suitableId);
+                            result.addText(DateBot.connectionReply);
+                            break;
+                        case "2":
+                            result.addText(waitForSuitable);
+                            botAttributes.get(chatId).setBotState(BotState.NORMAL);
+                            abledUsers.add(chatId);
+                            abledUsers.add(suitableId);
+                            break;
+                    }
+            }
         }
         addButtons(result, botAttributes.get(chatId).getBotState());
         return result;
@@ -241,11 +272,20 @@ class DateBot
     }
 
 
-    private final ArrayList<String> normalCommands =  new ArrayList<>(Arrays.asList("/help", "/able", "/disable",
-            "/change", "/connect"));
+    private final ArrayList<String> normalCommands =  new ArrayList<>(Arrays.asList("/help","/money",
+            "/able", "/disable", "/change", "/connect"));
 
-    private final ArrayList<String> connectionCommands =  new ArrayList<>(Arrays.asList("/help",
+    private final ArrayList<String> connectionCommands =  new ArrayList<>(Arrays.asList("/help", "/money",
             "/disconnect"));
+
+    final static int connectionCost = 60;
+
+    final static int startMoneyCount = 100;
+
+    final static String notEnoughMoney = "Sorry, but you do not have enough money for connection with human." +
+            " Your current money count is {0} coins. Connection costs {1} coins.";
+
+    final static String moneyInformation = "You have {0} coins. Connection costs {1} coins.";
 
     final static String botConnectionReply = "You have been connected to our bot for conversation";
 
