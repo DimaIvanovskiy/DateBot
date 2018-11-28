@@ -18,6 +18,7 @@ class DateBot
     }
 
     private CyberBuddy cyberBuddy = new CyberBuddy();
+    private MoneySubBot moneyBot = new MoneySubBot(botAttributes);
 
     private Set<Long> abledUsers = Sets.newConcurrentHashSet();
 
@@ -50,6 +51,13 @@ class DateBot
                     break;
                 case "/disable":
                     result = disableConnection(chatId);
+                    break;
+                case "/money":
+                    result.addText(MoneySubBot.showMoney(attributes));
+                    break;
+                case "/play":
+                    attributes.setBotState(BotState.PLAYING);
+                    moneyBot.startSession(result, chatId);
                     break;
                 case "/connect":
                     Long suitableId = ConnectionManager.findSuitable(chatId, botAttributes, abledUsers);
@@ -126,6 +134,11 @@ class DateBot
                     break;
                 case NORMAL:
                     result = processCommands(chatId, text);
+                    break;
+                case PLAYING:
+                    var is_finished = moneyBot.processMessage(result, chatId, text);
+                    if (is_finished)
+                        botAttributes.get(chatId).setBotState(BotState.NORMAL);
                     break;
                 case CONNECTED:
                     result = processCommands(chatId, text);
@@ -320,6 +333,7 @@ class DateBot
             "'/help'-use it if you want to read about my functions\n" +
             "'/able'-use it if you want to able someone to write you\n" +
             "'/disable'-use it if you want to disable anyone to write you\n" +
+            "'/money'-check your balance\n" +
             "'/connect'-use it if you want to find someone for the conversation\n" +
             "'/disconnect'-use it if you want stop the conversation\n" +
             "'/change'-use it if you want to rewrite your questionary\n";
