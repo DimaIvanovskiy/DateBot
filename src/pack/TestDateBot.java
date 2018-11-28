@@ -5,6 +5,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.text.MessageFormat;
+
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
 
@@ -131,6 +133,76 @@ public class TestDateBot {
         result = dateBot.processMessage(chatId2,"Hello2");
         assertEquals(result.getText(),"Hello2");
         assertTrue(result.getChatIds().contains(chatId1));
+    }
+
+    @org.junit.Test
+    public void testConnectionSpendsConnecterMoney()
+    {
+        DateBot dateBot = new DateBot();
+        Long chatId1 = 12345678L;
+        Long chatId2 = 23456789L;
+        MethodsForTests.getResultOfConnect(dateBot, chatId1, chatId2, Sex.MALE, Sex.MALE,
+                Sex.MALE, Sex.MALE);
+        int expectedConnecterMoney = DateBot.startMoneyCount - DateBot.connectionCost;
+        int currentConnecterMoney =  dateBot.getBotAttributes().get(chatId2).getMoney();
+        int currentConnectedMoney = dateBot.getBotAttributes().get(chatId1).getMoney();
+        assertEquals(expectedConnecterMoney, currentConnecterMoney);
+        assertEquals(DateBot.startMoneyCount, currentConnectedMoney);
+    }
+
+    @org.junit.Test
+    public void testUnableToConnectIfNotEnoughMoney()
+    {
+        DateBot dateBot = new DateBot();
+        Long chatId1 = 12345678L;
+        Long chatId2 = 23456789L;
+        MethodsForTests.getResultOfConnect(dateBot, chatId1, chatId2, Sex.MALE, Sex.MALE,
+                Sex.MALE, Sex.MALE);
+        dateBot.processMessage(chatId2, "/disconnect");
+        dateBot.processMessage(chatId1, "/able");
+        int currentMoneyCount = dateBot.getBotAttributes().get(chatId2).getMoney();
+        BotResult result = dateBot.processMessage(chatId2, "/connect");
+        assertTrue(result.getText().startsWith(MessageFormat.format(DateBot.notEnoughMoney, currentMoneyCount,
+                DateBot.connectionCost)));
+    }
+
+    @org.junit.Test
+    public void testBotAsksQuestionAfterFindingSuitable()
+    {
+        Long chatId1 = 12345678L;
+        Long chatId2 = 23456789L;
+        MethodsForTests.StartDateBot(dateBot, chatId);
+        MethodsForTests.setSexAndCouple(dateBot, chatId1, Sex.MALE, Sex.MALE);
+
+        MethodsForTests.StartDateBot(dateBot, chatId2);
+        MethodsForTests.setSexAndCouple(dateBot,  chatId2, Sex.MALE, Sex.MALE);
+
+        dateBot.processMessage(chatId2, "/able");
+        BotResult result = dateBot.processMessage(chatId1,"/connect");
+        int pairMoneyCount = dateBot.getBotAttributes().get(chatId2).getMoney();
+        String expected = MessageFormat.format("Would you like to talk to stranger with {0} coins?",
+                pairMoneyCount);
+        assertEquals(expected, result.getText());
+    }
+
+    @org.junit.Test
+    public void testRefuseToConnectAfterFingingSuitable()
+    {
+        Long chatId1 = 12345678L;
+        Long chatId2 = 23456789L;
+        MethodsForTests.StartDateBot(dateBot, chatId);
+        MethodsForTests.setSexAndCouple(dateBot, chatId1, Sex.MALE, Sex.MALE);
+
+        MethodsForTests.StartDateBot(dateBot, chatId2);
+        MethodsForTests.setSexAndCouple(dateBot,  chatId2, Sex.MALE, Sex.MALE);
+
+        dateBot.processMessage(chatId2, "/able");
+        dateBot.processMessage(chatId1,"/connect");
+
+        BotResult result = dateBot.processMessage(chatId1,"2");
+
+        assertEquals(BotState.NORMAL, dateBot.getBotAttributes().get(chatId1).getBotState());
+        assertEquals(BotState.NORMAL, dateBot.getBotAttributes().get(chatId2).getBotState());
     }
 
     @org.junit.Test

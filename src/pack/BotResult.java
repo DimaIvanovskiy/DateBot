@@ -57,8 +57,9 @@ public class BotResult
         return this.chatIds;
     }
 
-   String[] getAnswers()
+    String[] getAnswers()
     {
         return this.answers;
     }
+
 }
