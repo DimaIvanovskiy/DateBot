@@ -4,6 +4,7 @@ public enum BotState
 {
     NORMAL,
     MAKING_QUESTIONARY,
+    PLAYING,
     CONNECTED,
     STARTED,
     TALKING_WITH_BOT,
