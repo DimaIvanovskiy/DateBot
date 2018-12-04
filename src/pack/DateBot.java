@@ -52,9 +52,6 @@ class DateBot
                 case "/disable":
                     result = disableConnection(chatId);
                     break;
-                case "/money":
-                    result.addText(MoneySubBot.showMoney(attributes));
-                    break;
                 case "/play":
                     attributes.setBotState(BotState.PLAYING);
                     moneyBot.startSession(result, chatId);
@@ -333,6 +330,7 @@ class DateBot
             "'/help'-use it if you want to read about my functions\n" +
             "'/able'-use it if you want to able someone to write you\n" +
             "'/disable'-use it if you want to disable anyone to write you\n" +
+            "'/play'-earn money for playing\n" +
             "'/money'-check your balance\n" +
             "'/connect'-use it if you want to find someone for the conversation\n" +
             "'/disconnect'-use it if you want stop the conversation\n" +
