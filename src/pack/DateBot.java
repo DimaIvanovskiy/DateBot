@@ -235,13 +235,16 @@ class DateBot
         {
             case CONNECTED:
                 result.addCurrentCommands(connectionCommands);
-            break;
+                break;
             case TALKING_WITH_BOT:
                 result.addCurrentCommands(connectionCommands);
                 break;
             case NORMAL:
                 result.addCurrentCommands(normalCommands);
-            break;
+                break;
+            case PLAYING:
+                result.addCurrentCommands(gameCommands);
+                break;
         }
     }
 
@@ -283,10 +286,12 @@ class DateBot
 
 
     private final ArrayList<String> normalCommands =  new ArrayList<>(Arrays.asList("/help","/money",
-            "/able", "/disable", "/change", "/connect"));
+            "/able", "/disable", "/change", "/connect", "/play"));
 
     private final ArrayList<String> connectionCommands =  new ArrayList<>(Arrays.asList("/help", "/money",
             "/disconnect"));
+
+    public static final ArrayList<String> gameCommands =  new ArrayList<>(Arrays.asList("/help", "/quit"));
 
     final static int connectionCost = 60;
 
