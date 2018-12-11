@@ -70,20 +70,19 @@ public class MoneySubBot {
 
     boolean processRps(BotResult result, Long chatId, String text)
     {
-        var warrior = numberToRps.getOrDefault(text, "0");
-        if (!Arrays.asList(rpsWarriors).contains(warrior))
+        if (!Arrays.asList(rpsWarriors).contains(text))
         {
             result.addText(unknownMessage);
             return false;
         }
 
         var botRps = rpsStates.get(chatId);
-        result.addText(String.format("%s VS %s\n", warrior, botRps));
+        result.addText(String.format("%s VS %s", text, botRps));
 
-        if (botRps.equals(warrior)) {
+        if (botRps.equals(text)) {
             result.addText("Draw!");
         }
-        else if (rpsWins.get(warrior).contains(botRps)){
+        else if (rpsWins.get(text).contains(botRps)){
             var wonMoney = rand.nextInt(winValue) + winValue;
             result.addText(String.format(winMessage, wonMoney));
             botAttributes.get(chatId).addMoney(wonMoney);
@@ -113,11 +112,6 @@ public class MoneySubBot {
     }
 
     private final static String[] rpsWarriors = new String[] {"Rock", "Paper", "Scissors"};
-    private final static HashMap<String, String> numberToRps = new HashMap<>() {{
-       put("1", "Rock");
-       put("2", "Paper");
-       put("3", "Scissors");
-    }};
     private final static QuestionAndAnswers rpsOptions = new QuestionAndAnswers("Choose your fighter", rpsWarriors);
     private final static HashMap<String, ArrayList<String>> rpsWins = new HashMap<>() {{
         put("Rock", new ArrayList<>() {{ add("Scissors");}});
@@ -133,8 +127,8 @@ public class MoneySubBot {
     private final static String introductionMessage = "Seems like you've given up trying to impress " +
             "your potential partner with charisma alone. It's finally time to get some cash, " +
             "let the whole world know that Love is not the only thing " +
-            "you can fill your pockets with!\n";
-    private final static String goodbyeMessage = "Goodbye!\n";
+            "you can fill your pockets with!";
+    private final static String goodbyeMessage = "Goodbye!";
     private final static String unknownMessage = "Maybe you should try getting some /help?";
     final static String helpMessage = "Available commands:\n" +
             "'/help' - get this message\n"+
