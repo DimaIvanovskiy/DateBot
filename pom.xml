@@ -22,7 +22,7 @@
                     <assembleDirectory>target</assembleDirectory>
                     <programs>
                         <program>
-                            <mainClass>pack.TelegramBot</mainClass>
+                            <mainClass>TelegramBot</mainClass>
                             <name>workerBot</name>
                         </program>
                     </programs>
