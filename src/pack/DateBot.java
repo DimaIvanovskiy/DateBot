@@ -1,7 +1,6 @@
 package pack;
 
 import com.google.common.collect.Sets;
-
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,7 +10,10 @@ import java.util.concurrent.ConcurrentHashMap;
 class DateBot
 {
 
+    private Database database = new Database();
+
     private ConcurrentHashMap<Long, BotAttributes> botAttributes = new ConcurrentHashMap<>();
+
     ConcurrentHashMap<Long, BotAttributes> getBotAttributes()
     {
         return botAttributes;
@@ -19,9 +21,6 @@ class DateBot
 
     private CyberBuddy cyberBuddy = new CyberBuddy();
     private MoneySubBot moneyBot = new MoneySubBot(botAttributes);
-
-    private Set<Long> abledUsers = Sets.newConcurrentHashSet();
-
 
     private BotResult processCommands(Long chatId, String text)
     {
@@ -57,7 +56,7 @@ class DateBot
                     moneyBot.startSession(result, chatId);
                     break;
                 case "/connect":
-                    Long suitableId = ConnectionManager.findSuitable(chatId, botAttributes, abledUsers);
+                    Long suitableId = ConnectionManager.findSuitable(chatId, botAttributes, database.getAbledUsers());
                     int currentMoney = attributes.getMoney();
                     if (suitableId == null || currentMoney<connectionCost)
                     {
@@ -73,8 +72,8 @@ class DateBot
                     else
                     {
                         int pairMoneyCount = botAttributes.get(suitableId).getMoney();
-                        abledUsers.remove(chatId);
-                        abledUsers.remove(suitableId);
+                        database.removeAbledUser(chatId);
+                        database.removeAbledUser(suitableId);
                         attributes.setSuitableId(suitableId);
                         result.addQuestionAndAnswers(new QuestionAndAnswers(MessageFormat.format(
                                 "Would you like to talk to stranger with {0} coins?", pairMoneyCount),
@@ -199,8 +198,8 @@ class DateBot
                         case "2":
                             result.addText(waitForSuitable);
                             botAttributes.get(chatId).setBotState(BotState.NORMAL);
-                            abledUsers.add(chatId);
-                            abledUsers.add(suitableId);
+                            database.addAbledUser(chatId);
+                            database.addAbledUser(suitableId);
                             break;
                     }
             }
@@ -212,9 +211,9 @@ class DateBot
     BotResult enableConnection(Long chatId, BotState botState)
     {
         BotResult result = new BotResult("", chatId);
-        if (botState == BotState.CONNECTED || abledUsers.contains(chatId))
+        if (botState == BotState.CONNECTED || database.abledUsersContains(chatId))
             return result;
-        abledUsers.add(chatId);
+        database.addAbledUser(chatId);
         result.addText(DateBot.ableReply);
         return result;
     }
@@ -222,9 +221,9 @@ class DateBot
     BotResult disableConnection(Long chatId)
     {
         BotResult result = new BotResult("", chatId);
-        if (!abledUsers.contains(chatId))
+        if (!database.abledUsersContains(chatId))
             return result;
-        abledUsers.remove(chatId);
+        database.removeAbledUser(chatId);
         result.addText(DateBot.disableReply);
         return result;
     }
