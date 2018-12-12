@@ -52,9 +52,6 @@ class DateBot
                 case "/disable":
                     result = disableConnection(chatId);
                     break;
-                case "/money":
-                    result.addText(MoneySubBot.showMoney(attributes));
-                    break;
                 case "/play":
                     attributes.setBotState(BotState.PLAYING);
                     moneyBot.startSession(result, chatId);

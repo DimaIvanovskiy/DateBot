@@ -6,7 +6,6 @@ class BotAttributes
     private Questionary questionary;
     private BotState botState;
     private Long connection;
-    private int money;
     private String userName;
     private int money = DateBot.startMoneyCount;
     private Long suitableId;
