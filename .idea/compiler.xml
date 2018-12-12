@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Java-Chat-Bot" target="2.0" />
+      <module name="Java-Chat-Bot" target="10" />
     </bytecodeTargetLevel>
   </component>
 </project>
