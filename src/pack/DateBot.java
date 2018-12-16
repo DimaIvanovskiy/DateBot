@@ -1,10 +1,8 @@
 package pack;
 
-import com.google.common.collect.Sets;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 class DateBot
@@ -12,9 +10,9 @@ class DateBot
 
     private Database database = new Database();
 
-    private ConcurrentHashMap<Long, BotAttributes> botAttributes = new ConcurrentHashMap<>();
+    private ConcurrentHashMap<Long, BotAttribute> botAttributes = new ConcurrentHashMap<>();
 
-    ConcurrentHashMap<Long, BotAttributes> getBotAttributes()
+    ConcurrentHashMap<Long, BotAttribute> getBotAttributes()
     {
         return botAttributes;
     }
@@ -25,7 +23,7 @@ class DateBot
     private BotResult processCommands(Long chatId, String text)
     {
         BotResult result = new BotResult("", chatId);
-        BotAttributes attributes = botAttributes.get(chatId);
+        BotAttribute attributes = botAttributes.get(chatId);
         synchronized (attributes.lock)
         {
             BotState botState = attributes.getBotState();
@@ -114,7 +112,7 @@ class DateBot
     BotResult processMessage(Long chatId, String text)
     {
         if (!botAttributes.containsKey(chatId))
-            botAttributes.putIfAbsent(chatId, new BotAttributes(BotState.STARTED,
+            botAttributes.putIfAbsent(chatId, new BotAttribute(BotState.STARTED,
                     new Questionary(), chatId));
         BotResult result = new BotResult("", chatId);
         if (text == null && botAttributes.get(chatId).getBotState() == BotState.CONNECTED)
@@ -241,6 +239,9 @@ class DateBot
             case NORMAL:
                 result.addCurrentCommands(normalCommands);
             break;
+            case PLAYING:
+                result.addCurrentCommands(playingCommands);
+            break;
         }
     }
 
@@ -280,9 +281,11 @@ class DateBot
             result.addQuestionAndAnswers(questionary.AskQuestion());
     }
 
+    private final ArrayList<String> playingCommands =  new ArrayList<>(Arrays.asList("/help","/quit"));
+
 
     private final ArrayList<String> normalCommands =  new ArrayList<>(Arrays.asList("/help","/money",
-            "/able", "/disable", "/change", "/connect"));
+            "/able", "/disable", "/change", "/connect", "/play"));
 
     private final ArrayList<String> connectionCommands =  new ArrayList<>(Arrays.asList("/help", "/money",
             "/disconnect"));

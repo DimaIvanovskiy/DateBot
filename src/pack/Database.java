@@ -6,11 +6,10 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.cloud.FirestoreClient;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 
@@ -36,6 +35,56 @@ class Database
         {
             e.printStackTrace();
         }
+    }
+
+    void setBotAttribute(BotAttribute attribute, Long chatId)
+    {
+        HashMap<String, Object> fields = new HashMap<>();
+        fields.put("botState", attribute.getBotState().toString());
+        fields.put("money", attribute.getMoney());
+        fields.put("connection", attribute.getConnection());
+        fields.put("moneySubBotState", attribute.getMoneySubBotState().toString());
+        fields.put("rpsState", attribute.getRpsState());
+        fields.put("suitableId", attribute.getSuitableId());
+        fields.put("userName", attribute.getUserName());
+        ApiFuture<WriteResult> future = database.collection("botAttributes")
+                .document(chatId.toString())
+                .update(fields);
+        try
+        {
+            future.get();
+        }
+        catch (InterruptedException | ExecutionException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public BotAttribute getBotAttrubute(Long chatId)
+    {
+        Map<String, Object> documentDate = getDocumentData(chatId);
+        if (documentDate == null)
+            return null;
+        return null;
+    }
+
+    private Map<String, Object> getDocumentData(Long chatId)
+    {
+        DocumentReference docRef = database.collection("botAttributes").document(chatId.toString());
+        ApiFuture<DocumentSnapshot> future = docRef.get();
+        DocumentSnapshot document = null;
+        try
+        {
+            document = future.get();
+        }
+        catch (InterruptedException | ExecutionException e)
+        {
+            e.printStackTrace();
+        }
+        if (document!= null && document.exists())
+            return document.getData();
+        else
+            return null;
     }
 
     void setQuestionary(Long chatId, Sex userSex, Sex coupleSex)

@@ -1,6 +1,6 @@
 package pack;
 
-public enum MoneySubBotStates {
+public enum MoneySubBotState {
     NORMAL,
     PLAYING,
     QUITTING
