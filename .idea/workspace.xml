@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5420adb-31ce-46ca-90a5-f207c8f48054" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/BotAttributes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/ConnectionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/ConnectionManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/Database.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/DateBot$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/DateBot$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/DateBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/DateBot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/MoneySubBot$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/MoneySubBot$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/MoneySubBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/MoneySubBot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/MoneySubBotStates.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TelegramBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TelegramBot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TestDateBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Chat-Bot/pack/TestDateBot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pack/BotAttributes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pack/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/ConnectionManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pack/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pack/DateBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/DateBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pack/MoneySubBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/MoneySubBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pack/MoneySubBotStates.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pack/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pack/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/TelegramBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/Questionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/Questionary.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,10 +17,6 @@
     <SUITE FILE_PATH="coverage/DateBot$TestDateBot.ic" NAME="TestDateBot Coverage Results" MODIFIED="1542745094507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>pack.*</FILTER>
     </SUITE>
-  </component>
-  <component name="ErrorTreeViewConfiguration">
-    <option name="hideWarnings" value="true" />
-    <option name="HIDE_WARNINGS" value="true" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1652764165">
@@ -181,20 +161,20 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="12" />
-          <entry key="java" value="9793" />
+          <entry key="java" value="10929" />
           <entry key="txt" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9793" />
+          <entry key="JAVA" value="10929" />
           <entry key="PLAIN_TEXT" value="39" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="5" />
-          <entry key="java" value="81" />
+          <entry key="java" value="83" />
           <entry key="json" value="1" />
           <entry key="xml" value="1" />
         </counts>
@@ -202,7 +182,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="5" />
-          <entry key="JAVA" value="81" />
+          <entry key="JAVA" value="83" />
           <entry key="JSON" value="1" />
           <entry key="XML" value="1" />
         </counts>
@@ -242,19 +222,43 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pack/MoneySubBot.java">
+        <entry file="file://$PROJECT_DIR$/src/pack/QuestionAndAnswers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1751">
-              <caret line="123" column="58" lean-forward="true" selection-start-line="123" selection-start-column="58" selection-end-line="123" selection-end-column="58" />
+            <state relative-caret-position="34">
+              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pack/Database.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pack/QuestionAndAnswers.java">
+        <entry file="file://$PROJECT_DIR$/src/pack/Questionary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            <state relative-caret-position="272">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="e#134#135#0" expanded="true" />
+                <element signature="e#171#172#0" expanded="true" />
+                <element signature="e#252#253#0" expanded="true" />
+                <element signature="e#289#290#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pack/DateBot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="246">
+              <caret line="115" column="40" lean-forward="true" selection-start-line="115" selection-start-column="40" selection-end-line="115" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -264,33 +268,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
               <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pack/Database.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="48" column="56" lean-forward="true" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pack/DateBot.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/ArrayList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="1377" selection-start-line="1377" selection-end-line="1377" />
             </state>
           </provider>
         </entry>
@@ -307,8 +284,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pack/Program.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+            <state relative-caret-position="391">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -338,7 +315,6 @@
         <option value="$PROJECT_DIR$/src/pack/Sex.java" />
         <option value="$PROJECT_DIR$/src/pack/State.java" />
         <option value="$PROJECT_DIR$/src/pack/QuestionAndAnswers.java" />
-        <option value="$PROJECT_DIR$/src/pack/Questionary.java" />
         <option value="$PROJECT_DIR$/src/pack/CyberBuddy.java" />
         <option value="$PROJECT_DIR$/src/pack/TestPersonalityForge.java" />
         <option value="$PROJECT_DIR$/src/pack/TestCyberBuddy.java" />
@@ -351,6 +327,7 @@
         <option value="$PROJECT_DIR$/src/pack/MoneySubBot.java" />
         <option value="$PROJECT_DIR$/src/pack/TelegramBot.java" />
         <option value="$PROJECT_DIR$/src/pack/DateBot.java" />
+        <option value="$PROJECT_DIR$/src/pack/Questionary.java" />
         <option value="$PROJECT_DIR$/src/pack/Program.java" />
         <option value="$PROJECT_DIR$/src/pack/Database.java" />
       </list>
@@ -368,7 +345,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1386" />
@@ -416,7 +393,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Дима/Desktop/Java-Chat-Bot/src/pack/Main.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544999087986" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545003005263" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/junit-mockito" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -608,9 +585,9 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.12859304" side_tool="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49848714" weight="0.3289689" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49848714" weight="0.3289689" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" />
-      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49848714" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -750,13 +727,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pack/Key.json" />
-    <entry file="file://$PROJECT_DIR$/src/pack/Questionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_admin_6_6_0.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -812,24 +782,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/BotAttribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pack/MoneySubBot.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1751">
           <caret line="123" column="58" lean-forward="true" selection-start-line="123" selection-start-column="58" selection-end-line="123" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="1377" selection-start-line="1377" selection-end-line="1377" />
         </state>
       </provider>
     </entry>
@@ -850,13 +806,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/Program.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pack/QuestionAndAnswers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -871,17 +820,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pack/Questionary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#134#135#0" expanded="true" />
+            <element signature="e#171#172#0" expanded="true" />
+            <element signature="e#252#253#0" expanded="true" />
+            <element signature="e#289#290#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pack/DateBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="246">
+          <caret line="115" column="40" lean-forward="true" selection-start-line="115" selection-start-column="40" selection-end-line="115" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="1377" selection-start-line="1377" selection-end-line="1377" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pack/BotAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pack/Program.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pack/Database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="48" column="56" lean-forward="true" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
+        <state relative-caret-position="340">
+          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
         </state>
       </provider>
     </entry>

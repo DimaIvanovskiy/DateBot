@@ -13,6 +13,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 
+import static java.lang.Math.toIntExact;
+
 class Database
 {
     private Firestore database;
@@ -39,14 +41,7 @@ class Database
 
     void setBotAttribute(BotAttribute attribute, Long chatId)
     {
-        HashMap<String, Object> fields = new HashMap<>();
-        fields.put("botState", attribute.getBotState().toString());
-        fields.put("money", attribute.getMoney());
-        fields.put("connection", attribute.getConnection());
-        fields.put("moneySubBotState", attribute.getMoneySubBotState().toString());
-        fields.put("rpsState", attribute.getRpsState());
-        fields.put("suitableId", attribute.getSuitableId());
-        fields.put("userName", attribute.getUserName());
+        HashMap<String, Object> fields = formFields(attribute);
         ApiFuture<WriteResult> future = database.collection("botAttributes")
                 .document(chatId.toString())
                 .update(fields);
@@ -60,12 +55,55 @@ class Database
         }
     }
 
-    public BotAttribute getBotAttrubute(Long chatId)
+     BotAttribute getBotAttrubute(Long chatId)
     {
-        Map<String, Object> documentDate = getDocumentData(chatId);
-        if (documentDate == null)
+        Map<String, Object> documentData = getDocumentData(chatId);
+        if (documentData == null)
             return null;
-        return null;
+        Questionary questionary = formQuestionary(documentData);
+        BotState botState = BotState.valueOf((String) documentData.get("botState"));
+        Long connection = (Long) documentData.get("connection");
+
+        BotAttribute botAttribute = new BotAttribute(botState, questionary, connection);
+        botAttribute.setRpsState((String)documentData.get("rpsState"));
+        botAttribute.setMoneySubBotState(MoneySubBotState.valueOf((String)documentData.get("moneySubBotState")));
+        botAttribute.setMoney(toIntExact((Long)documentData.get("money")));
+        botAttribute.setSuitableId((Long) documentData.get("suitableId"));
+        botAttribute.setUserName((String) documentData.get("userName"));
+        return botAttribute;
+    }
+
+    Questionary formQuestionary(Map<String, Object> documentData)
+    {
+        Map<String, Object> mapQuestionary = (Map<String, Object>) documentData.get("questionary");
+        Questionary questionary = new Questionary();
+        String strUserSex = (String)mapQuestionary.get("userSex");
+        questionary.userSex = strUserSex == null? null : Sex.valueOf(strUserSex);
+        String strCoupleSex = (String)mapQuestionary.get("coupleSex");
+        questionary.coupleSex = strCoupleSex == null? null : Sex.valueOf(strCoupleSex);
+        questionary.setNumber(toIntExact((Long)mapQuestionary.get("questionNumber")));
+        return questionary;
+    }
+
+    private HashMap<String, Object> formFields(BotAttribute attribute)
+    {
+        HashMap<String, Object> fields = new HashMap<>();
+        fields.put("botState", attribute.getBotState().toString());
+        fields.put("money", attribute.getMoney());
+        fields.put("connection", attribute.getConnection());
+        fields.put("moneySubBotState", attribute.getMoneySubBotState().toString());
+        fields.put("rpsState", attribute.getRpsState());
+        fields.put("suitableId", attribute.getSuitableId());
+        fields.put("userName", attribute.getUserName());
+
+        Questionary questionary = attribute.getQuestionary();
+        HashMap<String, Object> questionaryField = new HashMap<>();
+        questionaryField.put("userSex", questionary.userSex == null ? null : questionary.userSex.toString());
+        questionaryField.put("coupleSex", questionary.coupleSex == null ? null : questionary.coupleSex.toString());
+        questionaryField.put("questionNumber", questionary.getNumber());
+
+        fields.put("questionary", questionaryField);
+        return fields;
     }
 
     private Map<String, Object> getDocumentData(Long chatId)
@@ -85,67 +123,6 @@ class Database
             return document.getData();
         else
             return null;
-    }
-
-    void setQuestionary(Long chatId, Sex userSex, Sex coupleSex)
-    {
-        HashMap<String, Integer> questionary = new HashMap<>();
-        questionary.put("userSex", userSex.getNumber());
-        questionary.put("coupleSex", coupleSex.getNumber());
-        simpleSet(chatId, questionary, "questionary");
-    }
-
-    void setBotState(Long chatId, BotState botState)
-    {
-        simpleSet(chatId, botState.toString(), "botState");
-    }
-
-    Object getBotState(Long chatId)
-    {
-        Object stringState = simpleGet(chatId, "botState");
-        return BotState.valueOf((String)stringState);
-    }
-
-    void setConnection(Long chatId, Long suitableId)
-    {
-        simpleSet(chatId, suitableId, "connection");
-    }
-
-    Object getConnection(Long chatId)
-    {
-        return simpleGet(chatId, "connection");
-    }
-
-
-    void setUserName(Long chatId, String name)
-    {
-        simpleSet(chatId, name, "userName");
-    }
-
-    Object getUserName(Long chatId)
-    {
-        return simpleGet(chatId, "userName");
-    }
-
-    void setMoney(Long chatId, int money)
-    {
-        simpleSet(chatId, money, "money");
-    }
-
-
-    Object getMoney(Long chatId)
-    {
-        return simpleGet(chatId, "money");
-    }
-
-    void setSuitableId(Long chatId, Long suitableId)
-    {
-        simpleSet(chatId, suitableId, "suitableId");
-    }
-
-    Object getSuitableId(Long chatId)
-    {
-        return simpleGet(chatId, "suitableId");
     }
 
     void addAbledUser(Long chatId)
@@ -235,39 +212,4 @@ class Database
             return null;
     }
 
-    private void simpleSet(Long chatId, Object object, String fieldName)
-    {
-        HashMap<String, Object> field = new HashMap<>();
-        field.put(fieldName, object);
-        ApiFuture<WriteResult> future = database.collection("botAttributes")
-                .document(chatId.toString())
-                .update(field);
-        try
-        {
-            future.get();
-        }
-        catch (InterruptedException | ExecutionException e)
-        {
-            e.printStackTrace();
-        }
-    }
-
-    private Object simpleGet(Long chatId, String fieldName)
-    {
-        DocumentReference docRef = database.collection("botAttributes").document(chatId.toString());
-        ApiFuture<DocumentSnapshot> future = docRef.get();
-        DocumentSnapshot document = null;
-        try
-        {
-            document = future.get();
-        }
-        catch (InterruptedException | ExecutionException e)
-        {
-            e.printStackTrace();
-        }
-        if (document!= null && document.exists())
-            return document.get(fieldName);
-        else
-            return null;
-    }
 }
