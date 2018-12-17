@@ -20,7 +20,7 @@ class Database
     private Firestore database;
 
 
-    public Database()
+    Database()
     {
         String path ="C:\\Users\\Дима\\Desktop\\Key.json";
         try
@@ -39,12 +39,17 @@ class Database
         }
     }
 
+    boolean botAttributesContains(Long chatId)
+    {
+        return getDocumentData(chatId) != null;
+    }
+
     void setBotAttribute(BotAttribute attribute, Long chatId)
     {
         HashMap<String, Object> fields = formFields(attribute);
         ApiFuture<WriteResult> future = database.collection("botAttributes")
                 .document(chatId.toString())
-                .update(fields);
+                .set(fields);
         try
         {
             future.get();
@@ -55,6 +60,21 @@ class Database
         }
     }
 
+    void createBotAttribute(BotAttribute attribute, Long chatId)
+    {
+        HashMap<String, Object> fields = formFields(attribute);
+        ApiFuture<WriteResult> future = database.collection("botAttributes")
+                .document(chatId.toString())
+                .create(fields);
+        try
+        {
+            future.get();
+        }
+        catch (InterruptedException | ExecutionException e)
+        {
+            e.printStackTrace();
+        }
+    }
      BotAttribute getBotAttrubute(Long chatId)
     {
         Map<String, Object> documentData = getDocumentData(chatId);
@@ -66,14 +86,16 @@ class Database
 
         BotAttribute botAttribute = new BotAttribute(botState, questionary, connection);
         botAttribute.setRpsState((String)documentData.get("rpsState"));
-        botAttribute.setMoneySubBotState(MoneySubBotState.valueOf((String)documentData.get("moneySubBotState")));
+        String strMoneySybBotState = (String)documentData.get("moneySubBotState");
+        botAttribute.setMoneySubBotState(strMoneySybBotState == null ? null :
+                MoneySubBotState.valueOf(strMoneySybBotState));
         botAttribute.setMoney(toIntExact((Long)documentData.get("money")));
         botAttribute.setSuitableId((Long) documentData.get("suitableId"));
         botAttribute.setUserName((String) documentData.get("userName"));
         return botAttribute;
     }
 
-    Questionary formQuestionary(Map<String, Object> documentData)
+    private Questionary formQuestionary(Map<String, Object> documentData)
     {
         Map<String, Object> mapQuestionary = (Map<String, Object>) documentData.get("questionary");
         Questionary questionary = new Questionary();
@@ -91,7 +113,9 @@ class Database
         fields.put("botState", attribute.getBotState().toString());
         fields.put("money", attribute.getMoney());
         fields.put("connection", attribute.getConnection());
-        fields.put("moneySubBotState", attribute.getMoneySubBotState().toString());
+
+        MoneySubBotState moneySubBotState = attribute.getMoneySubBotState();
+        fields.put("moneySubBotState", moneySubBotState==null? null : moneySubBotState.toString());
         fields.put("rpsState", attribute.getRpsState());
         fields.put("suitableId", attribute.getSuitableId());
         fields.put("userName", attribute.getUserName());
@@ -181,7 +205,7 @@ class Database
 
     Set<Long> getAbledUsers()
     {
-        HashSet<Long> result = new HashSet<Long>();
+        HashSet<Long> result = new HashSet<>();
 
         HashMap<String, Boolean> mappedUsers = getMappedAbledUsers();
         if (mappedUsers == null)

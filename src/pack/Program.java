@@ -19,5 +19,6 @@ public class Program
 
         database.setBotAttribute(botAttribute, chatId1);
         BotAttribute botAttribute1 = database.getBotAttrubute(chatId1);
+        boolean contains = database.botAttributesContains(11L);
     }
 }

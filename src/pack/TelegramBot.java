@@ -154,7 +154,7 @@ public class TelegramBot extends TelegramLongPollingBot
         BotResult result = dateBot.processMessage(chatId, text);
         if (result != null)
         {
-            if (dateBot.getBotAttributes().get(chatId).getBotState() == BotState.CONNECTED)
+            if (dateBot.database.getBotAttrubute(chatId).getBotState() == BotState.CONNECTED)
                 result.addText(getContentInfo(msg));
             String answer = result.getText();
             if (!answer.isEmpty())

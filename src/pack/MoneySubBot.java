@@ -11,34 +11,32 @@ import static pack.MoneySubBotState.PLAYING;
 import static pack.MoneySubBotState.QUITTING;
 
 public class MoneySubBot {
-    private ConcurrentHashMap<Long, BotAttribute> botAttributes;
+    private Database database;
     private Random rand = new Random();
 
-    public MoneySubBot(ConcurrentHashMap<Long, BotAttribute> botAttributes)
+    public MoneySubBot( Database database)
     {
-        this.botAttributes = botAttributes;
+        this.database = database;
     }
 
-    void startSession(BotResult result, Long chatId)
+    void startSession(BotResult result, BotAttribute botAttribute)
     {
-        BotAttribute botAttribute = botAttributes.get(chatId);
         if (botAttribute.getMoneySubBotState()==null)
         {
             botAttribute.setMoneySubBotState(NORMAL);
             result.addText(getIntroduction());
         }
-        startRps(result, chatId);
+        startRps(result, botAttribute);
     }
 
-    void startRps(BotResult result, Long chatId)
+    void startRps(BotResult result, BotAttribute botAttribute)
     {
-        BotAttribute botAttribute = botAttributes.get(chatId);
         result.addQuestionAndAnswers(rpsOptions);
         botAttribute.setRpsState(rpsWarriors[rand.nextInt(rpsWarriors.length)]);
         botAttribute.setMoneySubBotState(PLAYING);
     }
 
-    boolean processGeneralCommands(BotResult result, Long chatId, String text)
+    boolean processGeneralCommands(BotResult result, String text, BotAttribute botAttribute)
     {
         switch (text) {
             case "/help":
@@ -46,30 +44,30 @@ public class MoneySubBot {
                 return true;
             case "/quit":
                 result.addText(getGoodbye());
-                botAttributes.get(chatId).setMoneySubBotState(QUITTING);
+                botAttribute.setMoneySubBotState(QUITTING);
                 return false;
         }
         return false;
     }
 
-    boolean processMessage(BotResult result, Long chatId, String text)
+    boolean processMessage(BotResult result, String text, BotAttribute botAttribute)
     {
-        if (processGeneralCommands(result, chatId, text))
+        if (processGeneralCommands(result, text, botAttribute))
             return false;
-        switch (botAttributes.get(chatId).getMoneySubBotState())
+        switch (botAttribute.getMoneySubBotState())
         {
             case NORMAL:
-                startRps(result, chatId);
+                startRps(result, botAttribute);
                 break;
             case PLAYING:
-                return processRps(result, chatId, text);
+                return processRps(result, text, botAttribute);
             case QUITTING:
                 return true;
         }
         return false;
     }
 
-    boolean processRps(BotResult result, Long chatId, String text)
+    boolean processRps(BotResult result, String text, BotAttribute botAttribute)
     {
         var warrior = numberToRps.getOrDefault(text, "0");
         if (!Arrays.asList(rpsWarriors).contains(warrior))
@@ -78,7 +76,7 @@ public class MoneySubBot {
             return false;
         }
 
-        var botRps = botAttributes.get(chatId).getRpsState();
+        var botRps = botAttribute.getRpsState();
         result.addText(String.format("%s VS %s\n", warrior, botRps));
 
         if (botRps.equals(warrior)) {
@@ -87,12 +85,12 @@ public class MoneySubBot {
         else if (rpsWins.get(warrior).contains(botRps)){
             var wonMoney = rand.nextInt(winValue) + winValue;
             result.addText(String.format(winMessage, wonMoney));
-            botAttributes.get(chatId).addMoney(wonMoney);
+            botAttribute.addMoney(wonMoney);
         }
         else {
             var lostMoney = rand.nextInt(loseValue) + loseValue;
             result.addText(String.format(loseMessage, lostMoney));
-            botAttributes.get(chatId).substractMoney(lostMoney);
+            botAttribute.substractMoney(lostMoney);
         }
         return true;
     }
