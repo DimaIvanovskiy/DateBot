@@ -6,12 +6,9 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.cloud.FirestoreClient;
 
-import java.io.FileInputStream;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ExecutionException;
 
 import static java.lang.Math.toIntExact;
@@ -23,12 +20,11 @@ class Database
 
     Database()
     {
-        String path ="C:\\Users\\Дима\\Desktop\\Key.json";
         try
         {
-            FileInputStream serviceAccount = new FileInputStream(path);
+            var decodedCredentials = new ByteArrayInputStream(Base64.getDecoder().decode(System.getenv("FIREBASE_BASE64_ENCODED_KEY")));
             FirebaseOptions options = new FirebaseOptions.Builder()
-                    .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+                    .setCredentials(GoogleCredentials.fromStream(decodedCredentials))
                     .setDatabaseUrl("https://datebot-9b168.firebaseio.com")
                     .build();
             FirebaseApp.initializeApp(options);

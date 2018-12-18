@@ -19,11 +19,9 @@ import java.util.List;
 
 public class TelegramBot extends TelegramLongPollingBot
 {
-    private static String botName = "Temporary123TestBot";
-            //"DateSearcherBot";
+    private static String botName = "DateSearcherBot";
 
-    private static String botToken = "613484839:AAFZm0XSrp3S-1ypaHBXwXgnrCe6YzoaDa8";
-            //System.getenv("BOT_TOKEN");
+    private static String botToken = System.getenv("BOT_TOKEN");
 
     private DateBot dateBot = new DateBot();
 
