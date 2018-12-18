@@ -1,43 +1,41 @@
 package pack;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.ArrayList;
 import java.util.Random;
-import java.util.concurrent.ConcurrentHashMap;
 
-import static pack.MoneySubBotStates.NORMAL;
-import static pack.MoneySubBotStates.PLAYING;
-import static pack.MoneySubBotStates.QUITTING;
+import static pack.MoneySubBotState.NORMAL;
+import static pack.MoneySubBotState.PLAYING;
+import static pack.MoneySubBotState.QUITTING;
 
 public class MoneySubBot {
-    private ConcurrentHashMap<Long, BotAttributes> botAttributes;
-    private ConcurrentHashMap<Long, MoneySubBotStates> botStates = new ConcurrentHashMap<>();
-    private ConcurrentHashMap<Long, String> rpsStates = new ConcurrentHashMap<>();
+    private Database database;
     private Random rand = new Random();
 
-    public MoneySubBot(ConcurrentHashMap<Long, BotAttributes> botAttributes)
+    public MoneySubBot( Database database)
     {
-        this.botAttributes = botAttributes;
+        this.database = database;
     }
 
-    void startSession(BotResult result, Long chatId)
+    void startSession(BotResult result, BotAttribute botAttribute)
     {
-        if (!botStates.containsKey(chatId)) {
-            botStates.putIfAbsent(chatId, MoneySubBotStates.NORMAL);
+        if (botAttribute.getMoneySubBotState()==null)
+        {
+            botAttribute.setMoneySubBotState(NORMAL);
             result.addText(getIntroduction());
         }
-        startRps(result, chatId);
+        startRps(result, botAttribute);
     }
 
-    void startRps(BotResult result, Long chatId)
+    void startRps(BotResult result, BotAttribute botAttribute)
     {
         result.addQuestionAndAnswers(rpsOptions);
-        rpsStates.put(chatId, rpsWarriors[rand.nextInt(rpsWarriors.length)]);
-        botStates.put(chatId, PLAYING);
+        botAttribute.setRpsState(rpsWarriors[rand.nextInt(rpsWarriors.length)]);
+        botAttribute.setMoneySubBotState(PLAYING);
     }
 
-    boolean processGeneralCommands(BotResult result, Long chatId, String text)
+    boolean processGeneralCommands(BotResult result, String text, BotAttribute botAttribute)
     {
         switch (text) {
             case "/help":
@@ -45,30 +43,30 @@ public class MoneySubBot {
                 return true;
             case "/quit":
                 result.addText(getGoodbye());
-                botStates.put(chatId, QUITTING);
+                botAttribute.setMoneySubBotState(QUITTING);
                 return false;
         }
         return false;
     }
 
-    boolean processMessage(BotResult result, Long chatId, String text)
+    boolean processMessage(BotResult result, String text, BotAttribute botAttribute)
     {
-        if (processGeneralCommands(result, chatId, text))
+        if (processGeneralCommands(result, text, botAttribute))
             return false;
-        switch (botStates.get(chatId))
+        switch (botAttribute.getMoneySubBotState())
         {
             case NORMAL:
-                startRps(result, chatId);
+                startRps(result, botAttribute);
                 break;
             case PLAYING:
-                return processRps(result, chatId, text);
+                return processRps(result, text, botAttribute);
             case QUITTING:
                 return true;
         }
         return false;
     }
 
-    boolean processRps(BotResult result, Long chatId, String text)
+    boolean processRps(BotResult result, String text, BotAttribute botAttribute)
     {
         if (!Arrays.asList(rpsWarriors).contains(text))
         {
@@ -76,8 +74,8 @@ public class MoneySubBot {
             return false;
         }
 
-        var botRps = rpsStates.get(chatId);
-        result.addText(String.format("%s VS %s", text, botRps));
+        var botRps = botAttribute.getRpsState();
+        result.addText(String.format("%s VS %s\n", text, botRps));
 
         if (botRps.equals(text)) {
             result.addText("Draw!");
@@ -85,15 +83,14 @@ public class MoneySubBot {
         else if (rpsWins.get(text).contains(botRps)){
             var wonMoney = rand.nextInt(winValue) + winValue;
             result.addText(String.format(winMessage, wonMoney));
-            botAttributes.get(chatId).addMoney(wonMoney);
+            botAttribute.addMoney(wonMoney);
         }
         else {
             var lostMoney = rand.nextInt(loseValue) + loseValue;
             result.addText(String.format(loseMessage, lostMoney));
-            botAttributes.get(chatId).substractMoney(lostMoney);
+            botAttribute.substractMoney(lostMoney);
         }
         return true;
-
     }
 
     static String getIntroduction()
@@ -106,7 +103,7 @@ public class MoneySubBot {
         return goodbyeMessage;
     }
 
-    static String showMoney(BotAttributes attribute)
+    static String showMoney(BotAttribute attribute)
     {
         return moneyCheck + attribute.getMoney();
     }

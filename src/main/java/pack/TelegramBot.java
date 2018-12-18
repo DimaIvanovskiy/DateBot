@@ -12,18 +12,18 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKe
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButton;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-
 import java.text.MessageFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
 public class TelegramBot extends TelegramLongPollingBot
 {
-    private static String botName = "DateSearcherBot";
+    private static String botName = "Temporary123TestBot";
+            //"DateSearcherBot";
 
-    private static String botToken =  System.getenv("BOT_TOKEN");
+    private static String botToken = "613484839:AAFZm0XSrp3S-1ypaHBXwXgnrCe6YzoaDa8";
+            //System.getenv("BOT_TOKEN");
 
     private DateBot dateBot = new DateBot();
 
@@ -152,7 +152,7 @@ public class TelegramBot extends TelegramLongPollingBot
         BotResult result = dateBot.processMessage(chatId, text);
         if (result != null)
         {
-            if (dateBot.getBotAttributes().get(chatId).getBotState() == BotState.CONNECTED)
+            if (dateBot.database.getBotAttrubute(chatId).getBotState() == BotState.CONNECTED)
                 result.addText(getContentInfo(msg));
             String answer = result.getText();
             if (!answer.isEmpty())

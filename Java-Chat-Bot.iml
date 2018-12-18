@@ -67,5 +67,10 @@
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpmime:4.5.3" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.5" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.mockito:mockito-all:1.9.5" level="project" />
+
+    <orderEntry type="library" name="com.google.firebase:firebase-admin:6.6.0" level="project" />
+    <orderEntry type="library" name="telegrambots-4.1-jar-with-dependencies" level="project" />
+    <orderEntry type="library" name="org.mockito:mockito-core:2.0.106-beta" level="project" />
+    <orderEntry type="library" name="org.slf4j:slf4j-nop:1.7.25" level="project" />
   </component>
 </module>

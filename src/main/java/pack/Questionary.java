@@ -12,7 +12,7 @@ class Questionary
     {
         return questionNumber;
     }
-
+    void setNumber( int number ) { questionNumber = number; }
     private boolean isLastQuestion = false;
 
     boolean isLastQuestion()

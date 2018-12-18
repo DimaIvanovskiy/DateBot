@@ -9,19 +9,19 @@ import java.util.Set;
 
 class ConnectionManager
 {
-    synchronized static void connect(Long chatId, Long suitableId, Map<Long, BotAttributes> botAttributes)
+    synchronized static void connect(Long chatId, Long suitableId, Map<Long, BotAttribute> botAttributes)
     {
-        BotAttributes attributes = botAttributes.get(chatId);
-        BotAttributes pair = botAttributes.get(suitableId);
+        BotAttribute attributes = botAttributes.get(chatId);
+        BotAttribute pair = botAttributes.get(suitableId);
         attributes.setConnection(suitableId);
         attributes.setBotState(BotState.CONNECTED);
         pair.setConnection(chatId);
         pair.setBotState(BotState.CONNECTED);
     }
 
-    synchronized static Long disconnect(Long chatId, Map<Long, BotAttributes> botAttributes)
+    synchronized static Long disconnect(Long chatId, Map<Long, BotAttribute> botAttributes)
     {
-        BotAttributes attributes = botAttributes.get(chatId);
+        BotAttribute attributes = botAttributes.get(chatId);
         Long connection = attributes.getConnection();
         attributes.setBotState(BotState.NORMAL);
         botAttributes.get(connection).setBotState(BotState.NORMAL);
@@ -30,7 +30,7 @@ class ConnectionManager
         return connection;
     }
 
-    synchronized static Long findSuitable(Long chatId, Map<Long, BotAttributes> botAttributes,
+    synchronized static Long findSuitable(Long chatId, Map<Long, BotAttribute> botAttributes,
                               Set<Long> abledUsers)
     {
         if (abledUsers.isEmpty())
