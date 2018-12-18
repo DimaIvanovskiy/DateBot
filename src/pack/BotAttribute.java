@@ -1,47 +1,37 @@
 package pack;
 
+import java.util.ArrayList;
+
 class BotAttribute
 {
-    final Object lock = new Object();
     private Questionary questionary;
     private BotState botState;
-    private Long connection;
-    private String userName;
     private int money = DateBot.startMoneyCount;
-    private Long suitableId;
     private MoneySubBotState moneySubBotState;
     private String rpsState;
+    private ArrayList<String> interestQuestions = new ArrayList<>();
 
-    Questionary getQuestionary() { return questionary; }
-    BotState getBotState() { return botState; }
-    Long getConnection() { return connection; }
-    String getUserName() { return userName; }
-    int getMoney() { return money; }
-    Long getSuitableId() { return suitableId; }
-    MoneySubBotState getMoneySubBotState() { return moneySubBotState; }
     String getRpsState() { return rpsState; }
+    MoneySubBotState getMoneySubBotState() { return moneySubBotState; }
+    BotState getBotState() { return botState; }
+    Questionary getQuestionary() { return questionary; }
+    int getMoney() { return money; }
+    ArrayList<String> getInterestQuestions() { return interestQuestions; }
 
     void setRpsState(String rpsState) { this.rpsState = rpsState; }
     void setMoneySubBotState(MoneySubBotState moneySubBotState){ this.moneySubBotState = moneySubBotState; }
     void setBotState(BotState newBotState) { botState = newBotState; }
     void setQuestionary(Questionary newQuestionary) { questionary = newQuestionary; }
-    void setConnection(Long newConnection) { connection = newConnection; }
-    void setUserName(String userName){ this.userName = userName; }
     void setMoney(int money){ this.money = money; }
-    void setSuitableId(Long suitableId) { this.suitableId = suitableId; }
+    void setInterestQuestions(ArrayList<String> interestQuestions) { this.interestQuestions = interestQuestions; }
+
     void addMoney(int value){this.money += value;}
-    void substractMoney(int value){this.money -= value;}
+    void subtractMoney(int value){this.money -= value;}
 
 
-
-    BotAttribute(BotState newBotState, Questionary newQuestionary, Long newConnection)
+    BotAttribute(BotState newBotState, Questionary newQuestionary)
     {
         botState = newBotState;
         questionary = newQuestionary;
-        connection = newConnection;
     }
-
-
-
-
 }

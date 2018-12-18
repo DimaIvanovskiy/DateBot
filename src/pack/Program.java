@@ -6,7 +6,7 @@ public class Program
 
     public static void main(String[] args)
     {
-        Database database = new Database();
+        /*Database database = new Database();
         Long chatId1 = 2147483648L;
         Long chatId2 = 1147483648L;
 
@@ -19,6 +19,6 @@ public class Program
 
         database.setBotAttribute(botAttribute, chatId1);
         BotAttribute botAttribute1 = database.getBotAttrubute(chatId1);
-        boolean contains = database.botAttributesContains(11L);
+        boolean contains = database.botAttributesContains(11L);*/
     }
 }

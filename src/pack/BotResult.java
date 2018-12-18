@@ -16,7 +16,7 @@ public class BotResult
     {
         this.text.append(text);
         for (Long chatId : chatIds)
-        this.chatIds.add(chatId);
+            this.chatIds.add(chatId);
     }
 
     void addQuestionAndAnswers(QuestionAndAnswers questionAnswers)

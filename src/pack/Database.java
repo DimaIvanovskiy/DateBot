@@ -82,16 +82,13 @@ class Database
             return null;
         Questionary questionary = formQuestionary(documentData);
         BotState botState = BotState.valueOf((String) documentData.get("botState"));
-        Long connection = (Long) documentData.get("connection");
 
-        BotAttribute botAttribute = new BotAttribute(botState, questionary, connection);
+        BotAttribute botAttribute = new BotAttribute(botState, questionary);
         botAttribute.setRpsState((String)documentData.get("rpsState"));
         String strMoneySybBotState = (String)documentData.get("moneySubBotState");
         botAttribute.setMoneySubBotState(strMoneySybBotState == null ? null :
                 MoneySubBotState.valueOf(strMoneySybBotState));
         botAttribute.setMoney(toIntExact((Long)documentData.get("money")));
-        botAttribute.setSuitableId((Long) documentData.get("suitableId"));
-        botAttribute.setUserName((String) documentData.get("userName"));
         return botAttribute;
     }
 
@@ -112,13 +109,10 @@ class Database
         HashMap<String, Object> fields = new HashMap<>();
         fields.put("botState", attribute.getBotState().toString());
         fields.put("money", attribute.getMoney());
-        fields.put("connection", attribute.getConnection());
 
         MoneySubBotState moneySubBotState = attribute.getMoneySubBotState();
         fields.put("moneySubBotState", moneySubBotState==null? null : moneySubBotState.toString());
         fields.put("rpsState", attribute.getRpsState());
-        fields.put("suitableId", attribute.getSuitableId());
-        fields.put("userName", attribute.getUserName());
 
         Questionary questionary = attribute.getQuestionary();
         HashMap<String, Object> questionaryField = new HashMap<>();
@@ -148,92 +142,4 @@ class Database
         else
             return null;
     }
-
-    void addAbledUser(Long chatId)
-    {
-        HashMap<String, Object> field = new HashMap<>();
-
-        field.put("abledUsers." + chatId, true);
-        ApiFuture<WriteResult> future = database.collection("abledUsers")
-                .document("abledUsers")
-                .update(field);
-        try
-        {
-            future.get();
-        }
-        catch (InterruptedException | ExecutionException e)
-        {
-            e.printStackTrace();
-        }
-    }
-
-    void removeAbledUser(Long chatId)
-    {
-        HashMap<String, Object> field = new HashMap<>();
-
-        field.put("abledUsers." + chatId, FieldValue.delete());
-        ApiFuture<WriteResult> future = database.collection("abledUsers")
-                .document("abledUsers")
-                .update(field);
-        try
-        {
-            future.get();
-        }
-        catch (InterruptedException | ExecutionException e)
-        {
-            e.printStackTrace();
-        }
-    }
-
-    Boolean abledUsersContains(Long chatId)
-    {
-        DocumentReference docRef = database.collection("abledUsers").document("abledUsers");
-        ApiFuture<DocumentSnapshot> future = docRef.get();
-        DocumentSnapshot document = null;
-        try
-        {
-            document = future.get();
-        }
-        catch (InterruptedException | ExecutionException e)
-        {
-            e.printStackTrace();
-        }
-        if (document!= null && document.exists())
-            return document.get("abledUsers." + chatId) != null;
-        return false;
-    }
-
-    Set<Long> getAbledUsers()
-    {
-        HashSet<Long> result = new HashSet<>();
-
-        HashMap<String, Boolean> mappedUsers = getMappedAbledUsers();
-        if (mappedUsers == null)
-            return null;
-        for (String key: mappedUsers.keySet())
-        {
-            result.add(Long.parseLong(key));
-        }
-        return result;
-    }
-
-    private HashMap<String, Boolean> getMappedAbledUsers()
-    {
-        DocumentReference docRef = database.collection("abledUsers").document("abledUsers");
-        ApiFuture<DocumentSnapshot> future = docRef.get();
-        DocumentSnapshot document = null;
-        try
-        {
-            document = future.get();
-        }
-        catch (InterruptedException | ExecutionException e)
-        {
-            e.printStackTrace();
-        }
-        if (document!= null && document.exists())
-            return (HashMap<String, Boolean>)document.get("abledUsers");
-        else
-            return null;
-    }
-
 }
