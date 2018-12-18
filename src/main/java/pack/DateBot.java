@@ -3,7 +3,6 @@ package pack;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.concurrent.ConcurrentHashMap;
 
 class DateBot
 {

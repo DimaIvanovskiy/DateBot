@@ -1,10 +1,9 @@
 package pack;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.ArrayList;
 import java.util.Random;
-import java.util.concurrent.ConcurrentHashMap;
 
 import static pack.MoneySubBotState.NORMAL;
 import static pack.MoneySubBotState.PLAYING;

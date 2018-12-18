@@ -3,7 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="e5420adb-31ce-46ca-90a5-f207c8f48054" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pack/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/TelegramBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Chat-Bot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Chat-Bot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/BotAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pack/BotAttribute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/BotResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pack/BotResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/BotState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pack/BotState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pack/ConnectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/CyberBuddy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pack/CyberBuddy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pack/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/DateBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pack/DateBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/MethodsForTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pack/MethodsForTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/MoneySubBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pack/MoneySubBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/MoneySubBotState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pack/MoneySubBotState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pack/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/QuestionAndAnswers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pack/QuestionAndAnswers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/Questionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pack/Questionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/Sex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pack/Sex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pack/TelegramBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/TestCyberBuddy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pack/TestCyberBuddy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/TestDateBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pack/TestDateBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/TestPersonalityForge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pack/TestPersonalityForge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/TestQuestionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pack/TestQuestionary.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -197,72 +216,51 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-2106244902">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="24" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="24" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="4" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pack/TelegramBot.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pack/TelegramBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="133" column="5" selection-start-line="133" selection-start-column="5" selection-end-line="133" selection-end-column="5" />
+            <state relative-caret-position="29">
+              <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pack/ConnectionManager.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pack/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pack/Database.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pack/Questionary.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="e#134#135#0" expanded="true" />
-                <element signature="e#171#172#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pack/DateBot.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pack/MoneySubBot.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="63" column="26" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pack/TestDateBot.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="383">
+              <caret line="117" column="53" selection-start-line="117" selection-start-column="44" selection-end-line="117" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -271,28 +269,73 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pack/Program.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pack/BotAttribute.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            <state relative-caret-position="580">
+              <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/lang/Enum.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pack/Questionary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3400">
-              <caret line="237" selection-start-line="237" selection-end-line="237" />
+            <state relative-caret-position="58">
+              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pack/MoneySubBot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-390">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pack/MoneySubBotState.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pack/MethodsForTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="87">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pack/DateBot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="29">
+              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pack/TestPersonalityForge.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="8" selection-start-column="8" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pack/TestQuestionary.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1765">
+              <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pack/Program.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -337,6 +380,25 @@
         <option value="$PROJECT_DIR$/src/pack/ConnectionManager.java" />
         <option value="$PROJECT_DIR$/src/pack/DateBot.java" />
         <option value="$PROJECT_DIR$/src/pack/TelegramBot.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pack/TelegramBot.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pack/BotResult.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pack/BotState.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pack/ConnectionManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pack/CyberBuddy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pack/DateBot.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pack/MethodsForTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pack/MoneySubBotState.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pack/QuestionAndAnswers.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pack/Questionary.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pack/Sex.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pack/TestCyberBuddy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pack/TestDateBot.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pack/TestPersonalityForge.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pack/TestQuestionary.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pack/Program.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pack/Database.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pack/BotAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pack/MoneySubBot.java" />
       </list>
     </option>
   </component>
@@ -352,7 +414,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1386" />
@@ -383,6 +445,21 @@
               <item name="DateBot" type="b2602c69:ProjectViewProjectNode" />
               <item name="DateBot" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DateBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DateBot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DateBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DateBot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="pack" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -400,7 +477,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Дима/Desktop/Java-Chat-Bot/src/pack/Main.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545066384197" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545111185105" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/junit-mockito" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -421,11 +498,11 @@
   </component>
   <component name="RunManager" selected="Application.TelegramBot">
     <configuration name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pack.Program" />
+      <option name="MAIN_CLASS_NAME" value="main.java.pack.Program" />
       <module name="Java-Chat-Bot" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pack.*" />
+          <option name="PATTERN" value="main.java.pack.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -434,11 +511,11 @@
       </method>
     </configuration>
     <configuration name="TelegramBot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pack.TelegramBot" />
+      <option name="MAIN_CLASS_NAME" value="main.java.pack.TelegramBot" />
       <module name="Java-Chat-Bot" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pack.*" />
+          <option name="PATTERN" value="main.java.pack.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -450,12 +527,12 @@
       <module name="Java-Chat-Bot" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pack.*" />
+          <option name="PATTERN" value="main.java.pack.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pack" />
-      <option name="MAIN_CLASS_NAME" value="pack.TestCyberBuddy" />
+      <option name="PACKAGE_NAME" value="main.java.pack" />
+      <option name="MAIN_CLASS_NAME" value="main.java.pack.TestCyberBuddy" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -464,12 +541,12 @@
       <module name="Java-Chat-Bot" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pack.*" />
+          <option name="PATTERN" value="main.java.pack.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pack" />
-      <option name="MAIN_CLASS_NAME" value="pack.TestDateBot" />
+      <option name="PACKAGE_NAME" value="main.java.pack" />
+      <option name="MAIN_CLASS_NAME" value="main.java.pack.TestDateBot" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -478,12 +555,12 @@
       <module name="Java-Chat-Bot" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pack.*" />
+          <option name="PATTERN" value="main.java.pack.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pack" />
-      <option name="MAIN_CLASS_NAME" value="pack.TestPersonalityForge" />
+      <option name="PACKAGE_NAME" value="main.java.pack" />
+      <option name="MAIN_CLASS_NAME" value="main.java.pack.TestPersonalityForge" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -572,10 +649,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2521322" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -583,7 +660,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3286334" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.871407" weight="0.39934534" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -648,8 +725,8 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/pack/Database.java</url>
-          <line>44</line>
+          <url>file://$PROJECT_DIR$/src/main/java/pack/Database.java</url>
+          <line>46</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
@@ -673,13 +750,7 @@
     <entry file="file://$PROJECT_DIR$/Java-Chat-Bot.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="jar://$USER_HOME$/Downloads/telegrambots-4.1-jar-with-dependencies.jar!/org/json/JSONObject.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3315">
-          <caret line="216" selection-start-line="216" selection-end-line="216" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/telegrambots-4.1-jar-with-dependencies.jar!/org/json/JSONObject.class" />
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -687,62 +758,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/Sex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/TestQuestionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Проекты/mockito-all-1.9.1-20110911-sources.jar!/org/mockito/Mockito.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2711">
-          <caret line="1195" column="28" lean-forward="true" selection-start-line="1195" selection-start-column="28" selection-end-line="1195" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/TestCyberBuddy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="53" column="57" selection-start-line="53" selection-start-column="51" selection-end-line="53" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Проекты/mockito-all-1.9.1-20110911-sources.jar!/org/mockito/Mock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="62" column="44" selection-start-line="62" selection-start-column="44" selection-end-line="62" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Проекты/mockito-all-1.9.1-20110911-sources.jar!/org/mockito/InjectMocks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="143" selection-start-line="143" selection-end-line="143" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/TestPersonalityForge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/MethodsForTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://D:/Проекты/mockito-all-1.9.1-20110911-sources.jar!/org/mockito/Mockito.java" />
+    <entry file="jar://D:/Проекты/mockito-all-1.9.1-20110911-sources.jar!/org/mockito/Mock.java" />
+    <entry file="jar://D:/Проекты/mockito-all-1.9.1-20110911-sources.jar!/org/mockito/InjectMocks.java" />
     <entry file="file://$PROJECT_DIR$/src/pack/Key.json" />
     <entry file="file://$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_admin_6_6_0.xml">
       <provider selected="true" editor-type-id="text-editor" />
@@ -768,122 +786,151 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/BotState.java">
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/ArrayList.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/lang/Enum.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/MoneySubBotState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
+        <state relative-caret-position="58">
           <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/BotResult.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pack/BotResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/CyberBuddy.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pack/BotState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/QuestionAndAnswers.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pack/ConnectionManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/ArrayList.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pack/CyberBuddy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="1377" selection-start-line="1377" selection-end-line="1377" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/BotAttribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/ConnectionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/Questionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#134#135#0" expanded="true" />
-            <element signature="e#171#172#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/MoneySubBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="63" column="26" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/TestDateBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/Program.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pack/MoneySubBotState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/lang/Enum.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pack/QuestionAndAnswers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3400">
-          <caret line="237" selection-start-line="237" selection-end-line="237" />
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/MoneySubBotState.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pack/Sex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/DateBot.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pack/TestCyberBuddy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/Database.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pack/TestDateBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/TelegramBot.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pack/TestPersonalityForge.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="133" column="5" selection-start-line="133" selection-start-column="5" selection-end-line="133" selection-end-column="5" />
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pack/TestQuestionary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1765">
+          <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pack/Program.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pack/Questionary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pack/DateBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pack/BotAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pack/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="117" column="53" selection-start-line="117" selection-start-column="44" selection-end-line="117" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pack/TelegramBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pack/MethodsForTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pack/MoneySubBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-390">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
