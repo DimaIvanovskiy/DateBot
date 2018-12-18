@@ -2,46 +2,45 @@ package pack;
 
 
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
 
 class ConnectionManager
 {
-    synchronized static void connect(Long chatId, Long suitableId, Map<Long, BotAttribute> botAttributes)
+    synchronized static void connect(Long chatId, Long suitableId, Database database, BotAttribute botAttribute)
     {
-        BotAttribute attributes = botAttributes.get(chatId);
-        BotAttribute pair = botAttributes.get(suitableId);
-        attributes.setConnection(suitableId);
-        attributes.setBotState(BotState.CONNECTED);
-        pair.setConnection(chatId);
-        pair.setBotState(BotState.CONNECTED);
+        BotAttribute pairAttribute = database.getBotAttrubute(suitableId);
+        botAttribute.setConnection(suitableId);
+        botAttribute .setBotState(BotState.CONNECTED);
+        pairAttribute.setConnection(chatId);
+        pairAttribute.setBotState(BotState.CONNECTED);
+        database.setBotAttribute(pairAttribute, suitableId);
     }
 
-    synchronized static Long disconnect(Long chatId, Map<Long, BotAttribute> botAttributes)
+    synchronized static Long disconnect(Long chatId, Database database, BotAttribute botAttribute)
     {
-        BotAttribute attributes = botAttributes.get(chatId);
-        Long connection = attributes.getConnection();
-        attributes.setBotState(BotState.NORMAL);
-        botAttributes.get(connection).setBotState(BotState.NORMAL);
-        botAttributes.get(connection).setConnection(connection);
-        attributes.setConnection(chatId);
+        Long connection = botAttribute.getConnection();
+        botAttribute.setBotState(BotState.NORMAL);
+        BotAttribute pairAttribute = database.getBotAttrubute(connection);
+        pairAttribute.setBotState(BotState.NORMAL);
+        pairAttribute.setConnection(connection);
+        botAttribute.setConnection(chatId);
+        database.setBotAttribute(pairAttribute, connection);
         return connection;
     }
 
-    synchronized static Long findSuitable(Long chatId, Map<Long, BotAttribute> botAttributes,
-                              Set<Long> abledUsers)
+    synchronized static Long findSuitable(Long chatId, Database database,
+                                          Set<Long> abledUsers)
     {
         if (abledUsers.isEmpty())
             return null;
-        Questionary curUser = botAttributes.get(chatId).getQuestionary();
+        Questionary curUser = database.getBotAttrubute(chatId).getQuestionary();
         ArrayList<Long> suitable = new ArrayList<>();
         for (Long id : abledUsers)
         {
 
-            if ( !id.equals(chatId) && curUser.isSuitable(botAttributes.get(id).
-                    getQuestionary()))
+            if ( !id.equals(chatId) && curUser.isSuitable(database.getBotAttrubute(id).getQuestionary()))
                 suitable.add(id);
         }
         if (suitable.isEmpty())

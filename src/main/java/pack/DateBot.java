@@ -192,6 +192,8 @@ class DateBot
                     }
             }
         }
+        if (result == null)
+            result = new BotResult();
         addButtons(result, botAttribute.getBotState());
         database.setBotAttribute(botAttribute, chatId);
         return result;
