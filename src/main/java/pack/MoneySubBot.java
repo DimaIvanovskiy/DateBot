@@ -68,19 +68,30 @@ public class MoneySubBot {
 
     boolean processRps(BotResult result, String text, BotAttribute botAttribute)
     {
-        if (!Arrays.asList(rpsWarriors).contains(text))
+        var warriorIndex = 0;
+        try {
+            warriorIndex = Integer.parseInt(text);
+        }
+        catch (NumberFormatException e) {
+            result.addText(unknownMessage);
+            return false;
+        }
+
+        if (warriorIndex >= rpsWarriors.length | warriorIndex == 0)
         {
             result.addText(unknownMessage);
             return false;
         }
 
-        var botRps = botAttribute.getRpsState();
-        result.addText(String.format("%s VS %s\n", text, botRps));
+        var warrior = rpsWarriors[Integer.parseInt(text) - 1];
 
-        if (botRps.equals(text)) {
+        var botRps = botAttribute.getRpsState();
+        result.addText(String.format("%s VS %s\n", warrior, botRps));
+
+        if (botRps.equals(warrior)) {
             result.addText("Draw!");
         }
-        else if (rpsWins.get(text).contains(botRps)){
+        else if (rpsWins.get(warrior).contains(botRps)){
             var wonMoney = rand.nextInt(winValue) + winValue;
             result.addText(String.format(winMessage, wonMoney));
             botAttribute.addMoney(wonMoney);
@@ -124,12 +135,12 @@ public class MoneySubBot {
     private final static String introductionMessage = "Seems like you've given up trying to impress " +
             "your potential partner with charisma alone. It's finally time to get some cash, " +
             "let the whole world know that Love is not the only thing " +
-            "you can fill your pockets with!";
+            "you can fill your pockets with!\n";
     private final static String goodbyeMessage = "Goodbye!";
     private final static String unknownMessage = "Maybe you should try getting some /help?";
     final static String helpMessage = "Available commands:\n" +
             "'/help' - get this message\n"+
-            "'/play' - play rock-paper-scissors" +
+            "'/play' - play rock-paper-scissors\n" +
             "'/quit' - quit from money making (why would you want that though?)";
     private final static String moneyCheck = "Current balance:\n";
 }
