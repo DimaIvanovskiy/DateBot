@@ -17,7 +17,6 @@ class Database
 {
     private Firestore database;
 
-
     Database()
     {
         try
@@ -55,6 +54,7 @@ class Database
         {
             e.printStackTrace();
         }
+        addChatId(chatId);
     }
 
     void createBotAttribute(BotAttribute attribute, Long chatId)
@@ -72,24 +72,88 @@ class Database
             e.printStackTrace();
         }
     }
-     BotAttribute getBotAttrubute(Long chatId)
+
+    BotAttribute getBotAttribute(Long chatId)
     {
         Map<String, Object> documentData = getDocumentData(chatId);
         if (documentData == null)
             return null;
         Questionary questionary = formQuestionary(documentData);
         BotState botState = BotState.valueOf((String) documentData.get("botState"));
-        Long connection = (Long) documentData.get("connection");
+        String userName = (String) documentData.get("userName");
 
-        BotAttribute botAttribute = new BotAttribute(botState, questionary, connection);
+        BotAttribute botAttribute = new BotAttribute(botState, questionary, userName);
         botAttribute.setRpsState((String)documentData.get("rpsState"));
         String strMoneySybBotState = (String)documentData.get("moneySubBotState");
         botAttribute.setMoneySubBotState(strMoneySybBotState == null ? null :
                 MoneySubBotState.valueOf(strMoneySybBotState));
         botAttribute.setMoney(toIntExact((Long)documentData.get("money")));
-        botAttribute.setSuitableId((Long) documentData.get("suitableId"));
-        botAttribute.setUserName((String) documentData.get("userName"));
+        botAttribute.setCurrentQuestion((String)documentData.get("currentQuestion"));
+        botAttribute.setInterestQuestions((ArrayList<String>) documentData.get("interestQuestions"));
+        botAttribute.setAnsweredQuestionIds((ArrayList<Long>)documentData.get("answeredQuestionIds"));
+        botAttribute.setAnswers(formAnswers(documentData));
+        botAttribute.setLiked((ArrayList<Long>)documentData.get("liked"));
         return botAttribute;
+    }
+
+    private void addChatId(Long chatId)
+    {
+        HashMap<String, Object> fields = new HashMap<>();
+        fields.put("chatIds", FieldValue.arrayUnion(chatId));
+        ApiFuture<WriteResult> future = database.collection("botAttributes")
+                .document("information")
+                .set(fields);
+        try
+        {
+            future.get();
+        }
+        catch (InterruptedException | ExecutionException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    ArrayList<Long> getSuitableIds(BotAttribute botAttribute, Long chatId)
+    {
+        ArrayList<Long> suitableIds = new ArrayList<>();
+        ArrayList<Long> answeredQuestionsIds = botAttribute.getAnsweredQuestionIds();
+        for (Query query: getSuitableQueries(botAttribute.getQuestionary()))
+        {
+            ApiFuture<QuerySnapshot> querySnapshot = query.get();
+            try
+            {
+                for (DocumentSnapshot document : querySnapshot.get().getDocuments())
+                {
+                    Long id = Long.parseLong(document.getId());
+                    if (!answeredQuestionsIds.contains(id) && !id.equals(chatId))
+                        suitableIds.add(id);
+                }
+            }
+            catch (InterruptedException | ExecutionException e)
+            {
+                e.printStackTrace();
+            }
+        }
+        return suitableIds;
+    }
+
+    private ArrayList<Query> getSuitableQueries(Questionary questionary)
+    {
+        ArrayList<Query> suitableQueries = new ArrayList<>();
+        CollectionReference attributes = database.collection("botAttributes");
+        Query query1 = attributes.whereEqualTo("questionary.coupleSex", questionary.userSex);
+        Query query2 = attributes.whereEqualTo("questionary.coupleSex", Sex.MALE_OR_FEMALE);
+        if (questionary.coupleSex == Sex.MALE_OR_FEMALE)
+        {
+            suitableQueries.add(query1);
+            suitableQueries.add(query2);
+        }
+        else
+        {
+            suitableQueries.add(query1.whereEqualTo("questionary.userSex", questionary.coupleSex));
+            suitableQueries.add(query2.whereEqualTo("questionary.userSex", questionary.coupleSex));
+        }
+        return suitableQueries;
     }
 
     private Questionary formQuestionary(Map<String, Object> documentData)
@@ -104,17 +168,32 @@ class Database
         return questionary;
     }
 
+    private ArrayList<Answer> formAnswers(Map<String, Object> documentData)
+    {
+        Map<String, Object> mapAnswers = (HashMap<String, Object>) documentData.get("answers");
+        ArrayList<Answer> answers = new ArrayList<>();
+        for (String id : mapAnswers.keySet()) {
+            Map<String, String> fields = (HashMap<String, String>) mapAnswers.get(id);
+            String question = fields.get("question");
+            String answer = fields.get("answer");
+            answers.add(new Answer(question, answer, Long.parseLong(id)));
+        }
+        return answers;
+    }
+
     private HashMap<String, Object> formFields(BotAttribute attribute)
     {
         HashMap<String, Object> fields = new HashMap<>();
         fields.put("botState", attribute.getBotState().toString());
         fields.put("money", attribute.getMoney());
-        fields.put("connection", attribute.getConnection());
 
         MoneySubBotState moneySubBotState = attribute.getMoneySubBotState();
         fields.put("moneySubBotState", moneySubBotState==null? null : moneySubBotState.toString());
         fields.put("rpsState", attribute.getRpsState());
-        fields.put("suitableId", attribute.getSuitableId());
+        fields.put("interestQuestions", attribute.getInterestQuestions());
+        fields.put("answeredQuestionIds", new ArrayList<>(attribute.getAnsweredQuestionIds()));
+        fields.put("currentQuestion", attribute.getCurrentQuestion());
+        fields.put("liked", attribute.getLiked());
         fields.put("userName", attribute.getUserName());
 
         Questionary questionary = attribute.getQuestionary();
@@ -123,6 +202,17 @@ class Database
         questionaryField.put("coupleSex", questionary.coupleSex == null ? null : questionary.coupleSex.toString());
         questionaryField.put("questionNumber", questionary.getNumber());
 
+        ArrayList<Answer> answers = attribute.getAnswers();
+        HashMap<String, HashMap<String, String>> answersField = new HashMap<>();
+        for (Answer answer : answers)
+        {
+            HashMap<String, String> answerMap = new HashMap<>();
+            answerMap.put("question", answer.question);
+            answerMap.put("answer", answer.answer);
+            answersField.put(answer.id.toString(), answerMap);
+        }
+
+        fields.put("answers", answersField);
         fields.put("questionary", questionaryField);
         return fields;
     }
@@ -145,92 +235,4 @@ class Database
         else
             return null;
     }
-
-    void addAbledUser(Long chatId)
-    {
-        HashMap<String, Object> field = new HashMap<>();
-
-        field.put("abledUsers." + chatId, true);
-        ApiFuture<WriteResult> future = database.collection("abledUsers")
-                .document("abledUsers")
-                .update(field);
-        try
-        {
-            future.get();
-        }
-        catch (InterruptedException | ExecutionException e)
-        {
-            e.printStackTrace();
-        }
-    }
-
-    void removeAbledUser(Long chatId)
-    {
-        HashMap<String, Object> field = new HashMap<>();
-
-        field.put("abledUsers." + chatId, FieldValue.delete());
-        ApiFuture<WriteResult> future = database.collection("abledUsers")
-                .document("abledUsers")
-                .update(field);
-        try
-        {
-            future.get();
-        }
-        catch (InterruptedException | ExecutionException e)
-        {
-            e.printStackTrace();
-        }
-    }
-
-    Boolean abledUsersContains(Long chatId)
-    {
-        DocumentReference docRef = database.collection("abledUsers").document("abledUsers");
-        ApiFuture<DocumentSnapshot> future = docRef.get();
-        DocumentSnapshot document = null;
-        try
-        {
-            document = future.get();
-        }
-        catch (InterruptedException | ExecutionException e)
-        {
-            e.printStackTrace();
-        }
-        if (document!= null && document.exists())
-            return document.get("abledUsers." + chatId) != null;
-        return false;
-    }
-
-    Set<Long> getAbledUsers()
-    {
-        HashSet<Long> result = new HashSet<>();
-
-        HashMap<String, Boolean> mappedUsers = getMappedAbledUsers();
-        if (mappedUsers == null)
-            return null;
-        for (String key: mappedUsers.keySet())
-        {
-            result.add(Long.parseLong(key));
-        }
-        return result;
-    }
-
-    private HashMap<String, Boolean> getMappedAbledUsers()
-    {
-        DocumentReference docRef = database.collection("abledUsers").document("abledUsers");
-        ApiFuture<DocumentSnapshot> future = docRef.get();
-        DocumentSnapshot document = null;
-        try
-        {
-            document = future.get();
-        }
-        catch (InterruptedException | ExecutionException e)
-        {
-            e.printStackTrace();
-        }
-        if (document!= null && document.exists())
-            return (HashMap<String, Boolean>)document.get("abledUsers");
-        else
-            return null;
-    }
-
 }

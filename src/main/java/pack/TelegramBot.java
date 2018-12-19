@@ -102,42 +102,19 @@ public class TelegramBot extends TelegramLongPollingBot
         sendMessage.setReplyMarkup(markupKeyboard);
     }
 
-    private String getContentInfo(Message msg)
-    {
-        String pattern = "\n[Message contained {0}.But bot does not support it]";
-        StringBuilder result = new StringBuilder();
-        if (msg.hasAnimation())
-            result.append(MessageFormat.format(pattern,"animation"));
-        if (msg.hasDocument())
-            result.append(MessageFormat.format(pattern,"document"));
-        if (msg.hasContact())
-            result.append(MessageFormat.format(pattern,"contact"));
-        if (msg.hasInvoice())
-            result.append(MessageFormat.format(pattern,"invoice"));
-        if (msg.hasLocation())
-            result.append(MessageFormat.format(pattern,"location"));
-        if (msg.hasPassportData())
-            result.append(MessageFormat.format(pattern,"passport data"));
-        if (msg.hasPhoto())
-            result.append(MessageFormat.format(pattern,"photo"));
-        if (msg.hasSticker())
-            result.append(MessageFormat.format(pattern,"sticker"));
-        if (msg.hasSuccessfulPayment())
-            result.append(MessageFormat.format(pattern,"Successful Payment"));
-        return result.toString();
-    }
-
     @Override
     public void onUpdateReceived(Update update)
     {
         Message msg;
         String text;
         Long chatId;
+        String userName;
         if (update.hasMessage())
         {
             msg = update.getMessage();
             text = msg.getText();
             chatId = msg.getChatId();
+            userName = msg.getFrom().getUserName();
         }
         else
         {
@@ -145,13 +122,12 @@ public class TelegramBot extends TelegramLongPollingBot
             text = callbackQuery.getData();
             msg = callbackQuery.getMessage();
             chatId = msg.getChatId();
+            userName = msg.getFrom().getUserName();
         }
 
-        BotResult result = dateBot.processMessage(chatId, text);
+        BotResult result = dateBot.processMessage(chatId, text, userName);
         if (result != null)
         {
-            if (dateBot.database.getBotAttrubute(chatId).getBotState() == BotState.CONNECTED)
-                result.addText(getContentInfo(msg));
             String answer = result.getText();
             if (!answer.isEmpty())
             {

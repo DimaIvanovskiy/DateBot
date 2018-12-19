@@ -99,7 +99,7 @@ public class MoneySubBot {
         else {
             var lostMoney = rand.nextInt(loseValue) + loseValue;
             result.addText(String.format(loseMessage, lostMoney));
-            botAttribute.substractMoney(lostMoney);
+            botAttribute.subtractMoney(lostMoney);
         }
         return true;
     }
