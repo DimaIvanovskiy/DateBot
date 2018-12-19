@@ -77,7 +77,7 @@ public class MoneySubBot {
             return false;
         }
 
-        if (warriorIndex >= rpsWarriors.length | warriorIndex == 0)
+        if (warriorIndex > rpsWarriors.length | warriorIndex == 0)
         {
             result.addText(unknownMessage);
             return false;
