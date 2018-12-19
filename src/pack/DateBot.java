@@ -3,14 +3,13 @@ package pack;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.Random;
 
 class DateBot
 {
     Database database = new Database();
+    Random random= new Random();
 
-    private CyberBuddy cyberBuddy = new CyberBuddy();
     private MoneySubBot moneyBot = new MoneySubBot(database);
 
     private BotResult processCommands(Long chatId, String text, BotAttribute attribute)
@@ -43,6 +42,16 @@ class DateBot
                 attribute.setQuestionary(new Questionary());
                 result.addQuestionAndAnswers(attribute.getQuestionary().AskQuestion());
                 break;
+            case "/answerQuestions":
+                addSuitableQuestion(attribute,result, chatId);
+                break;
+            case "/lookAtAnswers":
+                addAnswer(attribute, result);
+                break;
+            case "/changeInterestQuestions":
+                attribute.setBotState(BotState.WRITING_INTEREST_QUESTIONS);
+                result.addText(interestQuestionsInfo);
+                break;
             default:
                 return null;
         }
@@ -50,14 +59,109 @@ class DateBot
         return result;
     }
 
+    private void addAnswer(BotAttribute attribute, BotResult result)
+    {
 
-    BotResult processMessage(Long chatId, String text)
+        ArrayList<Answer> answers = attribute.getAnswers();
+        if (answers.size()==0)
+        {
+            result.addText("Sorry, but there is no answers for your questions");
+            attribute.setBotState(BotState.NORMAL);
+            return;
+        }
+        Answer answer = answers.get(0);
+        result.addText(MessageFormat.format("Your question was: {0}\n The answer is {1}",
+                answer.question, answer.answer));
+        attribute.setBotState(BotState.LOOKING_AT_ANSWERS);
+    }
+
+    private void addSuitableQuestion(BotAttribute attribute, BotResult result, Long chatId)
+    {
+        ArrayList<Long> suitableIds = database.getSuitableIds(attribute, chatId);
+        if (suitableIds.isEmpty())
+        {
+            attribute.setBotState(BotState.NORMAL);
+            result.addText(emptySuitableIds);
+        }
+        else
+        {
+            Long id = suitableIds.get(random.nextInt(suitableIds.size()));
+            ArrayList<String> questions = database.getBotAttribute(id).getInterestQuestions();
+            String question = questions.get(random.nextInt(questions.size()));
+            result.addText(question);
+            attribute.setBotState(BotState.ANSWERING_QUESTIONS);
+            attribute.addAnsweredQuestionId(id);
+            attribute.setCurrentQuestion(question);
+        }
+    }
+
+    private BotResult processAnswering(Long chatId, String text, BotAttribute attribute, BotResult result)
+    {
+        switch (text)
+        {
+            case "/finish":
+                attribute.setBotState(BotState.NORMAL);
+                result.addText(finishingAnswering);
+                break;
+            case "/help":
+                result.addText(commandsInformation);
+                break;
+            case "/money":
+                result.addText(moneyInformation);
+                break;
+            default:
+                ArrayList<Long> answered = attribute.getAnsweredQuestionIds();
+                Long id = answered.get(answered.size()-1);
+                BotAttribute pair = database.getBotAttribute(id);
+                pair.addAnswer(new Answer(attribute.getCurrentQuestion(), text, chatId));
+                database.setBotAttribute(pair, id);
+                addSuitableQuestion(attribute, result, chatId);
+                break;
+        }
+        return result;
+    }
+
+
+    private void processLooking(Long chatId, String text, BotAttribute attribute, BotResult result)
+    {
+        Answer answer = attribute.getAnswers().remove(0);
+        switch (text)
+        {
+            case "/finish":
+                attribute.setBotState(BotState.NORMAL);
+                result.addText(finishingAnswering);
+                break;
+            case "/help":
+                result.addText(commandsInformation);
+                break;
+            case "/money":
+                result.addText(commandsInformation);
+                break;
+            case "/like":
+                BotAttribute pair = database.getBotAttribute(answer.id);
+                pair.addLiked(chatId);
+                database.setBotAttribute(pair, answer.id);
+                if (attribute.getLiked().contains(answer.id))
+                {
+
+                    result.addText(MessageFormat.format("It is the match!!!\nUsername1:{0} & Username2:{1}",
+                            attribute.getUserName(), pair.getUserName()));
+                }
+                addAnswer(attribute, result);
+                break;
+            case "/dislike":
+                addAnswer(attribute, result);
+                break;
+        }
+    }
+
+    BotResult processMessage(Long chatId, String text, String userName)
     {
         if (!database.botAttributesContains(chatId))
             database.createBotAttribute(new BotAttribute(BotState.STARTED,
-                    new Questionary()), chatId);
+                    new Questionary(), userName), chatId);
         BotResult result = new BotResult("", chatId);
-        BotAttribute botAttribute = database.getBotAttrubute(chatId);
+        BotAttribute botAttribute = database.getBotAttribute(chatId);
 
         switch (botAttribute.getBotState())
         {
@@ -76,10 +180,15 @@ class DateBot
                 result = processCommands(chatId, text, botAttribute);
                 break;
             case WRITING_INTEREST_QUESTIONS:
-                String[] questions = text.split("/n");
+                updateInterestQuestions(result, botAttribute, text);
+                break;
+            case ANSWERING_QUESTIONS:
+                processAnswering(chatId, text, botAttribute, result);
+                break;
+            case LOOKING_AT_ANSWERS:
+                processLooking(chatId, text, botAttribute, result);
                 break;
         }
-
 
         if (result == null)
             result = new BotResult();
@@ -98,6 +207,31 @@ class DateBot
             case PLAYING:
                 result.addCurrentCommands(playingCommands);
             break;
+            case ANSWERING_QUESTIONS:
+                result.addCurrentCommands(answeringCommands);
+                break;
+            case LOOKING_AT_ANSWERS:
+                result.addCurrentCommands(lookingCommands);
+                break;
+        }
+    }
+
+    private void updateInterestQuestions(BotResult result, BotAttribute botAttribute, String text)
+    {
+        String[] questions = text.split("\n");
+        ArrayList<String> result_questions = new ArrayList<>();
+        for (String question : questions)
+            if (!question.equals(""))
+                result_questions.add(question);
+        if (result_questions.isEmpty())
+        {
+            result.addText(emptyQuestionts);
+        }
+        else
+        {
+            result.addText(filledQuestions);
+            botAttribute.setInterestQuestions(result_questions);
+            botAttribute.setBotState(BotState.NORMAL);
         }
     }
 
@@ -128,7 +262,7 @@ class DateBot
                 }
                 break;
         }
-        if (questionary.getNumber()==questionary.questions.length)
+        if (questionary.getNumber() == questionary.questions.length)
         {
             result.addText(finishingQuestionaryReply);
             if (botAttribute.getInterestQuestions().size()==0)
@@ -149,14 +283,25 @@ class DateBot
 
 
     private final ArrayList<String> normalCommands =  new ArrayList<>(Arrays.asList("/help","/money",
-            "/able", "/disable", "/change", "/connect", "/play"));
+            "/change", "/play", "/answerQuestions", "/lookAtAnswers", "/changeInterestQuestions"));
 
-    private final ArrayList<String> connectionCommands =  new ArrayList<>(Arrays.asList("/help", "/money",
-            "/disconnect"));
+    private final ArrayList<String> answeringCommands =  new ArrayList<>(Arrays.asList("/help", "/money",
+           "/finish" ));
+
+    private final ArrayList<String> lookingCommands =  new ArrayList<>(Arrays.asList("/help", "/money",
+            "/finish" , "/like", "/dislike"));
 
     final static int connectionCost = 60;
 
     final static int startMoneyCount = 100;
+
+    final static String finishingAnswering = "You finished to answer on questions";
+
+    final static String emptySuitableIds = "Sorry, but for now there are no questions for you to answer";
+
+    final static String filledQuestions = "Your interest questions have been updated.";
+
+    final static String emptyQuestionts = "Sorry, but  your questions are empty, try again.";
 
     final static String interestQuestionsInfo = "Please, write questions that will help you to " +
             "find suitable person for you. Each new question should start with the newline";
@@ -168,7 +313,7 @@ class DateBot
 
     final static String wrongAnswerReply = "There is no such answer\n";
 
-    final static String finishingQuestionaryReply = "Your questionary is finished";
+    final static String finishingQuestionaryReply = "Your questionary is finished\n";
 
     final static String greetingInformation = "Hello, I am the greatest DateBot. I can help you to find " +
             "someone interesting to talk to. Lets start with a little questionary at the beginning. I will ask you " +
@@ -176,12 +321,10 @@ class DateBot
 
     final static String commandsInformation = "Here are commands that are available for you to use:\n" +
             "'/help'-use it if you want to read about my functions\n" +
-            "'/able'-use it if you want to able someone to write you\n" +
-            "'/disable'-use it if you want to disable anyone to write you\n" +
             "'/play'-earn money for playing\n" +
             "'/money'-check your balance\n" +
-            "'/connect'-use it if you want to find someone for the conversation\n" +
-            "'/disconnect'-use it if you want stop the conversation\n" +
-            "'/change'-use it if you want to rewrite your questionary\n";
+            "'/change'-use it if you want to rewrite your questionary\n" +
+            "'/answerQuestions'-use it if you want to answer some questions\n" +
+            "'/lookAtAnswers'-use it if you want to look at answers on your questions\n";
 }
 

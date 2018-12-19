@@ -123,8 +123,8 @@ public class TestDateBot {
                 Sex.MALE, Sex.MALE);
         assertTrue(dateBot.database.botAttributesContains(chatId1));
         assertTrue(dateBot.database.botAttributesContains((chatId2));
-        assertSame(dateBot.database.getBotAttrubute(chatId1).getBotState(), BotState.CONNECTED);
-        assertSame(dateBot.database.getBotAttrubute(chatId2).getBotState(), BotState.CONNECTED);
+        assertSame(dateBot.database.getBotAttribute(chatId1).getBotState(), BotState.CONNECTED);
+        assertSame(dateBot.database.getBotAttribute(chatId2).getBotState(), BotState.CONNECTED);
 
         BotResult result = dateBot.processMessage(chatId1,"Hello1");
         assertEquals(result.getText(),"Hello1");
